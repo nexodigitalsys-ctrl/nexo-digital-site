@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ══ HOME ══ -->
+  <url>
+    <loc>https://www.nexo-digital.app/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/"/>
+  </url>
+  <url>
+    <loc>https://www.nexo-digital.app/pt/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/"/>
+  </url>
+
+  <!-- ══ SERVICIOS / SERVIÇOS ══ -->
+  <url>
+    <loc>https://www.nexo-digital.app/servicios.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/servicos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/servicios.html"/>
+  </url>
+  <url>
+    <loc>https://www.nexo-digital.app/pt/servicos.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/servicos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/servicios.html"/>
+  </url>
+
+  <!-- ══ PROCESO / PROCESSO ══ -->
+  <url>
+    <loc>https://www.nexo-digital.app/proceso.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/proceso.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/processo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/proceso.html"/>
+  </url>
+  <url>
+    <loc>https://www.nexo-digital.app/pt/processo.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/proceso.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/processo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/proceso.html"/>
+  </url>
+
+  <!-- ══ CLIENTES ══ -->
+  <url>
+    <loc>https://www.nexo-digital.app/clientes.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/clientes.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/clientes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/clientes.html"/>
+  </url>
+  <url>
+    <loc>https://www.nexo-digital.app/pt/clientes.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/clientes.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/clientes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/clientes.html"/>
+  </url>
+
+  <!-- ══ EQUIPO / EQUIPA ══ -->
+  <url>
+    <loc>https://www.nexo-digital.app/equipo.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/equipo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/equipa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/equipo.html"/>
+  </url>
+  <url>
+    <loc>https://www.nexo-digital.app/pt/equipa.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/equipo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/equipa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/equipo.html"/>
+  </url>
+
+  <!-- ══ CONTACTO ══ -->
+  <url>
+    <loc>https://www.nexo-digital.app/contacto.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/contacto.html"/>
+  </url>
+  <url>
+    <loc>https://www.nexo-digital.app/pt/contacto.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/contacto.html"/>
+  </url>
+
+</urlset>

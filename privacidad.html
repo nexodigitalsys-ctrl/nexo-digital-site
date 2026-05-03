@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — Nexo Digital</title>
+<meta name="description" content="Política de privacidad y protección de datos de Nexo Digital. Cumplimiento RGPD y LOPDGDD.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.nexo-digital.app/privacidad.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7fb;--surf:#fff;--blue:#1d4ed8;--blue-h:#1e40af;--violet:#7c3aed;
+  --txt:#0f172a;--txt-s:#374151;--txt-m:#6b7280;
+  --bdr:rgba(0,0,0,0.08);--glow:0 1px 2px rgba(0,0,0,0.04),0 4px 18px rgba(0,0,0,0.08);
+  --sans:'Inter',system-ui,sans-serif;--disp:'Poppins',system-ui,sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased;line-height:1.7;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(245,247,251,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr);padding:0 24px;}
+.nav-inner{max-width:1200px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-size:17px;font-weight:700;color:var(--txt);text-decoration:none;}
+.logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#1d4ed8,#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{font-size:14px;font-weight:500;color:var(--txt-s);}
+.nav-links a:hover{color:var(--txt);text-decoration:none;}
+.nav-cta{background:linear-gradient(135deg,#1d4ed8,#7c3aed);color:#fff!important;padding:8px 18px;border-radius:9999px;font-size:13px!important;font-weight:600!important;}
+.nav-cta:hover{opacity:.9;text-decoration:none!important;}
+.legal-hero{background:linear-gradient(135deg,#1e3a8a,#1d4ed8 45%,#7c3aed);padding:60px 24px;text-align:center;}
+.legal-hero h1{font-family:var(--disp);font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:10px;}
+.legal-hero p{font-size:14px;color:rgba(255,255,255,0.75);max-width:520px;margin:0 auto;}
+.legal-hero .badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:9999px;padding:4px 14px;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;}
+.legal-wrap{max-width:820px;margin:0 auto;padding:56px 24px 80px;}
+.legal-card{background:var(--surf);border-radius:20px;border:1px solid var(--bdr);padding:clamp(28px,5vw,48px);box-shadow:var(--glow);}
+.legal-section{margin-bottom:40px;}
+.legal-section:last-child{margin-bottom:0;}
+h2{font-family:var(--disp);font-size:1.1rem;font-weight:700;color:var(--txt);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid;border-image:linear-gradient(90deg,#1d4ed8,#7c3aed) 1;}
+h3{font-size:14.5px;font-weight:700;color:var(--txt);margin:18px 0 8px;}
+p{font-size:14.5px;color:var(--txt-s);margin-bottom:10px;line-height:1.8;}
+ul{margin:8px 0 12px 20px;}
+li{font-size:14.5px;color:var(--txt-s);margin-bottom:6px;line-height:1.7;}
+.updated{display:inline-block;font-size:12px;color:var(--txt-m);background:#f0f4ff;border:1px solid rgba(29,78,216,0.15);border-radius:6px;padding:4px 10px;margin-bottom:28px;}
+.info-box{background:#f0f4ff;border:1px solid rgba(29,78,216,0.2);border-radius:12px;padding:16px 20px;margin:16px 0;}
+.info-box p{color:#1e40af;margin:0;}
+.rights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:16px 0;}
+.right-item{background:#f8fafc;border:1px solid var(--bdr);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px;}
+.right-icon{font-size:18px;}
+.right-title{font-size:13px;font-weight:700;color:var(--txt);}
+.right-desc{font-size:12px;color:var(--txt-m);line-height:1.5;}
+.footer{background:#0f172a;padding:40px 24px 28px;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px;}
+.footer-logo{font-family:var(--disp);font-size:16px;font-weight:700;color:#e2e8f0;}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{font-size:13px;color:#64748b;transition:color .2s;}
+.footer-links a:hover{color:#94a3b8;text-decoration:none;}
+.footer-links a.active{color:#60a5fa;}
+.footer-bot{border-top:1px solid rgba(255,255,255,0.07);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-bot span{font-size:12.5px;color:#475569;}
+@media(max-width:600px){.nav-links{display:none;}.rights-grid{grid-template-columns:1fr 1fr;}.footer-top{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">N</div>
+      Nexo Digital
+    </a>
+    <div class="nav-links">
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#saas">Productos</a>
+      <a href="index.html#equipo">Equipo</a>
+      <a href="contacto.html" class="nav-cta">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<div class="legal-hero">
+  <div class="badge">RGPD · LOPDGDD</div>
+  <h1>Política de Privacidad</h1>
+  <p>Cómo recopilamos, usamos y protegemos tus datos personales</p>
+</div>
+
+<div class="legal-wrap">
+  <div class="legal-card">
+    <span class="updated">Última actualización: abril 2026</span>
+
+    <div class="legal-section">
+      <h2>1. Responsable del tratamiento</h2>
+      <div class="info-box">
+        <p><strong>Responsable:</strong> Nexo Digital<br>
+        <strong>Domicilio:</strong> Sabadell, Barcelona, España<br>
+        <strong>Email:</strong> <a href="mailto:contacto@nexo-digital.app">contacto@nexo-digital.app</a><br>
+        <strong>Web:</strong> <a href="https://www.nexo-digital.app">www.nexo-digital.app</a></p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Datos que recopilamos</h2>
+      <h3>2.1 Datos que nos proporcionas directamente</h3>
+      <p>Cuando rellenas el formulario de contacto o consulta de proyecto, recopilamos:</p>
+      <ul>
+        <li><strong>Nombre y apellidos</strong> — para identificarte y dirigirnos a ti</li>
+        <li><strong>Correo electrónico</strong> — para responderte y gestionar tu solicitud</li>
+        <li><strong>Teléfono</strong> (opcional) — para contacto rápido si lo solicitas</li>
+        <li><strong>Empresa</strong> (opcional) — para contextualizar tu proyecto</li>
+        <li><strong>Descripción del proyecto</strong> — para preparar una propuesta adecuada</li>
+      </ul>
+      <h3>2.2 Datos que recopilamos automáticamente</h3>
+      <ul>
+        <li><strong>Datos de navegación</strong>: dirección IP anonimizada, tipo de navegador, páginas visitadas y tiempo de permanencia (solo con cookies analíticas y si das consentimiento)</li>
+        <li><strong>Cookies técnicas</strong> necesarias para el funcionamiento del sitio (siempre activas)</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Finalidades y base legal</h2>
+      <ul>
+        <li><strong>Gestión de consultas y solicitudes</strong> — Base legal: ejecución de un contrato o medidas precontractuales (Art. 6.1.b RGPD)</li>
+        <li><strong>Envío de presupuestos y propuestas</strong> — Base legal: ejecución de un contrato (Art. 6.1.b RGPD)</li>
+        <li><strong>Comunicaciones comerciales sobre nuestros servicios</strong> (solo si das consentimiento expreso) — Base legal: consentimiento (Art. 6.1.a RGPD)</li>
+        <li><strong>Análisis de uso del sitio web</strong> (solo con consentimiento de cookies analíticas) — Base legal: consentimiento (Art. 6.1.a RGPD)</li>
+        <li><strong>Cumplimiento de obligaciones legales</strong> — Base legal: cumplimiento de obligación legal (Art. 6.1.c RGPD)</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Conservación de los datos</h2>
+      <p>Tus datos personales serán conservados durante el tiempo necesario para la finalidad para la que fueron recogidos:</p>
+      <ul>
+        <li><strong>Consultas sin contratación:</strong> hasta 2 años desde el último contacto</li>
+        <li><strong>Datos de clientes:</strong> durante la relación contractual y hasta 6 años tras su finalización (obligaciones fiscales y mercantiles)</li>
+        <li><strong>Datos con consentimiento para comunicaciones:</strong> hasta que retires el consentimiento</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Tus derechos</h2>
+      <p>En virtud del RGPD y la LOPDGDD, tienes los siguientes derechos sobre tus datos personales:</p>
+      <div class="rights-grid">
+        <div class="right-item">
+          <span class="right-icon">👁️</span>
+          <span class="right-title">Acceso</span>
+          <span class="right-desc">Conocer qué datos tenemos sobre ti</span>
+        </div>
+        <div class="right-item">
+          <span class="right-icon">✏️</span>
+          <span class="right-title">Rectificación</span>
+          <span class="right-desc">Corregir datos inexactos o incompletos</span>
+        </div>
+        <div class="right-item">
+          <span class="right-icon">🗑️</span>
+          <span class="right-title">Supresión</span>
+          <span class="right-desc">Solicitar la eliminación de tus datos</span>
+        </div>
+        <div class="right-item">
+          <span class="right-icon">⏸️</span>
+          <span class="right-title">Limitación</span>
+          <span class="right-desc">Limitar el tratamiento de tus datos</span>
+        </div>
+        <div class="right-item">
+          <span class="right-icon">📦</span>
+          <span class="right-title">Portabilidad</span>
+          <span class="right-desc">Recibir tus datos en formato estructurado</span>
+        </div>
+        <div class="right-item">
+          <span class="right-icon">🚫</span>
+          <span class="right-title">Oposición</span>
+          <span class="right-desc">Oponerte al tratamiento de tus datos</span>
+        </div>
+      </div>
+      <p>Para ejercer cualquiera de estos derechos, envía un email a <a href="mailto:contacto@nexo-digital.app">contacto@nexo-digital.app</a> indicando el derecho que deseas ejercer y adjuntando una copia de tu documento de identidad.</p>
+      <p>También tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> en <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a> si consideras que el tratamiento de tus datos no es adecuado.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Transferencias internacionales</h2>
+      <p>Nexo Digital no realiza transferencias internacionales de datos fuera del Espacio Económico Europeo (EEE) de forma habitual.</p>
+      <p>En caso de utilizar servicios de terceros (como herramientas de análisis o proveedores de hosting) que impliquen transferencias fuera del EEE, nos aseguramos de que dichas transferencias cuenten con las garantías adecuadas (decisiones de adecuación, cláusulas contractuales tipo de la Comisión Europea, etc.).</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Comunicación a terceros</h2>
+      <p>Tus datos personales no serán cedidos ni comunicados a terceros, salvo en los siguientes casos:</p>
+      <ul>
+        <li>Cuando sea necesario para la prestación del servicio contratado (por ejemplo, proveedores tecnológicos que actúan como encargados del tratamiento bajo contrato)</li>
+        <li>Cuando exista una obligación legal que lo requiera</li>
+        <li>Cuando hayas dado tu consentimiento expreso</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Seguridad de los datos</h2>
+      <p>Nexo Digital aplica medidas técnicas y organizativas apropiadas para garantizar un nivel de seguridad adecuado al riesgo, incluyendo:</p>
+      <ul>
+        <li>Transmisión de datos cifrada mediante protocolo HTTPS/TLS</li>
+        <li>Acceso restringido a datos personales mediante autenticación</li>
+        <li>Almacenamiento en servidores ubicados en la Unión Europea</li>
+        <li>Revisión periódica de las medidas de seguridad</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Cambios en esta política</h2>
+      <p>Nexo Digital se reserva el derecho a modificar esta Política de Privacidad para adaptarla a novedades legislativas o cambios en sus actividades. Te informaremos de cualquier cambio relevante a través del Sitio o por email si hemos tenido algún contacto previo contigo.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Contacto y más información</h2>
+      <div class="info-box">
+        <p>📧 <a href="mailto:contacto@nexo-digital.app">contacto@nexo-digital.app</a><br>
+        💬 <a href="https://wa.me/34689135159">WhatsApp: +34 689 135 159</a><br>
+        🍪 <a href="cookies.html">Política de Cookies</a><br>
+        📋 <a href="aviso-legal.html">Aviso Legal</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <span class="footer-logo">Nexo Digital</span>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="aviso-legal.html">Aviso Legal</a>
+        <a href="privacidad.html" class="active">Privacidad</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 Nexo Digital · Sabadell, Cataluña · España &amp; Portugal</span>
+      <span>contacto@nexo-digital.app</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

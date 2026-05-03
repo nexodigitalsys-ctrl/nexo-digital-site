@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexo Billing — Spoiler construcción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0b;
+  --surface: #121214;
+  --surface-raised: #18181c;
+  --surface-hover: #1e1e23;
+  --border: #26262c;
+  --border-strong: #35353d;
+  --text: #f4f4f5;
+  --text-dim: #a1a1aa;
+  --text-subtle: #71717a;
+  --accent: #d4ff3f;
+  --accent-dim: #a3cc2c;
+  --accent-glow: rgba(212, 255, 63, 0.15);
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --serif: 'Instrument Serif', 'Georgia', serif;
+  --sans: 'Geist', -apple-system, sans-serif;
+  --mono: 'Geist Mono', 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ========== TOP NAV DEL SPOILER ========== */
+.spoiler-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 11, 0.85);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.spoiler-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--serif);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.spoiler-brand-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #000;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.spoiler-brand em {
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: 16px;
+}
+
+.screen-switcher {
+  display: flex;
+  gap: 4px;
+  background: var(--surface);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.screen-switcher button {
+  background: transparent;
+  border: 0;
+  color: var(--text-dim);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.screen-switcher button:hover {
+  color: var(--text);
+}
+
+.screen-switcher button.active {
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+}
+
+.spoiler-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-subtle);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ========== APP SHELL ========== */
+.screen { display: none; }
+.screen.active { display: block; }
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: calc(100vh - 65px);
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tenant-selector {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-raised);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.tenant-selector:hover { background: var(--surface-hover); }
+
+.tenant-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3a8fef 0%, #1b4fd4 100%);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.tenant-info { flex: 1; min-width: 0; }
+.tenant-name {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tenant-nif {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-subtle);
+}
+.tenant-chev { color: var(--text-subtle); font-size: 16px; }
+
+.nav-section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 14px 14px 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  color: var(--text-dim);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.nav-item:hover { background: var(--surface-hover); color: var(--text); }
+.nav-item.active { background: var(--surface-raised); color: var(--text); }
+.nav-item.active .nav-icon { color: var(--accent); }
+.nav-icon { width: 18px; display: inline-grid; place-items: center; color: var(--text-subtle); }
+.nav-badge {
+  margin-left: auto;
+  background: var(--accent);
+  color: #000;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-family: var(--mono);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.compliance-badge {
+  background: linear-gradient(135deg, rgba(212, 255, 63, 0.1) 0%, rgba(212, 255, 63, 0.02) 100%);
+  border: 1px solid rgba(212, 255, 63, 0.25);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.compliance-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-area {
+  padding: 40px 48px;
+  max-width: 1400px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  gap: 24px;
+}
+
+.page-title-wrap h1 {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.page-title-wrap h1 em {
+  font-style: italic;
+  color: var(--text-dim);
+}
+
+.page-subtitle {
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+.btn {
+  background: var(--accent);
+  color: #000;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s;
+}
+
+.btn:hover { background: var(--accent-dim); transform: translateY(-1px); }
+
+.btn-secondary {
+  background: var(--surface-raised);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover { background: var(--surface-hover); border-color: var(--border-strong); transform: none; }
+
+/* ========== DASHBOARD KPIs ========== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.kpi-card:hover { border-color: var(--border-strong); }
+
+.kpi-card.featured {
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(212, 255, 63, 0.04) 100%);
+  border-color: rgba(212, 255, 63, 0.2);
+}
+
+.kpi-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.kpi-value {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.kpi-value .unit {
+  font-size: 20px;
+  color: var(--text-dim);
+  margin-left: 2px;
+}
+
+.kpi-delta {
+  font-size: 12px;
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.kpi-delta.down { color: var(--danger); }
+
+.kpi-spark {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0.5;
+  width: 80px;
+  height: 32px;
+}
+
+/* ========== TWO COLUMN LAYOUT ========== */
+.two-col {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-title {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panel-link {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ========== INVOICE LIST ========== */
+.invoice-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto auto auto;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: background 0.1s;
+  cursor: pointer;
+}
+
+.invoice-row:hover { background: var(--surface-hover); }
+.invoice-row:last-child { border-bottom: 0; }
+
+.invoice-number {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.invoice-client { display: flex; align-items: center; gap: 12px; }
+
+.client-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.client-info .client-name { font-size: 14px; font-weight: 500; }
+.client-info .client-meta {
+  font-size: 11px;
+  color: var(--text-subtle);
+  font-family: var(--mono);
+}
+
+.invoice-amount {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.invoice-status {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.status-paid { background: rgba(74, 222, 128, 0.15); color: var(--success); }
+.status-pending { background: rgba(251, 191, 36, 0.15); color: var(--warning); }
+.status-overdue { background: rgba(248, 113, 113, 0.15); color: var(--danger); }
+.status-sent { background: rgba(161, 161, 170, 0.15); color: var(--text-dim); }
+
+.verifactu-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: var(--mono);
+  color: var(--accent);
+  background: rgba(212, 255, 63, 0.08);
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  letter-spacing: 0.04em;
+}
+
+/* ========== RIGHT COLUMN ========== */
+.action-card {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.action-card:last-child { border-bottom: 0; }
+
+.action-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.action-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.quick-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.quick-action:hover { background: var(--surface-hover); }
+
+.quick-action-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--surface-raised);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.quick-action-text { flex: 1; }
+.quick-action-text div:first-child { font-size: 13px; font-weight: 500; }
+.quick-action-text div:last-child { font-size: 11px; color: var(--text-subtle); }
+
+/* ========== WHATSAPP HIGHLIGHT ========== */
+.whatsapp-card {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border-radius: 14px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.whatsapp-card::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.whatsapp-card h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.whatsapp-card p {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.whatsapp-btn {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ========== INVOICE CREATE SCREEN ========== */
+.create-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+}
+
+.form-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.form-section {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-section:last-child { border-bottom: 0; margin-bottom: 0; }
+
+.form-section-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.form-row {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-row.two-col { grid-template-columns: 1fr 1fr; }
+.form-row.three-col { grid-template-columns: 2fr 1fr 1fr; }
+
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: 12px; color: var(--text-dim); }
+
+.form-input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.form-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+
+/* ========== LINE ITEMS ========== */
+.line-items {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.line-items-header {
+  display: grid;
+  grid-template-columns: 3fr 80px 100px 80px 100px 32px;
+  padding: 12px 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  letter-spacing: 0.06em;
+}
+
+.line-item {
+  display: grid;
+  grid-template-columns: 3fr 80px 100px 80px 100px 32px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  gap: 8px;
+  align-items: center;
+}
+
+.line-item:last-of-type { border-bottom: 0; }
+
+.line-input {
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 13px;
+  outline: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.line-input:focus { background: var(--surface-raised); }
+
+.add-line {
+  padding: 12px 16px;
+  color: var(--accent);
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+  background: var(--bg);
+  font-weight: 500;
+}
+
+.add-line:hover { background: var(--surface-raised); }
+
+.totals {
+  margin-top: 20px;
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.total-row.grand {
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+  padding-top: 16px;
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--text);
+  align-items: baseline;
+}
+
+/* ========== PREVIEW PANEL ========== */
+.preview-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.preview-header {
+  padding: 16px 20px;
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-title { font-size: 12px; font-family: var(--mono); color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.06em; }
+
+.preview-pdf {
+  background: white;
+  color: #1a1a1a;
+  padding: 32px;
+  margin: 20px;
+  border-radius: 8px;
+  font-size: 11px;
+  min-height: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.pdf-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.pdf-brand h2 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.pdf-brand em { font-style: italic; color: #666; }
+
+.pdf-doc-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.pdf-doc-num div:last-child {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  margin-top: 2px;
+}
+
+.pdf-parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.pdf-party-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.pdf-party-name { font-weight: 600; font-size: 11px; }
+.pdf-party-detail { color: #666; font-size: 10px; line-height: 1.5; }
+
+.pdf-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+.pdf-table th {
+  text-align: left;
+  padding: 8px 6px;
+  font-family: var(--mono);
+  font-size: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid #e5e5e5;
+}
+.pdf-table td {
+  padding: 10px 6px;
+  font-size: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.pdf-table td:not(:first-child) { text-align: right; }
+
+.pdf-totals {
+  margin-left: auto;
+  width: 50%;
+  padding-top: 8px;
+}
+.pdf-total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 10px;
+  color: #666;
+}
+.pdf-total-row.grand {
+  border-top: 2px solid #1a1a1a;
+  margin-top: 6px;
+  padding-top: 8px;
+  font-family: var(--serif);
+  font-size: 16px;
+  color: #1a1a1a;
+}
+
+.pdf-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.pdf-qr {
+  width: 72px;
+  height: 72px;
+  background:
+    linear-gradient(45deg, #000 25%, transparent 25%),
+    linear-gradient(-45deg, #000 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #000 75%),
+    linear-gradient(-45deg, transparent 75%, #000 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0;
+  border: 4px solid #000;
+  flex-shrink: 0;
+}
+
+.pdf-legal {
+  font-size: 8px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.pdf-legal strong { color: #1a1a1a; font-family: var(--mono); font-size: 9px; letter-spacing: 0.04em; }
+
+/* ========== MOBILE SCREEN ========== */
+.mobile-screen-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.phone-frame {
+  width: 380px;
+  height: 780px;
+  background: #000;
+  border: 8px solid #1a1a1a;
+  border-radius: 48px;
+  padding: 8px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 26px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  border-radius: 40px;
+  overflow: hidden;
+  padding: 40px 20px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-hello {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.phone-hello em { color: var(--text-dim); font-style: italic; }
+
+.phone-subtitle {
+  font-size: 12px;
+  color: var(--text-subtle);
+  font-family: var(--mono);
+  margin-bottom: 24px;
+}
+
+.phone-today-card {
+  background: var(--accent);
+  color: #000;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-today-card::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+}
+
+.phone-today-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.phone-today-count {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+
+.phone-today-desc {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.phone-service-list { flex: 1; overflow-y: auto; }
+
+.phone-service {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phone-service-time {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-subtle);
+  width: 44px;
+  flex-shrink: 0;
+}
+
+.phone-service-info { flex: 1; min-width: 0; }
+.phone-service-client { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+.phone-service-address { font-size: 11px; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.phone-service-status {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.phone-service.done .phone-service-status {
+  background: var(--success);
+  color: #000;
+}
+
+.phone-service.in-progress .phone-service-status {
+  background: var(--accent);
+  color: #000;
+  animation: pulse 2s infinite;
+}
+
+.phone-service.pending .phone-service-status {
+  background: var(--surface-raised);
+  color: var(--text-subtle);
+  border: 1px solid var(--border);
+}
+
+.phone-fab {
+  position: absolute;
+  bottom: 32px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: var(--accent);
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  color: #000;
+  font-size: 28px;
+  box-shadow: 0 12px 40px var(--accent-glow);
+  cursor: pointer;
+}
+
+/* Second phone - Parte de servicio */
+.phone-parte-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.phone-back {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.phone-parte-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.phone-parte-subtitle {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-family: var(--mono);
+}
+
+.phone-checkin-hero {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-raised) 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.phone-timer {
+  font-family: var(--serif);
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.phone-timer-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.phone-location {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 11px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.phone-location .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--success);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--success);
+}
+
+.phone-action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.phone-action {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.phone-action-icon { font-size: 24px; margin-bottom: 6px; }
+.phone-action-label { font-size: 11px; color: var(--text-dim); }
+.phone-action.done { border-color: var(--success); color: var(--success); }
+.phone-action.done .phone-action-label { color: var(--success); font-weight: 500; }
+
+.phone-checkout-btn {
+  margin-top: auto;
+  background: var(--danger);
+  color: white;
+  border: 0;
+  padding: 16px;
+  border-radius: 16px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ========== ONBOARDING ========== */
+.onboarding-wrap {
+  max-width: 640px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.onboarding-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 48px;
+}
+
+.progress-dot {
+  flex: 1;
+  height: 4px;
+  background: var(--surface-raised);
+  border-radius: 2px;
+}
+
+.progress-dot.active { background: var(--accent); }
+.progress-dot.done { background: var(--accent-dim); }
+
+.onboarding-hero {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.onboarding-hero em { font-style: italic; color: var(--text-dim); }
+
+.onboarding-lead {
+  font-size: 16px;
+  color: var(--text-dim);
+  margin-bottom: 40px;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.vertical-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.vertical-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.vertical-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.vertical-card.selected {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(212, 255, 63, 0.05) 100%);
+}
+
+.vertical-card.selected::after {
+  content: "✓";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  color: #000;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.vertical-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--surface-raised);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.vertical-card.selected .vertical-icon {
+  background: var(--accent);
+  color: #000;
+}
+
+.vertical-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.vertical-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+.onboarding-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.skip-link { color: var(--text-subtle); font-size: 13px; cursor: pointer; }
+
+/* ========== SCROLLBARS ========== */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
+
+/* ========== SVG ICONS ========== */
+svg { width: 18px; height: 18px; }
+
+</style>
+</head>
+<body>
+
+<!-- TOPBAR DEL SPOILER -->
+<div class="spoiler-topbar">
+  <div class="spoiler-brand">
+    <div class="spoiler-brand-mark">N</div>
+    <div>Nexo Billing <em>— spoiler</em></div>
+  </div>
+  <div class="screen-switcher">
+    <button class="active" onclick="showScreen('dashboard', this)">Dashboard</button>
+    <button onclick="showScreen('create', this)">Nueva factura</button>
+    <button onclick="showScreen('mobile', this)">App móvil</button>
+    <button onclick="showScreen('onboarding', this)">Onboarding</button>
+  </div>
+  <div class="spoiler-meta">v0.1 · prototipo</div>
+</div>
+
+<!-- ============= PANTALLA 1: DASHBOARD ============= -->
+<div class="screen active" id="dashboard">
+<div class="app-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="tenant-selector">
+      <div class="tenant-avatar" style="background:linear-gradient(135deg, #f59e0b 0%, #b45309 100%)">RG</div>
+      <div class="tenant-info">
+        <div class="tenant-name">Reformas García Construcción</div>
+        <div class="tenant-nif">B-98765432 · Construcción</div>
+      </div>
+      <div class="tenant-chev">⌄</div>
+    </div>
+
+    <div class="nav-section-label">Gestión</div>
+    <a class="nav-item active">
+      <span class="nav-icon">⌂</span>
+      <span>Inicio</span>
+    </a>
+    <a class="nav-item">
+      <span class="nav-icon">◈</span>
+      <span>Facturas</span>
+      <span class="nav-badge">3</span>
+    </a>
+    <a class="nav-item">
+      <span class="nav-icon">✎</span>
+      <span>Presupuestos</span>
+    </a>
+    <a class="nav-item">
+      <span class="nav-icon">⟲</span>
+      <span>Certificaciones</span>
+    </a>
+    <a class="nav-item">
+      <span class="nav-icon">◉</span>
+      <span>Clientes</span>
+    </a>
+    <a class="nav-item">
+      <span class="nav-icon">▤</span>
+      <span>Gastos</span>
+    </a>
+
+    <div class="nav-section-label">Construcción</div>
+    <a class="nav-item">
+      <span class="nav-icon">◐</span>
+      <span>Obras</span>
+    </a>
+    <a class="nav-item">
+      <span class="nav-icon">☰</span>
+      <span>Subcontratas</span>
+    </a>
+    <a class="nav-item">
+      <span class="nav-icon">◎</span>
+      <span>Partes de trabajo</span>
+    </a>
+
+    <div class="nav-section-label">Finanzas</div>
+    <a class="nav-item">
+      <span class="nav-icon">▨</span>
+      <span>Tesorería</span>
+    </a>
+    <a class="nav-item">
+      <span class="nav-icon">⌘</span>
+      <span>Impuestos</span>
+    </a>
+
+    <div class="sidebar-footer">
+      <div class="compliance-badge">
+        <div class="compliance-dot"></div>
+        <div>
+          <div style="font-weight:600;color:var(--accent)">VERI·FACTU</div>
+          <div style="color:var(--text-subtle)">Activo · SIF certificado</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-area">
+
+    <!-- HEADER -->
+    <div class="page-header">
+      <div class="page-title-wrap">
+        <h1>Buenos días, <em>Constructor</em></h1>
+        <div class="page-subtitle">Tu facturación en abril · 22 de abril de 2026</div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <button class="btn btn-secondary">Importar CSV</button>
+        <button class="btn">+ Nueva factura</button>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="kpi-grid">
+      <div class="kpi-card featured">
+        <div class="kpi-label">Facturado este mes</div>
+        <div class="kpi-value">84.320<span class="unit">€</span></div>
+        <div class="kpi-delta">↑ 22% vs marzo</div>
+        <svg class="kpi-spark" viewBox="0 0 80 32">
+          <path d="M0,24 L12,20 L24,22 L36,14 L48,16 L60,8 L72,10 L80,4" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Cobrado</div>
+        <div class="kpi-value">52.180<span class="unit">€</span></div>
+        <div class="kpi-delta">↑ 14%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Pendiente</div>
+        <div class="kpi-value">32.140<span class="unit">€</span></div>
+        <div class="kpi-delta down">↑ 3 certificaciones sin cobrar</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">IVA a liquidar</div>
+        <div class="kpi-value">14.623<span class="unit">€</span></div>
+        <div class="kpi-delta" style="color:var(--text-dim)">Próximo modelo 303: 20 abr</div>
+      </div>
+    </div>
+
+    <!-- TWO COL -->
+    <div class="two-col">
+
+      <!-- FACTURAS -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title">◈ Facturas recientes</div>
+          <a class="panel-link">Ver todas →</a>
+        </div>
+
+        <div class="invoice-row">
+          <div class="invoice-number">F2026-0087</div>
+          <div class="invoice-client">
+            <div class="client-avatar" style="background:linear-gradient(135deg,#f97316,#c2410c)">AC</div>
+            <div class="client-info">
+              <div class="client-name">Admón. Comunidades Badalona</div>
+              <div class="client-meta">B-67890123 · hace 2h</div>
+            </div>
+          </div>
+          <div class="invoice-amount">12.450 €</div>
+          <div class="invoice-status status-paid">Cobrada</div>
+          <div class="verifactu-chip">✓ AEAT</div>
+        </div>
+
+        <div class="invoice-row">
+          <div class="invoice-number">F2026-0086</div>
+          <div class="invoice-client">
+            <div class="client-avatar" style="background:linear-gradient(135deg,#8b5cf6,#5b21b6)">PI</div>
+            <div class="client-info">
+              <div class="client-name">Promociones Inmobiliarias Vallès S.L.</div>
+              <div class="client-meta">A-12345678 · hace 5h</div>
+            </div>
+          </div>
+          <div class="invoice-amount">28.800 €</div>
+          <div class="invoice-status status-sent">Enviada</div>
+          <div class="verifactu-chip">✓ AEAT</div>
+        </div>
+
+        <div class="invoice-row">
+          <div class="invoice-number">F2026-0085</div>
+          <div class="invoice-client">
+            <div class="client-avatar" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">OR</div>
+            <div class="client-info">
+              <div class="client-name">Oficinas Retail Park Sabadell</div>
+              <div class="client-meta">B-55667788 · ayer</div>
+            </div>
+          </div>
+          <div class="invoice-amount">18.200 €</div>
+          <div class="invoice-status status-pending">Pendiente</div>
+          <div class="verifactu-chip">✓ AEAT</div>
+        </div>
+
+        <div class="invoice-row">
+          <div class="invoice-number">F2026-0084</div>
+          <div class="invoice-client">
+            <div class="client-avatar" style="background:linear-gradient(135deg,#ec4899,#be185d)">AS</div>
+            <div class="client-info">
+              <div class="client-name">Ayuntamiento de Sabadell</div>
+              <div class="client-meta">P-0818600-I · 19 abr</div>
+            </div>
+          </div>
+          <div class="invoice-amount">7.960 €</div>
+          <div class="invoice-status status-overdue">Vencida 3d</div>
+          <div class="verifactu-chip">✓ AEAT</div>
+        </div>
+
+        <div class="invoice-row">
+          <div class="invoice-number">F2026-0083</div>
+          <div class="invoice-client">
+            <div class="client-avatar" style="background:linear-gradient(135deg,#10b981,#047857)">RC</div>
+            <div class="client-info">
+              <div class="client-name">Residencial Camp Nou</div>
+              <div class="client-meta">H-11223344 · 17 abr</div>
+            </div>
+          </div>
+          <div class="invoice-amount">16.920 €</div>
+          <div class="invoice-status status-paid">Cobrada</div>
+          <div class="verifactu-chip">✓ AEAT</div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div>
+        <!-- WhatsApp feature -->
+        <div class="whatsapp-card">
+          <h3>Factura por <em>WhatsApp</em></h3>
+          <p>"Certifica la obra 3 de Promociones Vallès por 12.500€" · y listo.</p>
+          <button class="whatsapp-btn">
+            ◆ Conectar WhatsApp
+          </button>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">⚡ Acciones rápidas</div>
+          </div>
+
+          <div class="action-card">
+            <div class="quick-action">
+              <div class="quick-action-icon">📄</div>
+              <div class="quick-action-text">
+                <div>Escanear factura proveedor</div>
+                <div>OCR automático · IVA y retención detectados</div>
+              </div>
+            </div>
+            <div class="quick-action">
+              <div class="quick-action-icon">📐</div>
+              <div class="quick-action-text">
+                <div>Nueva certificación de obra</div>
+                <div>5 obras activas · 2 pendientes de certificar</div>
+              </div>
+            </div>
+            <div class="quick-action">
+              <div class="quick-action-icon">◉</div>
+              <div class="quick-action-text">
+                <div>Recordar cobros</div>
+                <div>3 certificaciones vencidas · enviar email</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-card">
+            <div class="action-title">Próximo vencimiento fiscal</div>
+            <div class="action-desc">Modelo 303 · trimestral</div>
+            <div style="display:flex;align-items:baseline;gap:8px;margin-top:8px">
+              <div style="font-family:var(--serif);font-size:32px;line-height:1">20</div>
+              <div style="font-size:13px;color:var(--text-dim)">abril · en 2 días</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+</div>
+
+<!-- ============= PANTALLA 2: CREAR FACTURA ============= -->
+<div class="screen" id="create">
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="tenant-selector">
+      <div class="tenant-avatar" style="background:linear-gradient(135deg, #f59e0b 0%, #b45309 100%)">RG</div>
+      <div class="tenant-info">
+        <div class="tenant-name">Reformas García Construcción</div>
+        <div class="tenant-nif">B-98765432 · Construcción</div>
+      </div>
+      <div class="tenant-chev">⌄</div>
+    </div>
+
+    <div class="nav-section-label">Gestión</div>
+    <a class="nav-item"><span class="nav-icon">⌂</span><span>Inicio</span></a>
+    <a class="nav-item active"><span class="nav-icon">◈</span><span>Facturas</span></a>
+    <a class="nav-item"><span class="nav-icon">✎</span><span>Presupuestos</span></a>
+    <a class="nav-item"><span class="nav-icon">⟲</span><span>Certificaciones</span></a>
+    <a class="nav-item"><span class="nav-icon">◉</span><span>Clientes</span></a>
+
+    <div class="sidebar-footer">
+      <div class="compliance-badge">
+        <div class="compliance-dot"></div>
+        <div>
+          <div style="font-weight:600;color:var(--accent)">VERI·FACTU</div>
+          <div style="color:var(--text-subtle)">Activo · SIF certificado</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-area">
+
+    <div class="page-header">
+      <div class="page-title-wrap">
+        <h1>Nueva <em>factura</em></h1>
+        <div class="page-subtitle">F2026-0088 · se enviará a Hacienda al emitir</div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <button class="btn btn-secondary">Guardar borrador</button>
+        <button class="btn">Emitir y enviar</button>
+      </div>
+    </div>
+
+    <div class="create-layout">
+
+      <!-- FORM -->
+      <div class="form-panel">
+
+        <!-- Cliente -->
+        <div class="form-section">
+          <div class="form-section-title">◉ Cliente</div>
+          <div class="form-row two-col">
+            <div class="form-field">
+              <label class="form-label">Cliente</label>
+              <input class="form-input" value="Promociones Inmobiliarias Vallès S.L." />
+            </div>
+            <div class="form-field">
+              <label class="form-label">NIF</label>
+              <input class="form-input" value="A-12345678" style="font-family:var(--mono)" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">Dirección fiscal</label>
+              <input class="form-input" value="Avinguda Francesc Macià 60, 08208 Sabadell" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Fechas -->
+        <div class="form-section">
+          <div class="form-section-title">◈ Factura</div>
+          <div class="form-row three-col">
+            <div class="form-field">
+              <label class="form-label">Serie</label>
+              <input class="form-input" value="F2026" style="font-family:var(--mono)" />
+            </div>
+            <div class="form-field">
+              <label class="form-label">Número</label>
+              <input class="form-input" value="0088" style="font-family:var(--mono)" />
+            </div>
+            <div class="form-field">
+              <label class="form-label">Fecha</label>
+              <input class="form-input" value="22/04/2026" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Líneas -->
+        <div class="form-section">
+          <div class="form-section-title">☰ Conceptos</div>
+          <div class="line-items">
+            <div class="line-items-header">
+              <div>Descripción</div>
+              <div>Uds.</div>
+              <div>Precio</div>
+              <div>IVA</div>
+              <div>Subtotal</div>
+              <div></div>
+            </div>
+            <div class="line-item">
+              <input class="line-input" value="Certificación de obra nº 3 · Reforma integral planta baja" />
+              <input class="line-input" value="1" style="text-align:right" />
+              <input class="line-input" value="18.500,00" style="text-align:right" />
+              <input class="line-input" value="21%" style="text-align:right;font-family:var(--mono);font-size:12px" />
+              <div style="text-align:right;font-family:var(--serif);font-size:16px">18.500,00€</div>
+              <div style="color:var(--text-subtle);text-align:center;cursor:pointer">×</div>
+            </div>
+            <div class="line-item">
+              <input class="line-input" value="Acopio de materiales · forjado y estructura" />
+              <input class="line-input" value="1" style="text-align:right" />
+              <input class="line-input" value="5.320,00" style="text-align:right" />
+              <input class="line-input" value="21%" style="text-align:right;font-family:var(--mono);font-size:12px" />
+              <div style="text-align:right;font-family:var(--serif);font-size:16px">5.320,00€</div>
+              <div style="color:var(--text-subtle);text-align:center;cursor:pointer">×</div>
+            </div>
+            <div class="add-line">+ Añadir línea</div>
+          </div>
+
+          <!-- TOTALES -->
+          <div class="totals">
+            <div class="total-row">
+              <span>Base imponible</span>
+              <span style="font-family:var(--mono)">23.820,00 €</span>
+            </div>
+            <div class="total-row">
+              <span>IVA 21%</span>
+              <span style="font-family:var(--mono)">5.002,20 €</span>
+            </div>
+            <div class="total-row">
+              <span>Retención garantía 5%</span>
+              <span style="font-family:var(--mono);color:var(--danger)">−1.191,00 €</span>
+            </div>
+            <div class="total-row grand">
+              <span style="color:var(--text-dim);font-size:14px">Total a cobrar</span>
+              <span>27.631,20€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREVIEW -->
+      <div class="preview-panel">
+        <div class="preview-header">
+          <div class="preview-title">📄 Vista previa · PDF</div>
+          <div style="font-size:11px;color:var(--text-subtle);font-family:var(--mono)">en tiempo real</div>
+        </div>
+        <div class="preview-pdf">
+          <div class="pdf-brand">
+            <h2>Reformas <em>García</em></h2>
+            <div class="pdf-doc-num">
+              <div>FACTURA</div>
+              <div>F2026-0088</div>
+            </div>
+          </div>
+          <div class="pdf-parties">
+            <div>
+              <div class="pdf-party-label">De</div>
+              <div class="pdf-party-name">Reformas García Construcción S.L.</div>
+              <div class="pdf-party-detail">
+                B-98765432<br>
+                Carrer Industria 45<br>
+                08205 Sabadell
+              </div>
+            </div>
+            <div>
+              <div class="pdf-party-label">Para</div>
+              <div class="pdf-party-name">Promociones Inmobiliarias Vallès S.L.</div>
+              <div class="pdf-party-detail">
+                A-12345678<br>
+                Avinguda Francesc Macià 60<br>
+                08208 Sabadell
+              </div>
+            </div>
+          </div>
+          <table class="pdf-table">
+            <thead>
+              <tr>
+                <th>Concepto</th>
+                <th>Uds.</th>
+                <th>Precio</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Certificación obra nº 3 · Reforma planta baja</td>
+                <td>1</td>
+                <td>18.500,00€</td>
+                <td>18.500,00€</td>
+              </tr>
+              <tr>
+                <td>Acopio de materiales · forjado y estructura</td>
+                <td>1</td>
+                <td>5.320,00€</td>
+                <td>5.320,00€</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pdf-totals">
+            <div class="pdf-total-row"><span>Base</span><span>23.820,00€</span></div>
+            <div class="pdf-total-row"><span>IVA 21%</span><span>5.002,20€</span></div>
+            <div class="pdf-total-row"><span>Ret. garantía 5%</span><span>−1.191,00€</span></div>
+            <div class="pdf-total-row grand"><span>Total</span><span>27.631,20€</span></div>
+          </div>
+          <div class="pdf-footer">
+            <div class="pdf-qr"></div>
+            <div class="pdf-legal">
+              <strong>VERI·FACTU</strong><br>
+              Factura verificable en la sede electrónica de la AEAT.<br>
+              Escanea el código QR para verificar.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+</div>
+
+<!-- ============= PANTALLA 3: MOBILE ============= -->
+<div class="screen" id="mobile">
+<div class="mobile-screen-wrap">
+
+  <!-- Móvil 1: Día del jefe de obra -->
+  <div>
+    <div style="margin-bottom:20px;max-width:380px">
+      <h2 style="font-family:var(--serif);font-size:32px;font-weight:400;letter-spacing:-0.01em;margin-bottom:6px">Vista del <em>jefe de obra</em></h2>
+      <p style="color:var(--text-dim);font-size:13px">Pantalla "Hoy" — el jefe de obra ve sus visitas del día, control de avance en cada obra y partes de trabajo con foto y firma.</p>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-hello">Hola, <em>Miguel</em></div>
+        <div class="phone-subtitle">MIÉRCOLES · 22 ABR</div>
+
+        <div class="phone-today-card">
+          <div class="phone-today-label">HOY VISITAS</div>
+          <div class="phone-today-count">5</div>
+          <div class="phone-today-desc">obras · 2 visitadas</div>
+        </div>
+
+        <div class="phone-service-list">
+          <div class="phone-service done">
+            <div class="phone-service-time">08:30</div>
+            <div class="phone-service-info">
+              <div class="phone-service-client">Residencial Camp Nou</div>
+              <div class="phone-service-address">Cimentación · Carrer Maria Cristina 12</div>
+            </div>
+            <div class="phone-service-status">✓</div>
+          </div>
+          <div class="phone-service done">
+            <div class="phone-service-time">10:00</div>
+            <div class="phone-service-info">
+              <div class="phone-service-client">Oficinas Retail Park</div>
+              <div class="phone-service-address">Tabiquería · Polígon Can Roqueta</div>
+            </div>
+            <div class="phone-service-status">✓</div>
+          </div>
+          <div class="phone-service in-progress">
+            <div class="phone-service-time">12:30</div>
+            <div class="phone-service-info">
+              <div class="phone-service-client">Promociones Vallès · Obra 3</div>
+              <div class="phone-service-address">Forjado 2ª planta · Av. F. Macià 60</div>
+            </div>
+            <div class="phone-service-status">▸</div>
+          </div>
+          <div class="phone-service pending">
+            <div class="phone-service-time">15:00</div>
+            <div class="phone-service-info">
+              <div class="phone-service-client">Ayuntamiento Sabadell</div>
+              <div class="phone-service-address">Rehab. fachada · Passeig Sant Joan 47</div>
+            </div>
+            <div class="phone-service-status">·</div>
+          </div>
+          <div class="phone-service pending">
+            <div class="phone-service-time">17:00</div>
+            <div class="phone-service-info">
+              <div class="phone-service-client">Admón. Comunidades</div>
+              <div class="phone-service-address">Cubierta · Av. Martí Pujol 203</div>
+            </div>
+            <div class="phone-service-status">·</div>
+          </div>
+        </div>
+
+        <div class="phone-fab">+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Móvil 2: Parte de obra -->
+  <div>
+    <div style="margin-bottom:20px;max-width:380px">
+      <h2 style="font-family:var(--serif);font-size:32px;font-weight:400;letter-spacing:-0.01em;margin-bottom:6px">Parte <em>de obra</em></h2>
+      <p style="color:var(--text-dim);font-size:13px">Geolocalización en tiempo real, foto del avance, firma del promotor. Offline-first.</p>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-parte-header">
+          <div class="phone-back">←</div>
+          <div>
+            <div class="phone-parte-title">Promociones Vallès · Obra 3</div>
+            <div class="phone-parte-subtitle">VISITA · 12:34</div>
+          </div>
+        </div>
+
+        <div class="phone-checkin-hero">
+          <div class="phone-timer-label">TIEMPO EN OBRA</div>
+          <div class="phone-timer">01:47:22</div>
+          <div class="phone-location">
+            <div class="dot"></div>
+            <span>Ubicación verificada · 12 m</span>
+          </div>
+        </div>
+
+        <div class="phone-action-row">
+          <div class="phone-action done">
+            <div class="phone-action-icon">📷</div>
+            <div class="phone-action-label">FOTO AVANCE ✓</div>
+          </div>
+          <div class="phone-action">
+            <div class="phone-action-icon">📷</div>
+            <div class="phone-action-label">FOTO INCIDENCIAS</div>
+          </div>
+        </div>
+
+        <div class="phone-action-row">
+          <div class="phone-action">
+            <div class="phone-action-icon">✎</div>
+            <div class="phone-action-label">FIRMA PROMOTOR</div>
+          </div>
+          <div class="phone-action">
+            <div class="phone-action-icon">🧰</div>
+            <div class="phone-action-label">MATERIALES</div>
+          </div>
+        </div>
+
+        <button class="phone-checkout-btn">Finalizar visita</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ============= PANTALLA 4: ONBOARDING ============= -->
+<div class="screen" id="onboarding">
+<div style="background:var(--bg);min-height:calc(100vh - 65px);display:flex;align-items:center">
+  <div class="onboarding-wrap">
+
+    <div class="onboarding-progress">
+      <div class="progress-dot done"></div>
+      <div class="progress-dot done"></div>
+      <div class="progress-dot active"></div>
+      <div class="progress-dot"></div>
+      <div class="progress-dot"></div>
+    </div>
+
+    <h1 class="onboarding-hero">¿A qué te <em>dedicas</em>?</h1>
+    <p class="onboarding-lead">Cada sector tiene sus particularidades. Selecciona el tuyo y configuraremos tu plantilla de factura, tarifas de IVA por defecto y los módulos que necesitas.</p>
+
+    <div class="vertical-grid">
+      <div class="vertical-card">
+        <div class="vertical-icon">🧽</div>
+        <div class="vertical-title">Limpieza</div>
+        <div class="vertical-desc">Contratos recurrentes, partes de servicio, rutas, m²</div>
+      </div>
+      <div class="vertical-card selected">
+        <div class="vertical-icon">🔨</div>
+        <div class="vertical-title">Construcción</div>
+        <div class="vertical-desc">Certificaciones de obra, retención garantía, subcontratas</div>
+      </div>
+      <div class="vertical-card">
+        <div class="vertical-icon">⚕</div>
+        <div class="vertical-title">Médicos y clínicas</div>
+        <div class="vertical-desc">Exención IVA art. 20, RGPD reforzado, agenda</div>
+      </div>
+      <div class="vertical-card">
+        <div class="vertical-icon">⚖</div>
+        <div class="vertical-title">Servicios profesionales</div>
+        <div class="vertical-desc">Abogados, consultores, minutas, horas facturables</div>
+      </div>
+      <div class="vertical-card">
+        <div class="vertical-icon">🛍</div>
+        <div class="vertical-title">Retail y comercio</div>
+        <div class="vertical-desc">TPV, tickets, facturas simplificadas, inventario</div>
+      </div>
+      <div class="vertical-card">
+        <div class="vertical-icon">✦</div>
+        <div class="vertical-title">Otro</div>
+        <div class="vertical-desc">Configuración genérica adaptada</div>
+      </div>
+    </div>
+
+    <div class="onboarding-actions">
+      <span class="skip-link">← Anterior</span>
+      <button class="btn">Continuar →</button>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<script>
+function showScreen(id, btn) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.screen-switcher button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Selección de vertical en onboarding
+document.querySelectorAll('.vertical-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.vertical-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+  });
+});
+</script>
+
+</body>
+</html>

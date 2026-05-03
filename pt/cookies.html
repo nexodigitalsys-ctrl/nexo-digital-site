@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Cookies — Nexo Digital</title>
+<meta name="description" content="Informação sobre os cookies que utilizamos na Nexo Digital e como geri-los.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.nexo-digital.app/pt/cookies.html">
+<link rel="alternate" hreflang="es" href="https://www.nexo-digital.app/cookies.html">
+<link rel="alternate" hreflang="pt-PT" href="https://www.nexo-digital.app/pt/cookies.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7fb;--surf:#fff;--blue:#1d4ed8;--blue-h:#1e40af;--violet:#7c3aed;
+  --txt:#0f172a;--txt-s:#374151;--txt-m:#6b7280;
+  --bdr:rgba(0,0,0,0.08);--glow:0 1px 2px rgba(0,0,0,0.04),0 4px 18px rgba(0,0,0,0.08);
+  --sans:'Inter',system-ui,sans-serif;--disp:'Poppins',system-ui,sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased;line-height:1.7;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(245,247,251,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr);padding:0 24px;}
+.nav-inner{max-width:1200px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-size:17px;font-weight:700;color:var(--txt);text-decoration:none;}
+.logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#1d4ed8,#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{font-size:14px;font-weight:500;color:var(--txt-s);}
+.nav-links a:hover{color:var(--txt);text-decoration:none;}
+.nav-cta{background:linear-gradient(135deg,#1d4ed8,#7c3aed);color:#fff!important;padding:8px 18px;border-radius:9999px;font-size:13px!important;font-weight:600!important;}
+.nav-cta:hover{opacity:.9;text-decoration:none!important;}
+.legal-hero{background:linear-gradient(135deg,#1e3a8a,#1d4ed8 45%,#7c3aed);padding:60px 24px;text-align:center;}
+.legal-hero h1{font-family:var(--disp);font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:10px;}
+.legal-hero p{font-size:14px;color:rgba(255,255,255,0.75);max-width:520px;margin:0 auto;}
+.legal-hero .badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:9999px;padding:4px 14px;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;}
+.legal-wrap{max-width:820px;margin:0 auto;padding:56px 24px 80px;}
+.legal-card{background:var(--surf);border-radius:20px;border:1px solid var(--bdr);padding:clamp(28px,5vw,48px);box-shadow:var(--glow);}
+.legal-section{margin-bottom:40px;}
+.legal-section:last-child{margin-bottom:0;}
+h2{font-family:var(--disp);font-size:1.1rem;font-weight:700;color:var(--txt);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid;border-image:linear-gradient(90deg,#1d4ed8,#7c3aed) 1;}
+h3{font-size:14.5px;font-weight:700;color:var(--txt);margin:18px 0 8px;}
+p{font-size:14.5px;color:var(--txt-s);margin-bottom:10px;line-height:1.8;}
+ul{margin:8px 0 12px 20px;}
+li{font-size:14.5px;color:var(--txt-s);margin-bottom:6px;line-height:1.7;}
+.updated{display:inline-block;font-size:12px;color:var(--txt-m);background:#f0f4ff;border:1px solid rgba(29,78,216,0.15);border-radius:6px;padding:4px 10px;margin-bottom:28px;}
+.info-box{background:#f0f4ff;border:1px solid rgba(29,78,216,0.2);border-radius:12px;padding:16px 20px;margin:16px 0;}
+.info-box p{color:#1e40af;margin:0;}
+.cookie-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px;}
+.cookie-table th{background:#f0f4ff;color:#1e3a8a;font-weight:700;padding:10px 14px;text-align:left;border-bottom:2px solid rgba(29,78,216,0.2);}
+.cookie-table td{padding:10px 14px;border-bottom:1px solid var(--bdr);color:var(--txt-s);vertical-align:top;}
+.cookie-table tr:last-child td{border-bottom:none;}
+.cookie-table tr:hover td{background:#fafbff;}
+.badge-nec{display:inline-block;background:#dcfce7;color:#15803d;border-radius:9999px;padding:2px 9px;font-size:11px;font-weight:700;}
+.badge-ana{display:inline-block;background:#fef9c3;color:#a16207;border-radius:9999px;padding:2px 9px;font-size:11px;font-weight:700;}
+.browser-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin:16px 0;}
+.browser-item{background:#f8fafc;border:1px solid var(--bdr);border-radius:10px;padding:12px;text-align:center;}
+.browser-name{font-size:13px;font-weight:700;color:var(--txt);margin-bottom:4px;}
+.browser-link{font-size:12px;color:var(--blue);}
+.footer{background:#0f172a;padding:40px 24px 28px;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px;}
+.footer-logo{font-family:var(--disp);font-size:16px;font-weight:700;color:#e2e8f0;}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{font-size:13px;color:#64748b;transition:color .2s;}
+.footer-links a:hover{color:#94a3b8;text-decoration:none;}
+.footer-links a.active{color:#60a5fa;}
+.footer-bot{border-top:1px solid rgba(255,255,255,0.07);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-bot span{font-size:12.5px;color:#475569;}
+@media(max-width:600px){.nav-links{display:none;}.cookie-table{font-size:12px;}.browser-grid{grid-template-columns:1fr 1fr;}.footer-top{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">N</div>
+      Nexo Digital
+    </a>
+    <div class="nav-links">
+      <a href="index.html#servicios">Serviços</a>
+      <a href="index.html#saas">Produtos</a>
+      <a href="index.html#equipa">Equipa</a>
+      <a href="index.html#contacto" class="nav-cta">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<div class="legal-hero">
+  <div class="badge">🍪 Cookies</div>
+  <h1>Política de Cookies</h1>
+  <p>Informação sobre a utilização de cookies neste website e como pode geri-los</p>
+</div>
+
+<div class="legal-wrap">
+  <div class="legal-card">
+    <span class="updated">Última atualização: abril 2026</span>
+
+    <div class="legal-section">
+      <h2>1. O que são cookies?</h2>
+      <p>Os cookies são pequenos ficheiros de texto que os websites armazenam no seu dispositivo (computador, tablet, telemóvel) quando os visita. São amplamente utilizados para fazer com que os websites funcionem, ou funcionem de forma mais eficiente, bem como para fornecer informação aos proprietários do site.</p>
+      <p>Os cookies não danificam o seu dispositivo nem acedem a informação pessoal armazenada no mesmo. Não executam código nem transmitem vírus.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Tipos de cookies que utilizamos</h2>
+      <p>Na Nexo Digital utilizamos apenas duas categorias de cookies:</p>
+
+      <h3>🔒 Cookies necessários (sempre ativos)</h3>
+      <p>São imprescindíveis para que o website funcione corretamente. Não armazenam qualquer dado pessoal e não requerem o seu consentimento.</p>
+      <div style="overflow-x:auto">
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Finalidade</th>
+              <th>Duração</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>nd_cookie_consent</code></td>
+              <td>Guarda a sua preferência sobre cookies para não voltar a perguntar</td>
+              <td>1 ano</td>
+              <td><span class="badge-nec">Necessário</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>📊 Cookies analíticos (requerem consentimento)</h3>
+      <p>Apenas são ativados se aceitar todos os cookies. Permitem-nos perceber como os visitantes interagem com o site para melhorar a sua experiência. Não identificam utilizadores individuais e os dados são anonimizados.</p>
+      <div style="overflow-x:auto">
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Finalidade</th>
+              <th>Duração</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>_ga</code></td>
+              <td>Distingue utilizadores únicos (Google Analytics — se ativado)</td>
+              <td>2 anos</td>
+              <td><span class="badge-ana">Analítico</span></td>
+            </tr>
+            <tr>
+              <td><code>_ga_*</code></td>
+              <td>Mantém o estado da sessão (Google Analytics — se ativado)</td>
+              <td>2 anos</td>
+              <td><span class="badge-ana">Analítico</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-box">
+        <p>ℹ️ Neste momento, a <strong>Nexo Digital utiliza apenas cookies necessários</strong>. Os cookies analíticos estão preparados mas só são ativados com o seu consentimento explícito.</p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Gestão das suas preferências</h2>
+      <p>Pode alterar as suas preferências de cookies em qualquer momento. Ao eliminar a preferência guardada, o banner de cookies voltará a aparecer na próxima vez que visitar o site.</p>
+
+      <h3>Gerir a partir do navegador</h3>
+      <p>Também pode controlar e eliminar os cookies diretamente a partir das definições do seu navegador:</p>
+      <div class="browser-grid">
+        <div class="browser-item">
+          <div class="browser-name">Chrome</div>
+          <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" class="browser-link">Configurar →</a>
+        </div>
+        <div class="browser-item">
+          <div class="browser-name">Firefox</div>
+          <a href="https://support.mozilla.org/pt-PT/kb/ativar-e-desativar-cookies" target="_blank" rel="noopener" class="browser-link">Configurar →</a>
+        </div>
+        <div class="browser-item">
+          <div class="browser-name">Safari</div>
+          <a href="https://support.apple.com/pt-pt/guide/safari/sfri11471/mac" target="_blank" rel="noopener" class="browser-link">Configurar →</a>
+        </div>
+        <div class="browser-item">
+          <div class="browser-name">Edge</div>
+          <a href="https://support.microsoft.com/pt-pt/topic/eliminar-e-gerir-cookies-168dab11" target="_blank" rel="noopener" class="browser-link">Configurar →</a>
+        </div>
+      </div>
+      <p style="margin-top:12px">Tenha em atenção que desativar os cookies pode afetar o funcionamento de alguns serviços do site.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Cookies de terceiros</h2>
+      <p>O website pode incluir funcionalidades de terceiros (Google Fonts, bibliotecas CDN) que podem instalar os seus próprios cookies. Esses terceiros têm as suas próprias políticas de privacidade:</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google — Política de privacidade</a></li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Base legal e consentimento</h2>
+      <p>Em conformidade com o RGPD (UE) 2016/679 e a legislação aplicável em matéria de privacidade eletrónica:</p>
+      <ul>
+        <li><strong>Cookies necessários:</strong> não requerem consentimento prévio, pois são imprescindíveis para a prestação do serviço</li>
+        <li><strong>Cookies analíticos:</strong> requerem o seu consentimento prévio, livre, específico, informado e inequívoco</li>
+      </ul>
+      <p>Pode retirar o seu consentimento em qualquer momento sem que isso afete a licitude do tratamento anterior a essa retirada.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Mais informação</h2>
+      <div class="info-box">
+        <p>📧 <a href="mailto:contacto@nexo-digital.app">contacto@nexo-digital.app</a><br>
+        🔒 <a href="privacidade.html">Política de Privacidade</a><br>
+        📋 <a href="aviso-legal.html">Aviso Legal</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <span class="footer-logo">Nexo Digital</span>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="aviso-legal.html">Aviso Legal</a>
+        <a href="privacidade.html">Privacidade</a>
+        <a href="cookies.html" class="active">Cookies</a>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 Nexo Digital · Sabadell, Catalunha · Espanha &amp; Portugal</span>
+      <span>contacto@nexo-digital.app</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+# ══════════════════════════════════════════════════════════════
+#  Nexo Digital — .htaccess  |  Seguridad + Rendimiento
+# ══════════════════════════════════════════════════════════════
+
+# ── Motor de reescritura ──────────────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirigir HTTP → HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # Bloquear acceso directo a phpmailer
+  RewriteRule ^phpmailer(/.*)?$ - [F,L]
+
+  # Bloquear intentos de path traversal
+  RewriteCond %{REQUEST_URI} (\.\./|\.\.%2F|%00) [NC]
+  RewriteRule .* - [F,L]
+
+  # Bloquear inyecciones SQL y XSS en query string
+  RewriteCond %{QUERY_STRING} (union.*select|select.*from|insert.*into|drop\s+table|<script|eval\() [NC]
+  RewriteRule .* - [F,L]
+
+  # Bloquear bots maliciosos conocidos
+  RewriteCond %{HTTP_USER_AGENT} (nikto|masscan|nmap|sqlmap|zgrab|dirbuster|gobuster|wfuzz|acunetix|nessus|openvas) [NC]
+  RewriteRule .* - [F,L]
+</IfModule>
+
+# ── Deshabilitar listado de directorios ───────────────────────
+Options -Indexes
+
+# ── Proteger archivos sensibles ───────────────────────────────
+<FilesMatch "(\.env|\.git|\.gitignore|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|\.log|\.sql|\.bak|\.backup|\.sh|\.pem|\.key)$">
+  Require all denied
+</FilesMatch>
+
+# ── PHP endpoints de formulario ──────────────────────────────
+# (sin restricción de método — el propio PHP valida REQUEST_METHOD)
+
+# ── Cabeceras de seguridad ────────────────────────────────────
+<IfModule mod_headers.c>
+  # Clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # XSS (navegadores legacy)
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Referrer
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permisos de hardware
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+  # HSTS — actívalo solo si el SSL está en producción y es permanente
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # CSP — unsafe-eval es necesario para Babel standalone en browser
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://unpkg.com https://generativelanguage.googleapis.com; form-action 'self'; frame-ancestors 'none';"
+
+  # Eliminar cabeceras que revelan tecnología del servidor
+  Header unset X-Powered-By
+  Header always unset Server
+</IfModule>
+
+# ── Anti-hotlinking de imágenes ───────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP_REFERER} !^$
+  RewriteCond %{HTTP_REFERER} !^https://(www\.)?nexo-digital\.app [NC]
+  RewriteCond %{HTTP_REFERER} !^https://nexo\.chatopsmaster\.com [NC]
+  RewriteCond %{HTTP_REFERER} !^https://(www\.)?google\. [NC]
+  RewriteRule \.(jpg|jpeg|png|gif|svg|webp|ico|pdf)$ - [F,L]
+</IfModule>
+
+# ── Caché de archivos estáticos ───────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html                "access plus 0 seconds"
+  ExpiresByType text/css                 "access plus 1 month"
+  ExpiresByType application/javascript   "access plus 1 month"
+  ExpiresByType text/javascript          "access plus 1 month"
+  ExpiresByType image/jpeg               "access plus 6 months"
+  ExpiresByType image/png                "access plus 6 months"
+  ExpiresByType image/svg+xml            "access plus 6 months"
+  ExpiresByType image/webp               "access plus 6 months"
+  ExpiresByType image/x-icon             "access plus 1 year"
+  ExpiresByType font/woff                "access plus 1 year"
+  ExpiresByType font/woff2               "access plus 1 year"
+</IfModule>
+
+# ── Compresión GZIP ───────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ── Páginas de error personalizadas ──────────────────────────
+ErrorDocument 400 /index.html
+ErrorDocument 403 /index.html
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
+
+# ── Bloquear ejecución PHP en /uploads ───────────────────────
+<IfModule mod_rewrite.c>
+  RewriteRule ^uploads/.*\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$ - [F,L]
+</IfModule>
