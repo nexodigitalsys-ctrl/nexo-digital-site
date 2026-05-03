@@ -244,7 +244,7 @@ const ContactForm = () => {
     setFdata(data);
     try{
       const params=new URLSearchParams();Object.entries(data).forEach(([k,v])=>params.append(k,String(v)));
-      const r=await fetch('send.php',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()});
+      const r=await fetch('/api/send',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()});
       let j;
       try{ j=await r.json(); }catch(_){ j={success:false,message:'El servidor no respondió correctamente ('+r.status+').'}; }
       if(j.success){setSt('ok');ref.current.reset();setFdata(null);}
@@ -446,7 +446,7 @@ const ChatWidget = () => {
     setMsgs(history);
     setBusy(true);
     try {
-      const res = await fetch('chat.php', {
+      const res = await fetch('/api/chat', {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify({messages: history.map(m => ({role: m.r==='u'?'user':'assistant', content:m.t}))})

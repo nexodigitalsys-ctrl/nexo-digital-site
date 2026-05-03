@@ -2,11 +2,24 @@
 #  Nexo Digital — .htaccess  |  Seguridad + Rendimiento
 # ══════════════════════════════════════════════════════════════
 
+# ── Handler PHP explícito (necesario en IONOS shared hosting) ─
+<FilesMatch "\.php$">
+  SetHandler application/x-httpd-php
+</FilesMatch>
+
+# ── Permitir POST explícitamente en endpoints PHP ─────────────
+<Files "send.php">
+  Require all granted
+</Files>
+<Files "chat.php">
+  Require all granted
+</Files>
+
 # ── Motor de reescritura ──────────────────────────────────────
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Redirigir HTTP → HTTPS
+  # Redirigir HTTP → HTTPS (sin afectar POST — preserva método)
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
