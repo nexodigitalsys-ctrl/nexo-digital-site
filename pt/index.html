@@ -333,7 +333,7 @@ const Hero = () => (
         <a href="#contacto" className="btn btn-s" style={{background:'rgba(255,255,255,0.9)',backdropFilter:'blur(12px)'}}>Falar connosco</a>
       </div>
       <div className="ha5" style={{marginTop:28,display:'flex',justifyContent:'center',gap:8,flexWrap:'wrap'}}>
-        {[['ðŸ’»','100% Remoto'],['âš¡','Resposta em 24h'],['ðŸ›¡ï¸','Infraestrutura segura']].map(([ic,l])=>(
+        {[['💻','100% Remoto'],['âš¡','Resposta em 24h'],['ðŸ›¡ï¸','Infraestrutura segura']].map(([ic,l])=>(
           <span key={l} style={{fontSize:12,fontWeight:500,color:'var(--txt-s)',padding:'5px 13px',borderRadius:9999,border:'1px solid var(--bdr)',background:'rgba(255,255,255,0.85)',backdropFilter:'blur(8px)',display:'inline-flex',alignItems:'center',gap:5}}>{ic} {l}</span>
         ))}
       </div>
@@ -354,7 +354,7 @@ const Ticker = () => {
     {icon:'🚀',color:'#34d399',label:'Website lançado',loc:'Portugal',time:'há 2 dias'},
     {icon:'💬',color:'#60a5fa',label:'Chatbot IA ativado',loc:'Espanha',time:'há 4 dias'},
     {icon:'🛒',color:'#a78bfa',label:'Loja online entregue',loc:'Portugal',time:'há 6 dias'},
-    {icon:'âš™ï¸',color:'#2dd4bf',label:'CRM integrado com WhatsApp',loc:'Europa',time:'hÃ¡ 8 dias'},
+    {icon:'âš™ï¸',color:'#2dd4bf',label:'CRM integrado com WhatsApp',loc:'Europa',time:'há 8 dias'},
     {icon:'🔒',color:'#fb923c',label:'Auditoria de segurança',loc:'Portugal',time:'há 10 dias'},
     {icon:'📊',color:'#fbbf24',label:'Dashboard analítico',loc:'Espanha',time:'há 12 dias'},
   ];
@@ -363,7 +363,7 @@ const Ticker = () => {
     {icon:'📱',color:'#60a5fa',label:'App publicada',loc:'Espanha',time:'há 5 dias'},
     {icon:'🎯',color:'#a78bfa',label:'Campanha Google Ads',loc:'Europa',time:'há 7 dias'},
     {icon:'⚡',color:'#2dd4bf',label:'Automatização B2B',loc:'Portugal',time:'há 9 dias'},
-    {icon:'ðŸŒ',color:'#fb923c',label:'Landing page premium',loc:'Espanha',time:'hÃ¡ 11 dias'},
+    {icon:'ðŸŒ',color:'#fb923c',label:'Landing page premium',loc:'Espanha',time:'há 11 dias'},
     {icon:'📈',color:'#fbbf24',label:'SEO Audit · +67% visibilidade',loc:'Europa',time:'há 13 dias'},
   ];
   const Item = ({icon,color,label,loc,time}) => (
@@ -452,12 +452,12 @@ const SaasSection = () => {
 
 const ServicesSection = () => {
   const S=[
-    {icon:'ðŸŒ',title:'Landing Page / Website',desc:'Design e desenvolvimento web premium orientado Ã  conversÃ£o, com SEO tÃ©cnico desde o primeiro dia.',feats:['SEO tÃ©cnico nacional e internacional','Design mobile-first','Core Web Vitals otimizados']},
+    {icon:'ðŸŒ',title:'Landing Page / Website',desc:'Design e desenvolvimento web premium orientado Ã  conversão, com SEO técnico desde o primeiro dia.',feats:['SEO técnico nacional e internacional','Design mobile-first','Core Web Vitals otimizados']},
     {icon:'🛒',title:'Loja Online',desc:'E-commerce completo com gestão de produtos, pagamentos integrados e experiência de compra otimizada.',feats:['Catálogo e gateway de pagamento','Gestão de encomendas e inventário','Integração com marketplaces']},
     {icon:'🤖',title:'Chatbot IA',desc:'Assistentes virtuais com inteligência artificial integrados no seu website ou WhatsApp. Atendimento 24/7 sem custo de pessoal.',feats:['IA conversacional personalizada','Integração web e WhatsApp','Redireciona para vendas ou suporte']},
     {icon:'🧾',title:'Faturação Digital',desc:'Sistema de faturação para empresas de construção, vendas e pequenos negócios. Rápido, claro e sem complicações.',feats:['Faturas e recibos digitais','Gestão fiscal organizada','Para construção, vendas e retalho']},
-    {icon:'ðŸ–¥ï¸',title:'TPV & Quiosques Digitais',desc:'Software TPV e infraestrutura de quiosques para pequenas e mÃ©dias empresas. Chave-na-mÃ£o.',feats:['Software TPV personalizado','Quiosques de autoatendimento','Suporte e manutenÃ§Ã£o incluÃ­dos']},
-    {icon:'âš™ï¸',title:'Sistemas Ã  Medida',desc:'ERP, CRM, dashboards e portais internos criados para a operaÃ§Ã£o real do negÃ³cio.',feats:['ERP e CRM personalizados','IntegraÃ§Ãµes via API REST','Arquitetura escalÃ¡vel']},
+    {icon:'ðŸ–¥ï¸',title:'TPV & Quiosques Digitais',desc:'Software TPV e infraestrutura de quiosques para pequenas e médias empresas. Chave-na-mão.',feats:['Software TPV personalizado','Quiosques de autoatendimento','Suporte e manutenção incluídos']},
+    {icon:'âš™ï¸',title:'Sistemas Ã  Medida',desc:'ERP, CRM, dashboards e portais internos criados para a operação real do negócio.',feats:['ERP e CRM personalizados','Integrações via API REST','Arquitetura escalável']},
     {icon:'📣',title:'Tráfego Pago / Anúncios',desc:'Campanhas Google Ads e Meta Ads orientadas a resultados mensuráveis para negócios locais e nacionais.',feats:['Google Ads e Meta Ads','Segmentação geográfica precisa','Relatórios e otimização contínua']},
     {icon:'🔒',title:'Cibersegurança & Infraestrutura',desc:'Auditorias de segurança, hardening, SSL, firewall Cloudflare e monitorização ativa 24/7.',feats:['Auditoria de segurança web','Firewall e proteção DDoS','Backups automáticos diários']},
   ];
@@ -804,7 +804,7 @@ const ProcessSection = () => {
   const steps=[
     {n:'01',color:'linear-gradient(135deg,#059669,#0d9488)',icon:'💬',title:'Consulta gratuita',desc:'Conte-nos o seu projeto. Ouvimo-lo sem compromisso e em 24h dizemos exatamente o que podemos fazer e quanto custaria.'},
     {n:'02',color:'linear-gradient(135deg,#7c3aed,#1a56db)',icon:'📋',title:'Proposta técnica',desc:'Recebe um documento com âmbito, tecnologia, prazos e preço fechado. Sem custos ocultos nem surpresas no final.'},
-    {n:'03',color:'linear-gradient(135deg,#1a56db,#0d9488)',icon:'âš™ï¸',title:'Desenvolvimento iterativo',desc:'ConstruÃ­mos em sprints com entregas visÃ­veis. Tem acesso a cada avanÃ§o e canais diretos com a equipa.'},
+    {n:'03',color:'linear-gradient(135deg,#1a56db,#0d9488)',icon:'âš™ï¸',title:'Desenvolvimento iterativo',desc:'Construímos em sprints com entregas visíveis. Tem acesso a cada avanço e canais diretos com a equipa.'},
     {n:'04',color:'linear-gradient(135deg,#d97706,#059669)',icon:'🚀',title:'Lançamento e suporte',desc:'Fazemos o deploy com CI/CD, monitorização 24/7 e acompanhamos com suporte pós-lançamento incluído.'},
   ];
   return (
