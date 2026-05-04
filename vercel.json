@@ -1,6 +1,7 @@
 {
   "functions": {
-    "api/send.js": { "memory": 256, "maxDuration": 15 },
-    "api/chat.js":  { "memory": 256, "maxDuration": 20 }
+    "api/send.js": {
+      "maxDuration": 10
+    }
   }
 }
