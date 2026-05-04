@@ -1,8 +1,13 @@
-{
-  "name": "nexo-digital",
+﻿{
+  "name": "nexo-digital-site",
   "version": "1.0.0",
   "private": true,
+  "description": "Site oficial da Nexo Digital",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests configured\" && exit 0"
+  },
   "dependencies": {
-    "nodemailer": "^6.9.14"
+    "nodemailer": "^7.0.10"
   }
 }
