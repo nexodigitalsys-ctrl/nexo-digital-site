@@ -435,7 +435,7 @@ const ChatWidget = () => {
     setMsgs(history);
     setBusy(true);
     try {
-      const res = await fetch('../chat.php', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lang:'pt',messages:history.map(m=>({role:m.r==='u'?'user':'assistant',content:m.t}))})});
+      const res = await fetch('/api/chat', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lang:'pt',messages:history.map(m=>({role:m.r==='u'?'user':'assistant',content:m.t}))})});
       const data = await res.json();
       setMsgs(function(h){ return [...h, {r:'b', t: data.reply || 'Lamentamos, ocorreu um erro. Pode escrever-nos diretamente.'}]; });
     } catch(e) {

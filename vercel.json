@@ -1,7 +1,13 @@
+$vercelJson = @'
 {
   "functions": {
-    "api/send.js": {
-      "maxDuration": 10
-    }
+    "api/send.js": { "memory": 256, "maxDuration": 15 },
+    "api/chat.js": { "memory": 256, "maxDuration": 20 }
   }
 }
+'@
+
+$utf8NoBom = New-Object System.Text.UTF8Encoding $false
+[System.IO.File]::WriteAllText("vercel.json", $vercelJson, $utf8NoBom)
+
+node -e "JSON.parse(require('fs').readFileSync('vercel.json','utf8')); console.log('vercel.json OK')"
