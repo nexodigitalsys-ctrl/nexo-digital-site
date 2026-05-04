@@ -1,14 +1,13 @@
 User-agent: *
 Allow: /
 
-# Bloquear directorios internos y PHP
-Disallow: /phpmailer/
+# Directorios internos
 Disallow: /uploads/
-Disallow: /send.php
-Disallow: /chat.php
+Disallow: /api/
+
+# Páginas no indexables
 Disallow: /demo-billing.html
 
-# Páginas legales — accesibles pero sin indexar (controlado por noindex en el HTML)
-# No hace falta bloquearlas aquí porque ya tienen <meta name="robots" content="noindex">
+# Páginas legales — accesibles pero controladas por noindex en el HTML
 
 Sitemap: https://www.nexo-digital.app/sitemap.xml
