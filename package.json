@@ -5,9 +5,15 @@
   "description": "Site oficial da Nexo Digital",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"No tests configured\" && exit 0"
+    "test": "echo \"No tests configured\" && exit 0",
+    "build:home": "babel src/app.jsx --out-file js/app.js"
   },
   "dependencies": {
     "nodemailer": "^7.0.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-react": "^7.28.5"
   }
 }
