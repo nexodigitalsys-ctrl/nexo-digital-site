@@ -180,7 +180,7 @@ const Navbar = () => {
   },[]);
   const links=[
     {href:'index.html#saas',label:'Produtos'},
-    {href:'index.html#servicios',label:'Serviços'},
+    {href:'/pt#servicos',label:'Serviços'},
     {href:'index.html#processo',label:'Processo'},
     {href:'index.html#clientes',label:'Clientes'},
     {href:'contacto.html',label:'Contacto'},
@@ -386,7 +386,7 @@ const Footer = () => (
         </div>
         <div>
           <div className="fh">Páginas</div>
-          {[['index.html#saas','Produtos'],['index.html#servicios','Serviços'],['index.html#processo','Processo'],['index.html#clientes','Clientes']].map(([h,l])=><a key={l} href={h} className="flk">{l}</a>)}
+          {[['index.html#saas','Produtos'],['/pt#servicos','Serviços'],['index.html#processo','Processo'],['index.html#clientes','Clientes']].map(([h,l])=><a key={l} href={h} className="flk">{l}</a>)}
         </div>
         <div>
           <div className="fh">Serviços</div>
