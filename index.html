@@ -412,7 +412,7 @@ const Navbar = () => {
               <span style={{padding:'3px 8px',borderRadius:16,background:'var(--blue)',color:'#fff'}}>ES</span>
               <a href="pt/" onClick={function(){try{localStorage.setItem('nd-lang','pt');}catch(e){}}} style={{padding:'3px 8px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>PT</a>
             </div>
-            <a href="contacto.html" style={{display:'inline-flex',alignItems:'center',borderRadius:9999,background:'var(--blue)',padding:'9px 20px',fontSize:13.5,fontWeight:600,color:'#fff',textDecoration:'none',transition:'all .2s'}}>Empezar →</a>
+            <a href="/contacto" style={{display:'inline-flex',alignItems:'center',borderRadius:9999,background:'var(--blue)',padding:'9px 20px',fontSize:13.5,fontWeight:600,color:'#fff',textDecoration:'none',transition:'all .2s'}}>Empezar →</a>
           </div>
           <button onClick={()=>setOp(!op)} style={{display:'none',width:40,height:40,alignItems:'center',justifyContent:'center',borderRadius:'50%',border:'1px solid var(--bdr)',background:'rgba(255,255,255,0.93)',color:'var(--txt)',cursor:'pointer',fontSize:17}} className="mbtn">{op?'✕':'☰'}</button>
         </div>
@@ -426,7 +426,7 @@ const Navbar = () => {
             <span style={{padding:'4px 14px',borderRadius:16,background:'var(--blue)',color:'#fff'}}>ES</span>
             <a href="pt/" onClick={function(){try{localStorage.setItem('nd-lang','pt');}catch(e){}}} style={{padding:'4px 14px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>PT</a>
           </div>
-          <a href="contacto.html" onClick={()=>setOp(false)} style={{marginTop:8,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:9999,background:'var(--blue)',padding:'12px 20px',fontSize:14,fontWeight:600,color:'#fff',textDecoration:'none'}}>Empezar →</a>
+          <a href="/contacto" onClick={()=>setOp(false)} style={{marginTop:8,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:9999,background:'var(--blue)',padding:'12px 20px',fontSize:14,fontWeight:600,color:'#fff',textDecoration:'none'}}>Empezar →</a>
         </div>
       </div>
     )}
@@ -946,8 +946,8 @@ const Footer = () => (
       <div className="fbot">
         <span>© 2026 Nexo Digital</span>
         <div style={{display:'flex',gap:16,flexWrap:'wrap',justifyContent:'flex-end'}}>
-          <a href="aviso-legal.html" className="flk" style={{fontSize:12}}>Aviso Legal</a>
-          <a href="privacidad.html" className="flk" style={{fontSize:12}}>Privacidad</a>
+          <a href="/aviso-legal" className="flk" style={{fontSize:12}}>Aviso Legal</a>
+          <a href="/privacidad" className="flk" style={{fontSize:12}}>Privacidad</a>
           <a href="cookies.html" className="flk" style={{fontSize:12}}>Cookies</a>
         </div>
       </div>

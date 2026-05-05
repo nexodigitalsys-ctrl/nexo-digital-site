@@ -7,10 +7,10 @@
 <script>(function(){try{var s=localStorage.getItem('nd-lang');if(s==='pt'){window.location.replace('pt/clientes.html');return;}if(s==='es')return;var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';if(l.toLowerCase().startsWith('pt')){localStorage.setItem('nd-lang','pt');window.location.replace('pt/clientes.html');}else{localStorage.setItem('nd-lang','es');}}catch(e){}}());</script>
 <title>Clientes y Resultados — Nexo Digital | Casos de éxito</title>
 <meta name="description" content="Empresas reales, resultados reales. Conoce los clientes de Nexo Digital y los resultados que han conseguido con nuestras soluciones digitales.">
-<link rel="canonical" href="https://www.nexo-digital.app/clientes.html">
-<link rel="alternate" hreflang="es" href="https://www.nexo-digital.app/clientes.html">
-<link rel="alternate" hreflang="pt-PT" href="https://www.nexo-digital.app/pt/clientes.html">
-<link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/clientes.html">
+<link rel="canonical" href="https://www.nexo-digital.app/clientes">
+<link rel="alternate" hreflang="es" href="https://www.nexo-digital.app/clientes">
+<link rel="alternate" hreflang="pt-PT" href="https://www.nexo-digital.app/pt/clientes">
+<link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/clientes">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Nexo Digital — Enoque Santos, Abner Gabriel, Elias Mendes">
 <meta property="og:type" content="website">
@@ -142,7 +142,7 @@ const useReveal = () => {
   }, []);
 };
 const Logo = () => (
-  <a href="index.html" style={{display:'inline-flex',alignItems:'center',gap:10,textDecoration:'none'}}>
+  <a href="/" style={{display:'inline-flex',alignItems:'center',gap:10,textDecoration:'none'}}>
     <svg width="68" height="38" viewBox="-5 -5 230 130" xmlns="http://www.w3.org/2000/svg" style={{flexShrink:0}}>
       <defs><linearGradient id="ndg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#1A56DB"/><stop offset="100%" stopColor="#00F0FF"/></linearGradient></defs>
       <path d="M0 120 V0 L60 80 V0 H90 V120 H60 L30 40 V120 Z" fill="url(#ndg)"/>
@@ -181,9 +181,9 @@ const Navbar = () => {
           <div className="dnav" style={{gap:12}}>
             <div style={{display:'flex',alignItems:'center',gap:1,borderRadius:20,border:'1px solid rgba(29,78,216,0.18)',padding:'3px 4px',background:'rgba(29,78,216,0.05)',fontSize:11.5,fontWeight:600}}>
               <span style={{padding:'3px 8px',borderRadius:16,background:'var(--blue)',color:'#fff'}}>ES</span>
-              <a href="pt/clientes.html" onClick={function(){try{localStorage.setItem('nd-lang','pt');}catch(e){}}} style={{padding:'3px 8px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>PT</a>
+              <a href="/pt/clientes" onClick={function(){try{localStorage.setItem('nd-lang','pt');}catch(e){}}} style={{padding:'3px 8px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>PT</a>
             </div>
-            <a href="contacto.html" style={{display:'inline-flex',alignItems:'center',borderRadius:9999,background:'var(--blue)',padding:'9px 20px',fontSize:13.5,fontWeight:600,color:'#fff',textDecoration:'none'}}>Empezar →</a>
+            <a href="/contacto" style={{display:'inline-flex',alignItems:'center',borderRadius:9999,background:'var(--blue)',padding:'9px 20px',fontSize:13.5,fontWeight:600,color:'#fff',textDecoration:'none'}}>Empezar →</a>
           </div>
           <button onClick={()=>setOp(!op)} style={{display:'none',width:40,height:40,alignItems:'center',justifyContent:'center',borderRadius:'50%',border:'1px solid var(--bdr)',background:'rgba(255,255,255,0.93)',color:'var(--txt)',cursor:'pointer',fontSize:17}} className="mbtn">{op?'✕':'☰'}</button>
         </div>
@@ -195,9 +195,9 @@ const Navbar = () => {
           {links.map(l=><a key={l.href} href={l.href} onClick={()=>setOp(false)} style={{display:'block',padding:'11px 14px',borderRadius:12,fontSize:14,fontWeight:500,color:l.href==='clientes.html'?'var(--txt)':'var(--txt-s)',textDecoration:'none'}}>{l.label}</a>)}
           <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:1,borderRadius:20,border:'1px solid rgba(29,78,216,0.18)',padding:'3px 4px',background:'rgba(29,78,216,0.05)',fontSize:12,fontWeight:600,margin:'8px 0 4px'}}>
             <span style={{padding:'4px 14px',borderRadius:16,background:'var(--blue)',color:'#fff'}}>ES</span>
-            <a href="pt/clientes.html" onClick={function(){try{localStorage.setItem('nd-lang','pt');}catch(e){}}} style={{padding:'4px 14px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>PT</a>
+            <a href="/pt/clientes" onClick={function(){try{localStorage.setItem('nd-lang','pt');}catch(e){}}} style={{padding:'4px 14px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>PT</a>
           </div>
-          <a href="contacto.html" onClick={()=>setOp(false)} style={{marginTop:8,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:9999,background:'var(--blue)',padding:'12px 20px',fontSize:14,fontWeight:600,color:'#fff',textDecoration:'none'}}>Empezar →</a>
+          <a href="/contacto" onClick={()=>setOp(false)} style={{marginTop:8,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:9999,background:'var(--blue)',padding:'12px 20px',fontSize:14,fontWeight:600,color:'#fff',textDecoration:'none'}}>Empezar →</a>
         </div>
       </div>
     )}
@@ -289,7 +289,7 @@ const ClientsSection = () => {
             <div style={{fontFamily:'var(--disp)',fontSize:16,fontWeight:600,color:'var(--txt)'}}>¿Tu empresa podría ser la siguiente?</div>
             <p style={{marginTop:5,fontSize:13,color:'var(--txt-s)'}}>Últimos clientes registrados en los últimos 14 días. Únete a nuestra lista.</p>
           </div>
-          <a href="contacto.html" className="btn btn-p" style={{padding:'9px 18px',fontSize:13,flexShrink:0}}>Contactar ahora →</a>
+          <a href="/contacto" className="btn btn-p" style={{padding:'9px 18px',fontSize:13,flexShrink:0}}>Contactar ahora →</a>
         </div>
       </div>
     </section>
@@ -315,7 +315,7 @@ const Footer = () => (
         <div>
           <div className="fh">Contacto</div>
           <a href="mailto:contacto@nexo-digital.app" className="flk">contacto@nexo-digital.app</a>
-          <a href="contacto.html" className="flk" style={{marginTop:12}}>Hablar con nosotros →</a>
+          <a href="/contacto" className="flk" style={{marginTop:12}}>Hablar con nosotros →</a>
         </div>
       </div>
       <div className="fbot">
@@ -338,7 +338,7 @@ const StickyBar = () => {
     <div className={`sticky-bar${show?' show':''}`}>
       <div className="sticky-inner">
         <p className="sticky-txt"><strong>¿Tu negocio podría ser el siguiente caso de éxito?</strong></p>
-        <a href="contacto.html" className="btn btn-p" style={{padding:'9px 18px',fontSize:13}}>Empezar →</a>
+        <a href="/contacto" className="btn btn-p" style={{padding:'9px 18px',fontSize:13}}>Empezar →</a>
         <button className="sticky-x" onClick={()=>{setDismissed(true);setShow(false);}}>✕</button>
       </div>
     </div>
@@ -559,7 +559,7 @@ const App = () => {
         <div className="orb orb1"/><div className="orb orb2"/>
         <div className="wrap" style={{position:'relative'}}>
           <div className="ha1" style={{display:'flex',alignItems:'center',justifyContent:'center',gap:12}}>
-            <a href="index.html" style={{fontSize:12,color:'var(--txt-m)'}}>← Inicio</a>
+            <a href="/" style={{fontSize:12,color:'var(--txt-m)'}}>← Inicio</a>
             <span style={{color:'rgba(255,255,255,0.2)'}}>·</span>
             <span className="ew"><span className="dot"/>Resultados reales</span>
           </div>

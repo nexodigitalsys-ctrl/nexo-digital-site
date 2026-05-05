@@ -10,10 +10,10 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Nexo Digital — Enoque Santos, Abner Gabriel, Elias Mendes">
-<link rel="canonical" href="https://www.nexo-digital.app/pt/contacto.html">
-<link rel="alternate" hreflang="es" href="https://www.nexo-digital.app/contacto.html">
-<link rel="alternate" hreflang="pt-PT" href="https://www.nexo-digital.app/pt/contacto.html">
-<link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/contacto.html">
+<link rel="canonical" href="https://www.nexo-digital.app/pt/contacto">
+<link rel="alternate" hreflang="es" href="https://www.nexo-digital.app/contacto">
+<link rel="alternate" hreflang="pt-PT" href="https://www.nexo-digital.app/pt/contacto">
+<link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/contacto">
 
 <!-- â•â• OPEN GRAPH â•â• -->
 <meta property="og:type" content="website">
@@ -157,7 +157,7 @@ const IconArrow = ({open}) => (
 );
 
 const Logo = () => (
-  <a href="index.html" style={{display:'inline-flex',alignItems:'center',gap:10,textDecoration:'none'}}>
+  <a href="/pt" style={{display:'inline-flex',alignItems:'center',gap:10,textDecoration:'none'}}>
     <svg width="68" height="38" viewBox="-5 -5 230 130" xmlns="http://www.w3.org/2000/svg" style={{flexShrink:0}}>
       <defs><linearGradient id="ndg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#1A56DB"/><stop offset="100%" stopColor="#00F0FF"/></linearGradient></defs>
       <path d="M0 120 V0 L60 80 V0 H90 V120 H60 L30 40 V120 Z" fill="url(#ndg)"/>
@@ -196,7 +196,7 @@ const Navbar = () => {
           </div>
           <div style={{display:'none'}} className="dnav">
             <div style={{display:'flex',alignItems:'center',gap:1,borderRadius:20,border:'1px solid rgba(29,78,216,0.18)',padding:'3px 4px',background:'rgba(29,78,216,0.05)',fontSize:11.5,fontWeight:600}}>
-              <a href="../contacto.html" onClick={function(){try{localStorage.setItem('nd-lang','es');}catch(e){}}} style={{padding:'3px 8px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>ES</a>
+              <a href="/contacto" onClick={function(){try{localStorage.setItem('nd-lang','es');}catch(e){}}} style={{padding:'3px 8px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>ES</a>
               <span style={{padding:'3px 8px',borderRadius:16,background:'var(--blue)',color:'#fff'}}>PT</span>
             </div>
             <a href="#form" style={{display:'inline-flex',alignItems:'center',borderRadius:9999,background:'var(--emerald)',padding:'9px 20px',fontSize:13.5,fontWeight:600,color:'#fff',textDecoration:'none'}}>Consulta gratuita →</a>
@@ -210,7 +210,7 @@ const Navbar = () => {
         <div style={{maxWidth:1200,margin:'0 auto',borderRadius:22,border:'1px solid var(--bdr)',background:'rgba(255,255,255,0.98)',padding:20,backdropFilter:'blur(28px)'}}>
           {links.map(l=><a key={l.href} href={l.href} onClick={()=>setOp(false)} style={{display:'block',padding:'11px 14px',borderRadius:12,fontSize:14,fontWeight:500,color:l.href==='contacto.html'?'var(--txt)':'var(--txt-s)',textDecoration:'none'}}>{l.label}</a>)}
           <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:1,borderRadius:20,border:'1px solid rgba(29,78,216,0.18)',padding:'3px 4px',background:'rgba(29,78,216,0.05)',fontSize:12,fontWeight:600,margin:'8px 0 4px'}}>
-            <a href="../contacto.html" onClick={function(){try{localStorage.setItem('nd-lang','es');}catch(e){}}} style={{padding:'4px 14px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>ES</a>
+            <a href="/contacto" onClick={function(){try{localStorage.setItem('nd-lang','es');}catch(e){}}} style={{padding:'4px 14px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>ES</a>
             <span style={{padding:'4px 14px',borderRadius:16,background:'var(--blue)',color:'#fff'}}>PT</span>
           </div>
           <a href="#form" onClick={()=>setOp(false)} style={{marginTop:8,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:9999,background:'var(--emerald)',padding:'12px 20px',fontSize:14,fontWeight:600,color:'#fff',textDecoration:'none'}}>Consulta gratuita →</a>
@@ -402,9 +402,9 @@ const Footer = () => (
       <div className="fbot">
         <span>© 2026 Nexo Digital</span>
         <div style={{display:'flex',gap:14,flexWrap:'wrap'}}>
-          <a href="aviso-legal.html" className="flk" style={{fontSize:12,margin:0}}>Aviso Legal</a>
-          <a href="privacidade.html" className="flk" style={{fontSize:12,margin:0}}>Privacidade</a>
-          <a href="cookies.html" className="flk" style={{fontSize:12,margin:0}}>Cookies</a>
+          <a href="/pt/aviso-legal" className="flk" style={{fontSize:12,margin:0}}>Aviso Legal</a>
+          <a href="/pt/privacidade" className="flk" style={{fontSize:12,margin:0}}>Privacidade</a>
+          <a href="/pt/cookies" className="flk" style={{fontSize:12,margin:0}}>Cookies</a>
         </div>
       </div>
     </div>
@@ -565,7 +565,7 @@ const App = () => {
         <div className="orb orb1"/><div className="orb orb2"/>
         <div className="wrap" style={{position:'relative'}}>
           <div className="ha1" style={{display:'flex',alignItems:'center',justifyContent:'center',gap:12}}>
-            <a href="index.html" style={{fontSize:12,color:'var(--txt-m)'}}>← Início</a>
+            <a href="/pt" style={{fontSize:12,color:'var(--txt-m)'}}>← Início</a>
             <span style={{color:'var(--bdr)'}}>·</span>
             <span className="ew"><span className="dot"/>Consulta gratuita</span>
           </div>
