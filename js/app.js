@@ -1,5 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
-/* â”€â”€ SCROLL REVEAL â”€â”€ */
+/* ── SCROLL REVEAL ── */
 const useReveal = () => {
   React.useEffect(() => {
     const obs = new IntersectionObserver(entries => entries.forEach(e => {
@@ -13,7 +13,7 @@ const useReveal = () => {
   }, []);
 };
 
-/* â”€â”€ SVG ICONS â”€â”€ */
+/* ── SVG ICONS ── */
 const IconCheck = () => /*#__PURE__*/_jsxs("svg", {
   width: "15",
   height: "15",
@@ -45,7 +45,7 @@ const IconArrow = ({
   })
 });
 
-/* â”€â”€ LOGO â”€â”€ */
+/* ── LOGO ── */
 const Logo = () => /*#__PURE__*/_jsxs("a", {
   href: "#top",
   style: {
@@ -110,7 +110,7 @@ const Logo = () => /*#__PURE__*/_jsxs("a", {
   })]
 });
 
-/* â”€â”€ NAVBAR â”€â”€ */
+/* ── NAVBAR ── */
 const Navbar = () => {
   const [sc, setSc] = React.useState(false);
   const [op, setOp] = React.useState(false);
@@ -241,11 +241,11 @@ const Navbar = () => {
                 textDecoration: 'none',
                 transition: 'all .2s'
               },
-              children: "Empezar \xE2\u2020\u2019"
+              children: "Empezar \u2192"
             })]
           }), /*#__PURE__*/_jsx("button", {
             onClick: () => setOp(!op),
-            "aria-label": "Alternar men\xC3\xBA de navegaci\xC3\xB3n",
+            "aria-label": "Alternar men\xFA de navegaci\xF3n",
             style: {
               display: 'none',
               width: 40,
@@ -260,7 +260,7 @@ const Navbar = () => {
               fontSize: 17
             },
             className: "mbtn",
-            children: op ? 'âœ•' : 'â˜°'
+            children: op ? '✕' : '☰'
           })]
         })
       })
@@ -359,7 +359,7 @@ const Navbar = () => {
             color: '#fff',
             textDecoration: 'none'
           },
-          children: "Empezar \xE2\u2020\u2019"
+          children: "Empezar \u2192"
         })]
       })
     }), /*#__PURE__*/_jsx("style", {
@@ -368,7 +368,7 @@ const Navbar = () => {
   });
 };
 
-/* â”€â”€ HERO â”€â”€ */
+/* ── HERO ── */
 const Hero = () => /*#__PURE__*/_jsxs("section", {
   className: "sec-hero",
   style: {
@@ -438,7 +438,7 @@ const Hero = () => /*#__PURE__*/_jsxs("section", {
         marginRight: 'auto'
       },
       children: ["Construimos sistemas digitales que trabajan por tu empresa, ", /*#__PURE__*/_jsx("em", {
-        children: "incluso cuando no est\xC3\xA1s."
+        children: "incluso cuando no est\xE1s."
       })]
     }), /*#__PURE__*/_jsx("p", {
       className: "ha3",
@@ -467,7 +467,7 @@ const Hero = () => /*#__PURE__*/_jsxs("section", {
           background: 'linear-gradient(135deg,#1d4ed8,#7c3aed)',
           boxShadow: '0 4px 24px rgba(29,78,216,0.35)'
         },
-        children: "Ver productos SaaS \xE2\u2020\u2019"
+        children: "Ver productos SaaS \u2192"
       }), /*#__PURE__*/_jsx("a", {
         href: "#contacto",
         className: "btn btn-s",
@@ -486,7 +486,7 @@ const Hero = () => /*#__PURE__*/_jsxs("section", {
         gap: 8,
         flexWrap: 'wrap'
       },
-      children: [['ðŸ’»', '100% Remoto'], ['âš¡', 'Respuesta en 24h'], ['ðŸ›¡ï¸', 'Infraestructura segura']].map(([ic, l]) => /*#__PURE__*/_jsxs("span", {
+      children: [['💻', '100% Remoto'], ['⚡', 'Respuesta en 24h'], ['🛡️', 'Infraestructura segura']].map(([ic, l]) => /*#__PURE__*/_jsxs("span", {
         style: {
           fontSize: 12,
           fontWeight: 500,
@@ -550,81 +550,81 @@ const Hero = () => /*#__PURE__*/_jsxs("section", {
   })]
 });
 
-/* â”€â”€ SOCIAL PROOF TICKER â”€â”€ */
+/* ── SOCIAL PROOF TICKER ── */
 const Ticker = () => {
   const row1 = [{
-    icon: 'ðŸš€',
+    icon: '🚀',
     color: '#34d399',
     label: 'Web lanzada',
-    loc: 'EspaÃ±a',
-    time: 'hace 2 dÃ­as'
+    loc: 'España',
+    time: 'hace 2 días'
   }, {
-    icon: 'ðŸ’¬',
+    icon: '💬',
     color: '#60a5fa',
     label: 'Chatbot IA activado',
     loc: 'Portugal',
-    time: 'hace 4 dÃ­as'
+    time: 'hace 4 días'
   }, {
-    icon: 'ðŸ›’',
+    icon: '🛒',
     color: '#a78bfa',
     label: 'Tienda online entregada',
-    loc: 'EspaÃ±a',
-    time: 'hace 6 dÃ­as'
+    loc: 'España',
+    time: 'hace 6 días'
   }, {
-    icon: 'âš™ï¸',
+    icon: '⚙️',
     color: '#2dd4bf',
     label: 'CRM integrado con WhatsApp',
     loc: 'Europa',
-    time: 'hace 8 dÃ­as'
+    time: 'hace 8 días'
   }, {
-    icon: 'ðŸ”’',
+    icon: '🔒',
     color: '#fb923c',
-    label: 'AuditorÃ­a de seguridad',
-    loc: 'EspaÃ±a',
-    time: 'hace 10 dÃ­as'
+    label: 'Auditoría de seguridad',
+    loc: 'España',
+    time: 'hace 10 días'
   }, {
-    icon: 'ðŸ“Š',
+    icon: '📊',
     color: '#fbbf24',
-    label: 'Dashboard analÃ­tico',
+    label: 'Dashboard analítico',
     loc: 'Portugal',
-    time: 'hace 12 dÃ­as'
+    time: 'hace 12 días'
   }];
   const row2 = [{
-    icon: 'âœ…',
+    icon: '✅',
     color: '#34d399',
     label: 'Nuevo cliente',
     loc: 'Portugal',
-    time: 'hace 1 dÃ­a'
+    time: 'hace 1 día'
   }, {
-    icon: 'ðŸ“±',
+    icon: '📱',
     color: '#60a5fa',
     label: 'App publicada en stores',
-    loc: 'EspaÃ±a',
-    time: 'hace 5 dÃ­as'
+    loc: 'España',
+    time: 'hace 5 días'
   }, {
-    icon: 'ðŸŽ¯',
+    icon: '🎯',
     color: '#a78bfa',
-    label: 'CampaÃ±a Google Ads',
+    label: 'Campaña Google Ads',
     loc: 'Europa',
-    time: 'hace 7 dÃ­as'
+    time: 'hace 7 días'
   }, {
-    icon: 'âš¡',
+    icon: '⚡',
     color: '#2dd4bf',
-    label: 'AutomatizaciÃ³n B2B',
-    loc: 'EspaÃ±a',
-    time: 'hace 9 dÃ­as'
+    label: 'Automatización B2B',
+    loc: 'España',
+    time: 'hace 9 días'
   }, {
-    icon: 'ðŸŒ',
+    icon: '🌐',
     color: '#fb923c',
     label: 'Landing page premium',
     loc: 'Portugal',
-    time: 'hace 11 dÃ­as'
+    time: 'hace 11 días'
   }, {
-    icon: 'ðŸ“ˆ',
+    icon: '📈',
     color: '#fbbf24',
-    label: 'SEO Audit Â· +67% visibilidad',
+    label: 'SEO Audit · +67% visibilidad',
     loc: 'Europa',
-    time: 'hace 13 dÃ­as'
+    time: 'hace 13 días'
   }];
   const Item = ({
     icon,
@@ -680,7 +680,7 @@ const Ticker = () => {
           marginTop: 1,
           whiteSpace: 'nowrap'
         },
-        children: [loc, " \xC2\xB7 ", time]
+        children: [loc, " \xB7 ", time]
       })]
     }), /*#__PURE__*/_jsx("div", {
       style: {
@@ -726,7 +726,7 @@ const Ticker = () => {
   });
 };
 
-/* â”€â”€ TECH MARQUEE â”€â”€ */
+/* ── TECH MARQUEE ── */
 const Marquee = () => {
   const items = [{
     t: 'Next.js',
@@ -783,7 +783,7 @@ const Marquee = () => {
     t: 'APIs REST',
     c: '#0f766e'
   }, {
-    t: 'AutomatizaciÃ³n',
+    t: 'Automatización',
     c: '#065f46'
   }, {
     t: 'CI/CD',
@@ -847,55 +847,55 @@ const Marquee = () => {
   });
 };
 
-/* â”€â”€ SAAS PRODUCTS â”€â”€ */
+/* ── SAAS PRODUCTS ── */
 const SaasSection = () => {
   const P = [{
     st: 'Disponible',
     sc: 'green',
     tag: 'SaaS',
     title: 'Nexo Invoicer',
-    desc: 'FacturaciÃ³n moderna para empresas de construcciÃ³n, ventas y pequeÃ±os negocios. Control financiero y emisiÃ³n sin fricciÃ³n.',
-    feats: ['Facturas y recibos digitales', 'GestiÃ³n fiscal organizada', 'Historial e informes'],
+    desc: 'Facturación moderna para empresas de construcción, ventas y pequeños negocios. Control financiero y emisión sin fricción.',
+    feats: ['Facturas y recibos digitales', 'Gestión fiscal organizada', 'Historial e informes'],
     cta: 'Solicitar demo'
   }, {
     st: 'Beta privada',
     sc: 'blue',
     tag: 'SaaS',
     title: 'SpeakEasily',
-    desc: 'Plataforma orientada a comunicaciÃ³n y experiencia digital con foco en simplicidad y crecimiento.',
+    desc: 'Plataforma orientada a comunicación y experiencia digital con foco en simplicidad y crecimiento.',
     feats: ['Flujos intuitivos', 'Experiencia mobile-first', 'Lista para SaaS beta privada'],
     cta: 'Unirme a la lista'
   }, {
-    st: 'En expansiÃ³n',
+    st: 'En expansión',
     sc: 'orange',
     tag: 'SaaS',
     title: 'Nexo CRM & WhatsApp',
-    desc: 'RelaciÃ³n comercial y atenciÃ³n centralizadas con automatizaciÃ³n y contexto en tiempo real.',
+    desc: 'Relación comercial y atención centralizadas con automatización y contexto en tiempo real.',
     feats: ['Pipeline comercial visual', 'WhatsApp integrado', 'Automatizaciones de seguimiento'],
-    cta: 'Agendar reuniÃ³n'
+    cta: 'Agendar reunión'
   }, {
     st: 'Disponible',
     sc: 'green',
     tag: 'SaaS',
     title: 'Nexo SEO Audit',
-    desc: 'DiagnÃ³stico tÃ©cnico y estratÃ©gico para detectar bloqueos, oportunidades y prioridades SEO.',
-    feats: ['AnÃ¡lisis tÃ©cnico completo', 'Prioridades accionables', 'Hoja de ruta de mejora'],
-    cta: 'Solicitar auditorÃ­a'
+    desc: 'Diagnóstico técnico y estratégico para detectar bloqueos, oportunidades y prioridades SEO.',
+    feats: ['Análisis técnico completo', 'Prioridades accionables', 'Hoja de ruta de mejora'],
+    cta: 'Solicitar auditoría'
   }, {
     st: 'Disponible',
     sc: 'blue',
     tag: 'Software',
     title: 'TPV & Kioscos Software',
-    desc: 'Software de punto de venta y kioscos digitales llave en mano para negocios fÃ­sicos. Sin complicaciones tÃ©cnicas.',
-    feats: ['TPV tÃ¡ctil personalizado', 'Kioscos de autoservicio', 'Soporte y actualizaciones incluidas'],
+    desc: 'Software de punto de venta y kioscos digitales llave en mano para negocios físicos. Sin complicaciones técnicas.',
+    feats: ['TPV táctil personalizado', 'Kioscos de autoservicio', 'Soporte y actualizaciones incluidas'],
     cta: 'Ver demo'
   }, {
     st: 'Disponible',
     sc: 'green',
     tag: 'Servicio',
     title: 'Landing Page Pro',
-    desc: 'PÃ¡ginas de aterrizaje de alta conversiÃ³n con SEO tÃ©cnico, diseÃ±o premium y optimizaciÃ³n continua.',
-    feats: ['DiseÃ±o mobile-first y rÃ¡pido', 'SEO tÃ©cnico desde el dÃ­a 1', 'IntegraciÃ³n analÃ­tica y CRO'],
+    desc: 'Páginas de aterrizaje de alta conversión con SEO técnico, diseño premium y optimización continua.',
+    feats: ['Diseño mobile-first y rápido', 'SEO técnico desde el día 1', 'Integración analítica y CRO'],
     cta: 'Ver ejemplos'
   }];
   return /*#__PURE__*/_jsx("section", {
@@ -910,7 +910,7 @@ const SaasSection = () => {
           children: "Productos SaaS"
         }), /*#__PURE__*/_jsx("h2", {
           className: "sh-t",
-          children: "Plataformas propias dise\xC3\xB1adas para escalar."
+          children: "Plataformas propias dise\xF1adas para escalar."
         }), /*#__PURE__*/_jsx("p", {
           className: "sh-d",
           children: "Software desarrollado por Nexo Digital para acelerar operaciones, ventas y presencia online."
@@ -962,48 +962,48 @@ const SaasSection = () => {
   });
 };
 
-/* â”€â”€ SERVICES â”€â”€ */
+/* ── SERVICES ── */
 const ServicesSection = () => {
   const S = [{
-    icon: 'ðŸŒ',
-    title: 'Landing Page / PÃ¡gina Web',
-    desc: 'DiseÃ±o y desarrollo web premium orientado a conversiÃ³n, con SEO tÃ©cnico desde el primer dÃ­a.',
-    feats: ['SEO tÃ©cnico nacional e internacional', 'DiseÃ±o mobile-first', 'Core Web Vitals optimizados']
+    icon: '🌐',
+    title: 'Landing Page / Página Web',
+    desc: 'Diseño y desarrollo web premium orientado a conversión, con SEO técnico desde el primer día.',
+    feats: ['SEO técnico nacional e internacional', 'Diseño mobile-first', 'Core Web Vitals optimizados']
   }, {
-    icon: 'ðŸ›’',
+    icon: '🛒',
     title: 'Tienda Online',
-    desc: 'E-commerce completo con gestiÃ³n de productos, pagos integrados y experiencia de compra optimizada.',
-    feats: ['CatÃ¡logo y pasarela de pago', 'GestiÃ³n de pedidos e inventario', 'IntegraciÃ³n con marketplaces']
+    desc: 'E-commerce completo con gestión de productos, pagos integrados y experiencia de compra optimizada.',
+    feats: ['Catálogo y pasarela de pago', 'Gestión de pedidos e inventario', 'Integración con marketplaces']
   }, {
-    icon: 'ðŸ¤–',
+    icon: '🤖',
     title: 'Chatbot IA',
-    desc: 'Asistentes virtuales con inteligencia artificial integrados en tu web o WhatsApp. AtenciÃ³n 24/7 sin coste de personal.',
-    feats: ['IA conversacional personalizada', 'IntegraciÃ³n web y WhatsApp', 'Redirige a ventas o soporte']
+    desc: 'Asistentes virtuales con inteligencia artificial integrados en tu web o WhatsApp. Atención 24/7 sin coste de personal.',
+    feats: ['IA conversacional personalizada', 'Integración web y WhatsApp', 'Redirige a ventas o soporte']
   }, {
-    icon: 'ðŸ§¾',
-    title: 'FacturaciÃ³n Digital',
-    desc: 'Sistema de facturaciÃ³n para empresas de construcciÃ³n, ventas y pequeÃ±os negocios. RÃ¡pido, claro y sin complicaciones.',
-    feats: ['Facturas y recibos digitales', 'GestiÃ³n fiscal organizada', 'Para construcciÃ³n, ventas y retail']
+    icon: '🧾',
+    title: 'Facturación Digital',
+    desc: 'Sistema de facturación para empresas de construcción, ventas y pequeños negocios. Rápido, claro y sin complicaciones.',
+    feats: ['Facturas y recibos digitales', 'Gestión fiscal organizada', 'Para construcción, ventas y retail']
   }, {
-    icon: 'ðŸ–¥ï¸',
+    icon: '🖥️',
     title: 'TPV & Kioscos Digitales',
-    desc: 'Software TPV e infraestructura de kioscos para pequeÃ±os y medianos negocios. Llave en mano.',
+    desc: 'Software TPV e infraestructura de kioscos para pequeños y medianos negocios. Llave en mano.',
     feats: ['Software TPV personalizado', 'Kioscos de autoservicio', 'Soporte y mantenimiento incluido']
   }, {
-    icon: 'âš™ï¸',
+    icon: '⚙️',
     title: 'Sistemas a Medida',
-    desc: 'ERP, CRM, dashboards y portales internos diseÃ±ados para la operaciÃ³n real del negocio.',
-    feats: ['ERP y CRM personalizados', 'Integraciones vÃ­a API REST', 'Arquitectura escalable']
+    desc: 'ERP, CRM, dashboards y portales internos diseñados para la operación real del negocio.',
+    feats: ['ERP y CRM personalizados', 'Integraciones vía API REST', 'Arquitectura escalable']
   }, {
-    icon: 'ðŸ“£',
-    title: 'TrÃ¡fico Pago / Anuncios',
-    desc: 'CampaÃ±as Google Ads y Meta Ads orientadas a resultados medibles para negocios locales y nacionales.',
-    feats: ['Google Ads y Meta Ads', 'SegmentaciÃ³n geogrÃ¡fica precisa', 'Informes y optimizaciÃ³n continua']
+    icon: '📣',
+    title: 'Tráfico Pago / Anuncios',
+    desc: 'Campañas Google Ads y Meta Ads orientadas a resultados medibles para negocios locales y nacionales.',
+    feats: ['Google Ads y Meta Ads', 'Segmentación geográfica precisa', 'Informes y optimización continua']
   }, {
-    icon: 'ðŸ”’',
+    icon: '🔒',
     title: 'Ciberseguridad & Infraestructura',
-    desc: 'AuditorÃ­as de seguridad, hardening, SSL, firewall Cloudflare y monitorizaciÃ³n activa 24/7.',
-    feats: ['AuditorÃ­a de seguridad web', 'Firewall y protecciÃ³n DDoS', 'Backups automÃ¡ticos diarios']
+    desc: 'Auditorías de seguridad, hardening, SSL, firewall Cloudflare y monitorización activa 24/7.',
+    feats: ['Auditoría de seguridad web', 'Firewall y protección DDoS', 'Backups automáticos diarios']
   }];
   return /*#__PURE__*/_jsx("section", {
     id: "servicios",
@@ -1023,7 +1023,7 @@ const ServicesSection = () => {
           children: "Lo que construimos para tu empresa."
         }), /*#__PURE__*/_jsx("p", {
           className: "sh-d",
-          children: "Desde webs y tiendas online hasta sistemas internos, TPV y seguridad. Todo con criterio t\xC3\xA9cnico y foco en negocio."
+          children: "Desde webs y tiendas online hasta sistemas internos, TPV y seguridad. Todo con criterio t\xE9cnico y foco en negocio."
         })]
       }), /*#__PURE__*/_jsx("div", {
         className: "g3",
@@ -1056,7 +1056,7 @@ const ServicesSection = () => {
             className: "card-cta",
             children: /*#__PURE__*/_jsx("a", {
               href: "#contacto",
-              children: "Consultar \xE2\u2020\u2019"
+              children: "Consultar \u2192"
             })
           })]
         }, s.title))
@@ -1065,7 +1065,7 @@ const ServicesSection = () => {
   });
 };
 
-/* â”€â”€ AGENDA CTA â”€â”€ */
+/* ── AGENDA CTA ── */
 const AgendaSection = () => /*#__PURE__*/_jsx("section", {
   className: "sec",
   children: /*#__PURE__*/_jsx("div", {
@@ -1085,7 +1085,7 @@ const AgendaSection = () => /*#__PURE__*/_jsx("section", {
           marginBottom: 20,
           display: 'inline-flex'
         },
-        children: "\xC2\xBFHablamos?"
+        children: "\xBFHablamos?"
       }), /*#__PURE__*/_jsx("h2", {
         style: {
           fontFamily: 'var(--disp)',
@@ -1095,7 +1095,7 @@ const AgendaSection = () => /*#__PURE__*/_jsx("section", {
           color: 'var(--txt)',
           marginTop: 16
         },
-        children: "La primera conversaci\xC3\xB3n es gratis y sin compromiso."
+        children: "La primera conversaci\xF3n es gratis y sin compromiso."
       }), /*#__PURE__*/_jsx("p", {
         style: {
           marginTop: 14,
@@ -1105,7 +1105,7 @@ const AgendaSection = () => /*#__PURE__*/_jsx("section", {
           maxWidth: '38rem',
           margin: '14px auto 0'
         },
-        children: "Cu\xC3\xA9ntanos tu proyecto, tu problema o tu idea. En 24h te decimos si podemos ayudarte y c\xC3\xB3mo."
+        children: "Cu\xE9ntanos tu proyecto, tu problema o tu idea. En 24h te decimos si podemos ayudarte y c\xF3mo."
       }), /*#__PURE__*/_jsxs("div", {
         style: {
           marginTop: 32,
@@ -1117,17 +1117,17 @@ const AgendaSection = () => /*#__PURE__*/_jsx("section", {
         children: [/*#__PURE__*/_jsx("a", {
           href: "#contacto",
           className: "btn btn-p",
-          children: "Enviar consulta \xE2\u2020\u2019"
+          children: "Enviar consulta \u2192"
         }), /*#__PURE__*/_jsx("a", {
           href: "mailto:contacto@nexo-digital.app",
           className: "btn btn-teal",
-          children: "\xE2\u0153\u2030 Escribir por email"
+          children: "\u2709 Escribir por email"
         }), /*#__PURE__*/_jsx("a", {
           href: "https://wa.me/34689135159?text=Hola%20Nexo%20Digital,%20me%20interesa%20vuestros%20servicios",
           target: "_blank",
           rel: "noreferrer",
           className: "btn btn-s",
-          children: "\xF0\u0178\u2019\xAC WhatsApp directo"
+          children: "\uD83D\uDCAC WhatsApp directo"
         })]
       }), /*#__PURE__*/_jsx("p", {
         style: {
@@ -1135,30 +1135,30 @@ const AgendaSection = () => /*#__PURE__*/_jsx("section", {
           fontSize: 12,
           color: 'var(--txt-m)'
         },
-        children: "Espa\xC3\xB1a \xC2\xB7 Portugal \xC2\xB7 Europa \xE2\u20AC\u201D Respuesta garantizada en menos de 24h"
+        children: "Espa\xF1a \xB7 Portugal \xB7 Europa \u2014 Respuesta garantizada en menos de 24h"
       })]
     })
   })
 });
 
-/* â”€â”€ STATS â”€â”€ */
+/* ── STATS ── */
 const StatsSection = () => {
   const S = [{
     v: '40+',
     l: 'Proyectos entregados',
-    d: 'Sitios, plataformas y sistemas con foco en claridad y ejecuciÃ³n.'
+    d: 'Sitios, plataformas y sistemas con foco en claridad y ejecución.'
   }, {
     v: '99.9%',
     l: 'Uptime garantizado',
-    d: 'MonitorizaciÃ³n continua con alertas inmediatas ante cualquier incidencia.'
+    d: 'Monitorización continua con alertas inmediatas ante cualquier incidencia.'
   }, {
     v: '<2s',
     l: 'Velocidad web objetivo',
-    d: 'Experiencias ligeras, lectura rÃ¡pida y Core Web Vitals optimizados.'
+    d: 'Experiencias ligeras, lectura rápida y Core Web Vitals optimizados.'
   }, {
     v: '24h',
     l: 'Tiempo de respuesta',
-    d: 'AcompaÃ±amiento directo y respuesta garantizada en menos de 24 horas.'
+    d: 'Acompañamiento directo y respuesta garantizada en menos de 24 horas.'
   }];
   return /*#__PURE__*/_jsx("section", {
     className: "sec",
@@ -1168,7 +1168,7 @@ const StatsSection = () => {
         className: "sh c rev",
         children: [/*#__PURE__*/_jsx("span", {
           className: "ew",
-          children: "Confianza y m\xC3\xA9tricas"
+          children: "Confianza y m\xE9tricas"
         }), /*#__PURE__*/_jsx("h2", {
           className: "sh-t",
           children: "Una forma de trabajar orientada a consistencia y rendimiento."
@@ -1196,7 +1196,7 @@ const StatsSection = () => {
   });
 };
 
-/* â”€â”€ CLIENTS â”€â”€ */
+/* ── CLIENTS ── */
 const ClientsSection = () => {
   const C = ['Reformas Machado', 'Soltur Reformas', 'Santafe Reformas', 'Super Clim', 'Saviesa', 'Bresami', 'Viviane Cordeiro', 'Misme Electric', 'Ecants'];
   return /*#__PURE__*/_jsx("section", {
@@ -1211,13 +1211,13 @@ const ClientsSection = () => {
         className: "sh c rev",
         children: [/*#__PURE__*/_jsx("span", {
           className: "ew",
-          children: "Empresas que conf\xC3\xADan en nosotros"
+          children: "Empresas que conf\xEDan en nosotros"
         }), /*#__PURE__*/_jsx("h2", {
           className: "sh-t",
           children: "Proyectos reales para negocios que apuestan por lo digital."
         }), /*#__PURE__*/_jsx("p", {
           className: "sh-d",
-          children: "Hemos trabajado con empresas locales, e-commerces y negocios en expansi\xC3\xB3n en Espa\xC3\xB1a, Portugal y m\xC3\xA1s."
+          children: "Hemos trabajado con empresas locales, e-commerces y negocios en expansi\xF3n en Espa\xF1a, Portugal y m\xE1s."
         })]
       }), /*#__PURE__*/_jsx("div", {
         className: "client-wrap rev",
@@ -1235,14 +1235,14 @@ const ClientsSection = () => {
               fontWeight: 600,
               color: 'var(--txt)'
             },
-            children: "\xC2\xBFTu empresa podr\xC3\xADa ser la siguiente?"
+            children: "\xBFTu empresa podr\xEDa ser la siguiente?"
           }), /*#__PURE__*/_jsx("p", {
             style: {
               marginTop: 5,
               fontSize: 13,
               color: 'var(--txt-s)'
             },
-            children: "\xC3\u0161ltimos clientes registrados en los \xC3\xBAltimos 14 d\xC3\xADas. \xC3\u0161nete a nuestra lista."
+            children: "\xDAltimos clientes registrados en los \xFAltimos 14 d\xEDas. \xDAnete a nuestra lista."
           })]
         }), /*#__PURE__*/_jsx("a", {
           href: "#contacto",
@@ -1250,20 +1250,20 @@ const ClientsSection = () => {
           style: {
             flexShrink: 0
           },
-          children: "Contactar ahora \xE2\u2020\u2019"
+          children: "Contactar ahora \u2192"
         })]
       })]
     })
   });
 };
 
-/* â”€â”€ TEAM â”€â”€ */
+/* ── TEAM ── */
 const TeamSection = () => {
   const T = [{
     i: 'E',
     g: 'linear-gradient(135deg,#1a56db,#0d9488)',
     n: 'Enoque Santos',
-    r: 'System IT Â· Seguridad Â· Developer',
+    r: 'System IT · Seguridad · Developer',
     b: 'Especialista en infraestructura IT, ciberseguridad y arquitectura de sistemas. Garantiza que cada proyecto se despliega sobre una base robusta, segura y escalable.',
     li: 'https://www.linkedin.com/in/enoque-santos/',
     portfolio: null
@@ -1271,7 +1271,7 @@ const TeamSection = () => {
     i: 'A',
     g: 'linear-gradient(135deg,#1e3a8a,#1a56db)',
     n: 'Abner Gabriel',
-    r: 'Developer Senior Â· Web & Apps',
+    r: 'Developer Senior · Web & Apps',
     b: 'Desarrollador senior con amplia experiencia en aplicaciones web de alto rendimiento. Transforma requisitos complejos en productos digitales claros y precisos.',
     li: 'https://www.linkedin.com/in/abner-gabriel-b830163a1',
     portfolio: 'https://meu-portifolio-silk-xi.vercel.app/'
@@ -1279,8 +1279,8 @@ const TeamSection = () => {
     i: 'L',
     g: 'linear-gradient(135deg,#0f766e,#0d9488)',
     n: 'Elias Mendes',
-    r: 'Developer Â· Web & Apps Â· Empresario',
-    b: 'Desarrollador de aplicaciones con visiÃ³n empresarial. Combina criterio tÃ©cnico y enfoque de negocio para construir productos que generan valor real y duradero.',
+    r: 'Developer · Web & Apps · Empresario',
+    b: 'Desarrollador de aplicaciones con visión empresarial. Combina criterio técnico y enfoque de negocio para construir productos que generan valor real y duradero.',
     li: 'https://www.linkedin.com/in/hiperclimservicos/',
     portfolio: null
   }];
@@ -1326,10 +1326,10 @@ const TeamSection = () => {
           children: "Nuestro equipo"
         }), /*#__PURE__*/_jsx("h2", {
           className: "sh-t",
-          children: "Personas reales detr\xC3\xA1s de cada proyecto."
+          children: "Personas reales detr\xE1s de cada proyecto."
         }), /*#__PURE__*/_jsx("p", {
           className: "sh-d",
-          children: "Equipo t\xC3\xA9cnico con experiencia en sistemas IT, seguridad, desarrollo y aplicaciones. Acompa\xC3\xB1amiento directo y soporte continuo en cada proyecto."
+          children: "Equipo t\xE9cnico con experiencia en sistemas IT, seguridad, desarrollo y aplicaciones. Acompa\xF1amiento directo y soporte continuo en cada proyecto."
         })]
       }), /*#__PURE__*/_jsx("div", {
         className: "g3",
@@ -1400,24 +1400,24 @@ const TeamSection = () => {
   });
 };
 
-/* â”€â”€ FAQ â”€â”€ */
+/* ── FAQ ── */
 const FaqSection = () => {
   const [open, setOpen] = React.useState(null);
   const Q = [{
-    q: 'Â¿QuÃ© servicios de desarrollo web ofrecÃ©is?',
-    a: 'En Nexo Digital ofrecemos desarrollo web, tiendas online, aplicaciones SaaS, CRM con WhatsApp, chatbots IA, TPV, kioscos digitales, ciberseguridad y auditorÃ­as SEO. Trabajamos con empresas de toda EspaÃ±a, Portugal y mÃ¡s allÃ¡.'
+    q: '¿Qué servicios de desarrollo web ofrecéis?',
+    a: 'En Nexo Digital ofrecemos desarrollo web, tiendas online, aplicaciones SaaS, CRM con WhatsApp, chatbots IA, TPV, kioscos digitales, ciberseguridad y auditorías SEO. Trabajamos con empresas de toda España, Portugal y más allá.'
   }, {
-    q: 'Â¿CuÃ¡nto cuesta una pÃ¡gina web?',
-    a: 'El precio depende del proyecto. Una web informativa puede partir de 350â‚¬, una tienda online de 800â‚¬, y los sistemas a medida desde 1.500â‚¬. Contacta con nosotros para una propuesta personalizada sin compromiso y con respuesta en menos de 24h.'
+    q: '¿Cuánto cuesta una página web?',
+    a: 'El precio depende del proyecto. Una web informativa puede partir de 350€, una tienda online de 800€, y los sistemas a medida desde 1.500€. Contacta con nosotros para una propuesta personalizada sin compromiso y con respuesta en menos de 24h.'
   }, {
-    q: 'Â¿En cuÃ¡nto tiempo desarrollÃ¡is una web?',
-    a: 'El plazo habitual es de 2 a 6 semanas para webs estÃ¡ndar y de 4 a 12 semanas para sistemas mÃ¡s complejos. Siempre acordamos un calendario concreto antes de empezar para que tengas visibilidad completa del proceso.'
+    q: '¿En cuánto tiempo desarrolláis una web?',
+    a: 'El plazo habitual es de 2 a 6 semanas para webs estándar y de 4 a 12 semanas para sistemas más complejos. Siempre acordamos un calendario concreto antes de empezar para que tengas visibilidad completa del proceso.'
   }, {
-    q: 'Â¿TrabajÃ¡is en remoto o solo de forma presencial?',
-    a: 'Trabajamos 100% en remoto con cualquier empresa, independientemente de su ubicaciÃ³n. Tenemos clientes en EspaÃ±a, Portugal y Europa. Toda la comunicaciÃ³n y seguimiento es directo y sin intermediarios.'
+    q: '¿Trabajáis en remoto o solo de forma presencial?',
+    a: 'Trabajamos 100% en remoto con cualquier empresa, independientemente de su ubicación. Tenemos clientes en España, Portugal y Europa. Toda la comunicación y seguimiento es directo y sin intermediarios.'
   }, {
-    q: 'Â¿QuÃ© es un sistema TPV y cÃ³mo puede ayudar a mi negocio?',
-    a: 'Un TPV (Terminal Punto de Venta) es el software que gestiona las ventas, el inventario y los cobros de tu negocio. En Nexo Digital lo desarrollamos a medida o configuramos soluciones llave en mano para pequeÃ±os y medianos negocios.'
+    q: '¿Qué es un sistema TPV y cómo puede ayudar a mi negocio?',
+    a: 'Un TPV (Terminal Punto de Venta) es el software que gestiona las ventas, el inventario y los cobros de tu negocio. En Nexo Digital lo desarrollamos a medida o configuramos soluciones llave en mano para pequeños y medianos negocios.'
   }];
   return /*#__PURE__*/_jsx("section", {
     className: "sec",
@@ -1460,7 +1460,7 @@ const FaqSection = () => {
   });
 };
 
-/* â”€â”€ CONTACT FORM â”€â”€ */
+/* ── CONTACT FORM ── */
 const ContactSection = () => {
   const [st, setSt] = React.useState('idle');
   const [msg, setMsg] = React.useState('');
@@ -1468,13 +1468,13 @@ const ContactSection = () => {
   const ref = React.useRef();
   const buildMailto = d => {
     if (!d) return 'mailto:contacto@nexo-digital.app';
-    const subj = 'Nueva consulta: ' + (d.nombre || '') + (d.empresa ? ' â€” ' + d.empresa : '');
-    const body = ['Nombre: ' + (d.nombre || ''), 'Email: ' + (d.email || ''), 'TelÃ©fono: ' + (d.telefono || ''), 'Empresa: ' + (d.empresa || ''), 'Servicio: ' + (d.servicio || ''), 'Presupuesto: ' + (d.presupuesto || ''), 'Plazo: ' + (d.timeline || ''), '', 'DescripciÃ³n:', d.descripcion || ''].join('\n');
+    const subj = 'Nueva consulta: ' + (d.nombre || '') + (d.empresa ? ' — ' + d.empresa : '');
+    const body = ['Nombre: ' + (d.nombre || ''), 'Email: ' + (d.email || ''), 'Teléfono: ' + (d.telefono || ''), 'Empresa: ' + (d.empresa || ''), 'Servicio: ' + (d.servicio || ''), 'Presupuesto: ' + (d.presupuesto || ''), 'Plazo: ' + (d.timeline || ''), '', 'Descripción:', d.descripcion || ''].join('\n');
     return 'mailto:contacto@nexo-digital.app?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
   };
   const buildWa = d => {
     if (!d) return 'https://wa.me/34689135159';
-    const txt = 'Hola Nexo Digital! Me interesa ' + (d.servicio || 'vuestros servicios') + '. Soy ' + (d.nombre || 'un cliente potencial') + (d.empresa ? ' de ' + d.empresa : '') + (d.descripcion ? '. ' + d.descripcion.substring(0, 120) : '.') + ' Â¿PodÃ©is ayudarme?';
+    const txt = 'Hola Nexo Digital! Me interesa ' + (d.servicio || 'vuestros servicios') + '. Soy ' + (d.nombre || 'un cliente potencial') + (d.empresa ? ' de ' + d.empresa : '') + (d.descripcion ? '. ' + d.descripcion.substring(0, 120) : '.') + ' ¿Podéis ayudarme?';
     return 'https://wa.me/34689135159?text=' + encodeURIComponent(txt);
   };
   const submit = async e => {
@@ -1500,7 +1500,7 @@ const ContactSection = () => {
       } catch (_) {
         j = {
           success: false,
-          message: 'El servidor no respondiÃ³ correctamente (' + r.status + ').'
+          message: 'El servidor no respondió correctamente (' + r.status + ').'
         };
       }
       if (j.success) {
@@ -1593,7 +1593,7 @@ const ContactSection = () => {
           style: {
             color: '#ffffff'
           },
-          children: "\xC2\xBFTienes un proyecto en mente? Cu\xC3\xA9ntanoslo."
+          children: "\xBFTienes un proyecto en mente? Cu\xE9ntanoslo."
         }), /*#__PURE__*/_jsx("p", {
           className: "sh-d",
           style: {
@@ -1621,7 +1621,7 @@ const ContactSection = () => {
             style: {
               fontSize: 18
             },
-            children: "\xE2\u0153\u201C"
+            children: "\u2713"
           }), /*#__PURE__*/_jsx("span", {
             children: "Consulta recibida. Te contactaremos en menos de 24 horas."
           })]
@@ -1640,7 +1640,7 @@ const ContactSection = () => {
               color: '#fca5a5',
               margin: '0 0 10px'
             },
-            children: ["\xE2\u0161\xA0 ", msg]
+            children: ["\u26A0 ", msg]
           }), /*#__PURE__*/_jsx("p", {
             style: {
               fontSize: 12,
@@ -1670,7 +1670,7 @@ const ContactSection = () => {
                 fontWeight: 600,
                 textDecoration: 'none'
               },
-              children: "\xF0\u0178\u2019\xAC WhatsApp"
+              children: "\uD83D\uDCAC WhatsApp"
             }), /*#__PURE__*/_jsx("a", {
               href: buildMailto(fdata),
               style: {
@@ -1686,7 +1686,7 @@ const ContactSection = () => {
                 textDecoration: 'none',
                 border: '1px solid rgba(255,255,255,0.2)'
               },
-              children: "\xE2\u0153\u2030 Enviar por email"
+              children: "\u2709 Enviar por email"
             })]
           })]
         }), /*#__PURE__*/_jsxs("form", {
@@ -1736,35 +1736,35 @@ const ContactSection = () => {
               className: "fg2",
               children: [/*#__PURE__*/_jsx("label", {
                 className: "fl2",
-                children: "Tel\xC3\xA9fono *"
+                children: "Tel\xE9fono *"
               }), /*#__PURE__*/_jsx("input", {
                 name: "telefono",
                 type: "tel",
                 className: "fi2",
                 required: true,
-                placeholder: "N\xC3\xBAmero de tel\xC3\xA9fono"
+                placeholder: "N\xFAmero de tel\xE9fono"
               })]
             })]
           }), /*#__PURE__*/_jsxs("div", {
             className: "fg2",
             children: [/*#__PURE__*/_jsx("label", {
               className: "fl2",
-              children: "\xC2\xBFQu\xC3\xA9 servicio te interesa? *"
+              children: "\xBFQu\xE9 servicio te interesa? *"
             }), /*#__PURE__*/_jsxs("select", {
               name: "servicio",
               className: "fs2",
               required: true,
               children: [/*#__PURE__*/_jsx("option", {
                 value: "",
-                children: "Selecciona una opci\xC3\xB3n"
+                children: "Selecciona una opci\xF3n"
               }), /*#__PURE__*/_jsxs("optgroup", {
-                label: "\xE2\u201D\u20AC\xE2\u201D\u20AC Productos SaaS \xE2\u201D\u20AC\xE2\u201D\u20AC",
+                label: "\u2500\u2500 Productos SaaS \u2500\u2500",
                 children: [/*#__PURE__*/_jsx("option", {
                   value: "Nexo Invoicer",
-                  children: "Nexo Invoicer (Facturaci\xC3\xB3n)"
+                  children: "Nexo Invoicer (Facturaci\xF3n)"
                 }), /*#__PURE__*/_jsx("option", {
                   value: "SpeakEasily",
-                  children: "SpeakEasily (Comunicaci\xC3\xB3n digital)"
+                  children: "SpeakEasily (Comunicaci\xF3n digital)"
                 }), /*#__PURE__*/_jsx("option", {
                   value: "Nexo CRM & WhatsApp",
                   children: "Nexo CRM & WhatsApp"
@@ -1773,10 +1773,10 @@ const ContactSection = () => {
                   children: "Nexo SEO Audit"
                 })]
               }), /*#__PURE__*/_jsxs("optgroup", {
-                label: "\xE2\u201D\u20AC\xE2\u201D\u20AC Servicios \xE2\u201D\u20AC\xE2\u201D\u20AC",
+                label: "\u2500\u2500 Servicios \u2500\u2500",
                 children: [/*#__PURE__*/_jsx("option", {
-                  value: "Landing Page / P\xC3\xA1gina Web",
-                  children: "Landing Page / P\xC3\xA1gina Web"
+                  value: "Landing Page / P\xE1gina Web",
+                  children: "Landing Page / P\xE1gina Web"
                 }), /*#__PURE__*/_jsx("option", {
                   value: "Tienda Online",
                   children: "Tienda Online"
@@ -1787,8 +1787,8 @@ const ContactSection = () => {
                   value: "Sistemas a Medida",
                   children: "Sistemas a Medida (ERP/CRM)"
                 }), /*#__PURE__*/_jsx("option", {
-                  value: "Tr\xC3\xA1fico pago / Anuncios",
-                  children: "Tr\xC3\xA1fico Pago / Anuncios"
+                  value: "Tr\xE1fico pago / Anuncios",
+                  children: "Tr\xE1fico Pago / Anuncios"
                 }), /*#__PURE__*/_jsx("option", {
                   value: "Ciberseguridad",
                   children: "Ciberseguridad & Infraestructura"
@@ -1812,15 +1812,15 @@ const ContactSection = () => {
                   value: "",
                   children: "Selecciona un rango"
                 }), /*#__PURE__*/_jsx("option", {
-                  children: "350\xE2\u201A\xAC \xE2\u20AC\u201C 800\xE2\u201A\xAC"
+                  children: "350\u20AC \u2013 800\u20AC"
                 }), /*#__PURE__*/_jsx("option", {
-                  children: "800\xE2\u201A\xAC \xE2\u20AC\u201C 1.500\xE2\u201A\xAC"
+                  children: "800\u20AC \u2013 1.500\u20AC"
                 }), /*#__PURE__*/_jsx("option", {
-                  children: "1.500\xE2\u201A\xAC \xE2\u20AC\u201C 3.000\xE2\u201A\xAC"
+                  children: "1.500\u20AC \u2013 3.000\u20AC"
                 }), /*#__PURE__*/_jsx("option", {
-                  children: "3.000\xE2\u201A\xAC \xE2\u20AC\u201C 5.000\xE2\u201A\xAC"
+                  children: "3.000\u20AC \u2013 5.000\u20AC"
                 }), /*#__PURE__*/_jsx("option", {
-                  children: "M\xC3\xA1s de 5.000\xE2\u201A\xAC"
+                  children: "M\xE1s de 5.000\u20AC"
                 }), /*#__PURE__*/_jsx("option", {
                   children: "Pago mensual"
                 })]
@@ -1829,7 +1829,7 @@ const ContactSection = () => {
               className: "fg2",
               children: [/*#__PURE__*/_jsx("label", {
                 className: "fl2",
-                children: "\xC2\xBFCu\xC3\xA1ndo lo necesitas?"
+                children: "\xBFCu\xE1ndo lo necesitas?"
               }), /*#__PURE__*/_jsxs("select", {
                 name: "timeline",
                 className: "fs2",
@@ -1841,7 +1841,7 @@ const ContactSection = () => {
                 }), /*#__PURE__*/_jsx("option", {
                   children: "En 1 mes"
                 }), /*#__PURE__*/_jsx("option", {
-                  children: "En 2\xE2\u20AC\u201C3 meses"
+                  children: "En 2\u20133 meses"
                 }), /*#__PURE__*/_jsx("option", {
                   children: "Sin prisa"
                 })]
@@ -1856,7 +1856,7 @@ const ContactSection = () => {
               name: "descripcion",
               className: "ft2",
               required: true,
-              placeholder: "\xC2\xBFQu\xC3\xA9 necesitas? \xC2\xBFQu\xC3\xA9 objetivos tienes?"
+              placeholder: "\xBFQu\xE9 necesitas? \xBFQu\xE9 objetivos tienes?"
             })]
           }), /*#__PURE__*/_jsx("button", {
             type: "submit",
@@ -1869,7 +1869,7 @@ const ContactSection = () => {
               boxShadow: '0 4px 24px rgba(37,99,235,0.5)'
             },
             disabled: st === 'loading',
-            children: st === 'loading' ? 'Enviandoâ€¦' : 'Enviar consulta â†’'
+            children: st === 'loading' ? 'Enviando…' : 'Enviar consulta →'
           }), /*#__PURE__*/_jsx("p", {
             style: {
               marginTop: 11,
@@ -1877,7 +1877,7 @@ const ContactSection = () => {
               color: 'rgba(255,255,255,0.4)',
               textAlign: 'center'
             },
-            children: "Respuesta en <24h \xC2\xB7 contacto@nexo-digital.app"
+            children: "Respuesta en <24h \xB7 contacto@nexo-digital.app"
           })]
         })]
       })]
@@ -1885,7 +1885,7 @@ const ContactSection = () => {
   });
 };
 
-/* â”€â”€ FOOTER â”€â”€ */
+/* ── FOOTER ── */
 const Footer = () => /*#__PURE__*/_jsx("footer", {
   className: "footer",
   children: /*#__PURE__*/_jsxs("div", {
@@ -1901,7 +1901,7 @@ const Footer = () => /*#__PURE__*/_jsx("footer", {
             color: 'var(--txt-s)',
             maxWidth: 250
           },
-          children: "Soluciones digitales con dise\xC3\xB1o premium, claridad t\xC3\xA9cnica y foco en negocio. Espa\xC3\xB1a \xC2\xB7 Portugal \xC2\xB7 Europa."
+          children: "Soluciones digitales con dise\xF1o premium, claridad t\xE9cnica y foco en negocio. Espa\xF1a \xB7 Portugal \xB7 Europa."
         }), /*#__PURE__*/_jsx("div", {
           style: {
             marginTop: 16,
@@ -1949,7 +1949,7 @@ const Footer = () => /*#__PURE__*/_jsx("footer", {
           style: {
             cursor: 'default'
           },
-          children: "Espa\xC3\xB1a \xC2\xB7 Portugal \xC2\xB7 Europa"
+          children: "Espa\xF1a \xB7 Portugal \xB7 Europa"
         }), /*#__PURE__*/_jsx("a", {
           href: "#equipo",
           className: "flk",
@@ -1966,7 +1966,7 @@ const Footer = () => /*#__PURE__*/_jsx("footer", {
     }), /*#__PURE__*/_jsxs("div", {
       className: "fbot",
       children: [/*#__PURE__*/_jsx("span", {
-        children: "\xC2\xA9 2026 Nexo Digital"
+        children: "\xA9 2026 Nexo Digital"
       }), /*#__PURE__*/_jsxs("div", {
         style: {
           display: 'flex',
@@ -2001,7 +2001,7 @@ const Footer = () => /*#__PURE__*/_jsx("footer", {
   })
 });
 
-/* â”€â”€ STICKY BAR â”€â”€ */
+/* ── STICKY BAR ── */
 const StickyBar = () => {
   const [show, setShow] = React.useState(false);
   const [dismissed, setDismissed] = React.useState(false);
@@ -2022,12 +2022,12 @@ const StickyBar = () => {
       children: [/*#__PURE__*/_jsxs("p", {
         className: "sticky-txt",
         children: [/*#__PURE__*/_jsx("strong", {
-          children: "\xC2\xBFBuscas soluciones digitales?"
+          children: "\xBFBuscas soluciones digitales?"
         }), " Habla con nosotros hoy."]
       }), /*#__PURE__*/_jsx("a", {
         href: "#contacto",
         className: "btn btn-p btn-sm",
-        children: "Consulta gratuita \xE2\u2020\u2019"
+        children: "Consulta gratuita \u2192"
       }), /*#__PURE__*/_jsx("button", {
         className: "sticky-x",
         onClick: () => {
@@ -2035,13 +2035,13 @@ const StickyBar = () => {
           setShow(false);
         },
         "aria-label": "Cerrar",
-        children: "\xE2\u0153\u2022"
+        children: "\u2715"
       })]
     })
   });
 };
 
-/* â”€â”€ SCROLL FAB â”€â”€ */
+/* ── SCROLL FAB ── */
 const ChatWidget = () => {
   const [open, setOpen] = React.useState(false);
   const [msgs, setMsgs] = React.useState([]);
@@ -2156,7 +2156,7 @@ const ChatWidget = () => {
         fontSize: 11.5,
         fontWeight: 600
       }
-    }, 'ðŸ’¬ Abrir WhatsApp')));
+    }, '💬 Abrir WhatsApp')));
   };
   return /*#__PURE__*/_jsxs(_Fragment, {
     children: [open && /*#__PURE__*/_jsxs("div", {
@@ -2199,7 +2199,7 @@ const ChatWidget = () => {
             fontSize: 17,
             flexShrink: 0
           },
-          children: "\xF0\u0178\xA4\u2013"
+          children: "\uD83E\uDD16"
         }), /*#__PURE__*/_jsxs("div", {
           style: {
             flex: 1
@@ -2232,7 +2232,7 @@ const ChatWidget = () => {
                 color: 'rgba(255,255,255,0.8)',
                 fontWeight: 500
               },
-              children: "En l\xC3\xADnea"
+              children: "En l\xEDnea"
             })]
           })]
         }), /*#__PURE__*/_jsx("button", {
@@ -2252,7 +2252,7 @@ const ChatWidget = () => {
             justifyContent: 'center',
             fontSize: 13
           },
-          children: "\xE2\u0153\u2022"
+          children: "\u2715"
         })]
       }), /*#__PURE__*/_jsxs("div", {
         style: {
@@ -2548,7 +2548,7 @@ const ScrollFab = () => {
   });
 };
 
-/* â”€â”€ WHATSAPP FAB â”€â”€ */
+/* ── WHATSAPP FAB ── */
 const WaFab = () => /*#__PURE__*/_jsx("a", {
   href: "https://wa.me/34689135159?text=Hola%20Nexo%20Digital,%20me%20interesa%20vuestros%20servicios",
   target: "_blank",
@@ -2565,32 +2565,32 @@ const WaFab = () => /*#__PURE__*/_jsx("a", {
   })
 });
 
-/* â”€â”€ PROCESS â”€â”€ */
+/* ── PROCESS ── */
 const ProcessSection = () => {
   const steps = [{
     n: '01',
     color: 'linear-gradient(135deg,#059669,#0d9488)',
-    icon: 'ðŸ’¬',
+    icon: '💬',
     title: 'Consulta gratuita',
-    desc: 'CuÃ©ntanos tu proyecto. Te escuchamos sin compromiso y en 24h te decimos exactamente quÃ© podemos hacer y cuÃ¡nto costarÃ­a.'
+    desc: 'Cuéntanos tu proyecto. Te escuchamos sin compromiso y en 24h te decimos exactamente qué podemos hacer y cuánto costaría.'
   }, {
     n: '02',
     color: 'linear-gradient(135deg,#7c3aed,#1a56db)',
-    icon: 'ðŸ“‹',
-    title: 'Propuesta tÃ©cnica',
-    desc: 'Recibes un documento con alcance, tecnologÃ­a, plazos y precio cerrado. Sin costes ocultos ni sorpresas al final.'
+    icon: '📋',
+    title: 'Propuesta técnica',
+    desc: 'Recibes un documento con alcance, tecnología, plazos y precio cerrado. Sin costes ocultos ni sorpresas al final.'
   }, {
     n: '03',
     color: 'linear-gradient(135deg,#1a56db,#0d9488)',
-    icon: 'âš™ï¸',
+    icon: '⚙️',
     title: 'Desarrollo iterativo',
     desc: 'Construimos en sprints con entregas visibles. Tienes acceso a cada avance y canales directos con el equipo.'
   }, {
     n: '04',
     color: 'linear-gradient(135deg,#d97706,#059669)',
-    icon: 'ðŸš€',
+    icon: '🚀',
     title: 'Lanzamiento y soporte',
-    desc: 'Desplegamos con CI/CD, monitorizaciÃ³n 24/7 y te acompaÃ±amos con soporte post-lanzamiento incluido.'
+    desc: 'Desplegamos con CI/CD, monitorización 24/7 y te acompañamos con soporte post-lanzamiento incluido.'
   }];
   return /*#__PURE__*/_jsx("section", {
     id: "proceso",
@@ -2608,10 +2608,10 @@ const ProcessSection = () => {
           children: "Nuestro proceso"
         }), /*#__PURE__*/_jsx("h2", {
           className: "sh-t",
-          children: "De la idea al lanzamiento, sin fricci\xC3\xB3n."
+          children: "De la idea al lanzamiento, sin fricci\xF3n."
         }), /*#__PURE__*/_jsx("p", {
           className: "sh-d",
-          children: "Un proceso claro, iterativo y con comunicaci\xC3\xB3n directa en cada fase."
+          children: "Un proceso claro, iterativo y con comunicaci\xF3n directa en cada fase."
         })]
       }), /*#__PURE__*/_jsx("div", {
         className: "g2",
@@ -2656,24 +2656,24 @@ const ProcessSection = () => {
   });
 };
 
-/* â”€â”€ TESTIMONIALS â”€â”€ */
+/* ── TESTIMONIALS ── */
 const TestimonialsSection = () => {
   const T = [{
     q: 'Pasamos de perder leads por no responder a tiempo a tener un chatbot que los atiende en segundos. En 6 semanas logramos un +38% en conversiones.',
     author: 'Carlos M.',
-    role: 'Taller mecÃ¡nico',
+    role: 'Taller mecánico',
     initials: 'CM',
     color: 'linear-gradient(135deg,#059669,#0d9488)'
   }, {
-    q: 'La auditorÃ­a tÃ©cnica nos revelÃ³ un 67% de rebote en mobile. En 2 semanas lo bajamos al 22%. Las ventas subieron ese mismo mes.',
+    q: 'La auditoría técnica nos reveló un 67% de rebote en mobile. En 2 semanas lo bajamos al 22%. Las ventas subieron ese mismo mes.',
     author: 'Sara L.',
     role: 'E-commerce',
     initials: 'SL',
     color: 'linear-gradient(135deg,#7c3aed,#1a56db)'
   }, {
-    q: 'Conectaron nuestro CRM con el sistema de facturaciÃ³n. 15 horas semanales de trabajo manual eliminadas. El ROI se pagÃ³ en el primer mes.',
+    q: 'Conectaron nuestro CRM con el sistema de facturación. 15 horas semanales de trabajo manual eliminadas. El ROI se pagó en el primer mes.',
     author: 'Javier R.',
-    role: 'ConsultorÃ­a B2B Â· Madrid',
+    role: 'Consultoría B2B · Madrid',
     initials: 'JR',
     color: 'linear-gradient(135deg,#1e3a8a,#0d9488)'
   }];
@@ -2698,7 +2698,7 @@ const TestimonialsSection = () => {
           children: "Lo que dicen nuestros clientes."
         }), /*#__PURE__*/_jsx("p", {
           className: "sh-d",
-          children: "Empresas reales. N\xC3\xBAmeros reales. Sin testimonios de stock."
+          children: "Empresas reales. N\xFAmeros reales. Sin testimonios de stock."
         })]
       }), /*#__PURE__*/_jsx("div", {
         className: "g3",
@@ -2710,7 +2710,7 @@ const TestimonialsSection = () => {
           },
           children: [/*#__PURE__*/_jsx("div", {
             className: "test-stars",
-            children: 'â˜…â˜…â˜…â˜…â˜…'.split('').map((s, j) => /*#__PURE__*/_jsx("span", {
+            children: '★★★★★'.split('').map((s, j) => /*#__PURE__*/_jsx("span", {
               className: "test-star",
               children: s
             }, j))
@@ -2768,8 +2768,8 @@ const TestimonialsSection = () => {
           v: '14d',
           l: 'Entrega media'
         }, {
-          v: '4.9â˜…',
-          l: 'ValoraciÃ³n media'
+          v: '4.9★',
+          l: 'Valoración media'
         }].map(s => /*#__PURE__*/_jsxs("div", {
           style: {
             textAlign: 'center'
@@ -2798,7 +2798,7 @@ const TestimonialsSection = () => {
   });
 };
 
-/* â”€â”€ COOKIE BANNER â”€â”€ */
+/* ── COOKIE BANNER ── */
 const CookieBanner = () => {
   const KEY = 'nd_cookie_consent';
   const [visible, setVisible] = React.useState(false);
@@ -2860,7 +2860,7 @@ const CookieBanner = () => {
               style: {
                 fontSize: 16
               },
-              children: "\xF0\u0178\x8D\xAA"
+              children: "\uD83C\uDF6A"
             }), /*#__PURE__*/_jsx("span", {
               style: {
                 fontFamily: 'var(--disp)',
@@ -2877,7 +2877,7 @@ const CookieBanner = () => {
               color: '#94a3b8',
               margin: 0
             },
-            children: ["Usamos cookies necesarias para el funcionamiento del sitio y, con tu consentimiento, cookies anal\xC3\xADticas para mejorar la experiencia.", ' ', /*#__PURE__*/_jsx("button", {
+            children: ["Usamos cookies necesarias para el funcionamiento del sitio y, con tu consentimiento, cookies anal\xEDticas para mejorar la experiencia.", ' ', /*#__PURE__*/_jsx("button", {
               onClick: () => setDetail(!detail),
               style: {
                 background: 'none',
@@ -2906,7 +2906,7 @@ const CookieBanner = () => {
                   color: '#94a3b8'
                 },
                 children: "Necesarias:"
-              }), " Sesi\xC3\xB3n, seguridad. No requieren consentimiento."]
+              }), " Sesi\xF3n, seguridad. No requieren consentimiento."]
             }), /*#__PURE__*/_jsxs("p", {
               style: {
                 margin: 0
@@ -2915,8 +2915,8 @@ const CookieBanner = () => {
                 style: {
                   color: '#94a3b8'
                 },
-                children: "Anal\xC3\xADticas:"
-              }), " Google Analytics (an\xC3\xB3nimo), mejora de navegaci\xC3\xB3n."]
+                children: "Anal\xEDticas:"
+              }), " Google Analytics (an\xF3nimo), mejora de navegaci\xF3n."]
             })]
           })]
         }), /*#__PURE__*/_jsxs("div", {
@@ -2967,27 +2967,27 @@ const CookieBanner = () => {
           color: '#475569',
           textAlign: 'center'
         },
-        children: ["Al continuar navegando, aceptas el uso de cookies necesarias. ", 'Â·', ' ', /*#__PURE__*/_jsx("a", {
+        children: ["Al continuar navegando, aceptas el uso de cookies necesarias. ", '·', ' ', /*#__PURE__*/_jsx("a", {
           href: "privacidad.html",
           style: {
             color: '#60a5fa',
             textDecoration: 'none'
           },
-          children: "Pol\xC3\xADtica de privacidad"
-        }), ' Â· ', /*#__PURE__*/_jsx("a", {
+          children: "Pol\xEDtica de privacidad"
+        }), ' · ', /*#__PURE__*/_jsx("a", {
           href: "cookies.html",
           style: {
             color: '#60a5fa',
             textDecoration: 'none'
           },
-          children: "Pol\xC3\xADtica de cookies"
+          children: "Pol\xEDtica de cookies"
         })]
       })]
     })
   });
 };
 
-/* â”€â”€ APP â”€â”€ */
+/* ── APP ── */
 const App = () => {
   useReveal();
   return /*#__PURE__*/_jsxs(_Fragment, {
