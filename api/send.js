@@ -13,6 +13,20 @@ function clean(value) {
     .slice(0, 5000);
 }
 
+function safeError(error) {
+  if (error && typeof error === "object") {
+    return {
+      name: error.name || "Error",
+      message: String(error.message || error).slice(0, 300),
+    };
+  }
+
+  return {
+    name: "Error",
+    message: String(error),
+  };
+}
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -427,7 +441,7 @@ module.exports = async function handler(req, res) {
         referer: req.headers.referer || "",
       });
     } catch (discordError) {
-      console.error("[discord notify]", discordError);
+      console.error("[discord notify]", safeError(discordError));
     }
 
     return sendJson(res, 200, {
@@ -437,7 +451,7 @@ module.exports = async function handler(req, res) {
         : "Consulta recibida. Te contactaremos en menos de 24h.",
     });
   } catch (error) {
-    console.error("[api/send]", error);
+    console.error("[api/send]", safeError(error));
 
     return sendJson(res, 500, {
       success: false,

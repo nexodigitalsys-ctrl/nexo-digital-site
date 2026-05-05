@@ -11,6 +11,20 @@ function clean(value, max = 800) {
     .slice(0, max);
 }
 
+function safeError(error) {
+  if (error && typeof error === "object") {
+    return {
+      name: error.name || "Error",
+      message: String(error.message || error).slice(0, 300),
+    };
+  }
+
+  return {
+    name: "Error",
+    message: String(error),
+  };
+}
+
 async function readBody(req) {
   if (req.body && typeof req.body === "object") {
     return req.body;
@@ -368,7 +382,7 @@ module.exports = async function handler(req, res) {
           referer: req.headers.referer || "",
         });
       } catch (discordError) {
-        console.error("[discord chat notify]", discordError);
+        console.error("[discord chat notify]", safeError(discordError));
       }
     }
 
@@ -376,7 +390,7 @@ module.exports = async function handler(req, res) {
       reply,
     });
   } catch (error) {
-    console.error("[api/chat]", error);
+    console.error("[api/chat]", safeError(error));
 
     return sendJson(res, 500, {
       error: "No se pudo procesar el chat. Por favor escríbenos por WhatsApp o a contacto@nexo-digital.app.",
