@@ -1,0 +1,5 @@
+Contact: mailto:info@suaempresa.com.br
+Expires: 2027-01-01T00:00:00z
+Acknowledgment: https://www.nexo-digital.app/equipo.html
+Preferred-Languages: es, pt, en
+Canonical: https://www.nexo-digital.app/.well-known/security.txt
