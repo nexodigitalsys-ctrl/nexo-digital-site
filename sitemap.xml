@@ -9,16 +9,16 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/"/>
-    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/"/>
   </url>
   <url>
-    <loc>https://www.nexo-digital.app/pt/</loc>
+    <loc>https://www.nexo-digital.app/pt</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es"      href="https://www.nexo-digital.app/"/>
-    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT"   href="https://www.nexo-digital.app/pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.nexo-digital.app/"/>
   </url>
 
