@@ -126,7 +126,16 @@ $payload = [
     ]
 ];
 
-$api_key = 'AIzaSyCXt5Xi04J0kWW0RyyJdowfQRV0eE8XcwU';
+// Config: lee la API key desde config.php (NO se sube a git)
+if (file_exists(__DIR__ . '/config.php')) {
+    require __DIR__ . '/config.php';
+} else {
+    http_response_code(500);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['error' => 'Configuración no disponible.']);
+    exit;
+}
+$api_key = $GEMINI_API_KEY;
 $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={$api_key}";
 
 $ch = curl_init($url);

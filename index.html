@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>(function(){try{var s=localStorage.getItem('nd-lang');if(s==='pt'){window.location.replace('pt/');return;}if(s==='es')return;var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';if(l.toLowerCase().startsWith('pt')){localStorage.setItem('nd-lang','pt');window.location.replace('pt/');}else{localStorage.setItem('nd-lang','es');}}catch(e){}}());</script>
+<script>(function(){try{var p=window.location.pathname;var already=/^\/pt(\/|$)/.test(p);var s=localStorage.getItem('nd-lang');if(s==='pt'){if(!already)window.location.replace('/pt/');return;}if(s==='es')return;if(!localStorage.getItem('nd-lang'))localStorage.setItem('nd-lang','es');}catch(e){}}());</script>
 
 <!-- =================================================================== -->
 <title>Nexo Digital | Desarrollo Web y Software Premium</title>
@@ -151,7 +151,7 @@
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-<script src="/js/app.js" defer></script>
+<script src="/js/app.js?v=2" defer></script>
 
 <style>
 /* =================================================================== */
@@ -250,6 +250,7 @@ a{text-decoration:none;color:inherit;}
 .card-cta{margin-top:auto;padding-top:22px;}
 .card-cta a{display:flex;width:100%;align-items:center;justify-content:center;border-radius:9999px;border:1px solid rgba(29,78,216,0.22);background:linear-gradient(135deg,rgba(29,78,216,0.07),rgba(124,58,237,0.05));padding:11px 16px;font-size:13px;font-weight:600;color:var(--blue);transition:all .22s;gap:6px;}
 .card-cta a:hover{border-color:rgba(29,78,216,0.4);background:linear-gradient(135deg,rgba(29,78,216,0.14),rgba(124,58,237,0.1));transform:translateY(-1px);}
+@media(max-width:480px){.card-cta a{font-size:12.5px;padding:11px 12px;white-space:normal;}}
 
 /* =================================================================== */
 .hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(29,78,216,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(29,78,216,0.05) 1px,transparent 1px);background-size:52px 52px;animation:gridPan 14s linear infinite;mask-image:radial-gradient(ellipse 90% 70% at 50% 40%,black 30%,transparent 100%);}
@@ -294,6 +295,16 @@ a{text-decoration:none;color:inherit;}
 .cpill{border-radius:9999px;border:1px solid var(--bdr);background:#ffffff;padding:9px 18px;font-size:12.5px;font-weight:600;color:var(--txt-s);transition:all .2s;}
 .cpill:hover{border-color:rgba(29,78,216,0.25);color:var(--txt);background:#eef1f8;}
 .cta-join{margin-top:28px;border-radius:18px;border:1px dashed rgba(29,78,216,0.2);background:rgba(29,78,216,0.04);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+/* =================================================================== */
+.apps-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:22px;}
+.apps-strip-i{display:flex;align-items:center;gap:12px;border-radius:14px;border:1px solid var(--bdr);background:#ffffff;padding:14px 16px;box-shadow:0 1px 2px rgba(0,0,0,0.04);transition:border-color .25s,transform .25s;}
+.apps-strip-i:hover{border-color:rgba(124,58,237,0.3);transform:translateY(-2px);}
+.apps-strip-i>span{font-size:22px;flex-shrink:0;}
+.apps-strip-i b{font-size:13.5px;font-weight:600;color:var(--txt);}
+.apps-strip-i p{font-size:11.5px;color:var(--txt-s);margin-top:2px;line-height:1.5;}
+.apps-strip-i .tag2{margin-left:auto;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-radius:9999px;padding:3px 9px;border:1px solid rgba(124,58,237,0.25);color:var(--blue);background:rgba(124,58,237,0.07);flex-shrink:0;}
+@media(max-width:520px){.apps-strip-i{flex-wrap:wrap;padding:12px 14px;}.apps-strip-i .tag2{margin-left:0;}.apps-strip-i b{font-size:13px;}.apps-strip-i p{font-size:11px;}}
 
 /* =================================================================== */
 .fbox{max-width:640px;margin:0 auto;border-radius:24px;border:1px solid rgba(255,255,255,0.7);background:rgba(255,255,255,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:clamp(28px,4vw,48px);box-shadow:0 4px 8px rgba(0,0,0,0.03),0 20px 60px rgba(29,78,216,0.1);}

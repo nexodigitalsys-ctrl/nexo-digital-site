@@ -1,5 +1,4 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* ── SCROLL REVEAL ── */
 const _nexoChat = async (_body) => {
   const _urls = ['/api/chat', '/chat.php'];
   for (const _u of _urls) {
@@ -23,8 +22,6 @@ const useReveal = () => {
     return () => obs.disconnect();
   }, []);
 };
-
-/* ── SVG ICONS ── */
 const IconCheck = () => /*#__PURE__*/React.createElement("svg", {
   width: "15",
   height: "15",
@@ -53,8 +50,6 @@ const IconArrow = ({
 }, /*#__PURE__*/React.createElement("path", {
   d: "M6 9l6 6 6-6"
 }));
-
-/* ── LOGO ── */
 const Logo = () => /*#__PURE__*/React.createElement("a", {
   href: "#top",
   style: {
@@ -109,9 +104,7 @@ const Logo = () => /*#__PURE__*/React.createElement("a", {
     letterSpacing: '.22em',
     color: 'var(--txt-m)'
   }
-}, "Estudio Tech Premium")));
-
-/* ── NAVBAR ── */
+}, "Ag\xEAncia Tech Premium")));
 const Navbar = () => {
   const [sc, setSc] = React.useState(false);
   const [op, setOp] = React.useState(false);
@@ -124,19 +117,22 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', fn);
   }, []);
   const links = [{
-    href: 'servicios.html',
-    label: 'Servicios'
+    href: '#saas',
+    label: 'Produtos'
   }, {
-    href: 'proceso.html',
-    label: 'Proceso'
+    href: '#servicos',
+    label: 'Serviços'
   }, {
-    href: 'clientes.html',
+    href: '#processo',
+    label: 'Processo'
+  }, {
+    href: '#clientes',
     label: 'Clientes'
   }, {
-    href: 'equipo.html',
-    label: 'Equipo'
+    href: '#equipa',
+    label: 'Equipa'
   }, {
-    href: 'contacto.html',
+    href: '#contacto',
     label: 'Contacto'
   }];
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("nav", {
@@ -203,18 +199,11 @@ const Navbar = () => {
       fontSize: 11.5,
       fontWeight: 600
     }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      padding: '3px 8px',
-      borderRadius: 16,
-      background: 'var(--blue)',
-      color: '#fff'
-    }
-  }, "ES"), /*#__PURE__*/React.createElement("a", {
-    href: "pt/",
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "../",
     onClick: function () {
       try {
-        localStorage.setItem('nd-lang', 'pt');
+        localStorage.setItem('nd-lang', 'es');
       } catch (e) {}
     },
     style: {
@@ -223,8 +212,15 @@ const Navbar = () => {
       color: 'var(--txt-s)',
       textDecoration: 'none'
     }
+  }, "ES"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      padding: '3px 8px',
+      borderRadius: 16,
+      background: 'var(--blue)',
+      color: '#fff'
+    }
   }, "PT")), /*#__PURE__*/React.createElement("a", {
-    href: "/contacto.html",
+    href: "#contacto",
     style: {
       display: 'inline-flex',
       alignItems: 'center',
@@ -237,9 +233,8 @@ const Navbar = () => {
       textDecoration: 'none',
       transition: 'all .2s'
     }
-  }, "Empezar \u2192")), /*#__PURE__*/React.createElement("button", {
+  }, "Come\xE7ar \u2192")), /*#__PURE__*/React.createElement("button", {
     onClick: () => setOp(!op),
-    "aria-label": "Alternar men\xFA de navegaci\xF3n",
     style: {
       display: 'none',
       width: 40,
@@ -310,18 +305,11 @@ const Navbar = () => {
       fontWeight: 600,
       margin: '8px 0 4px'
     }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      padding: '4px 14px',
-      borderRadius: 16,
-      background: 'var(--blue)',
-      color: '#fff'
-    }
-  }, "ES"), /*#__PURE__*/React.createElement("a", {
-    href: "pt/",
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "../",
     onClick: function () {
       try {
-        localStorage.setItem('nd-lang', 'pt');
+        localStorage.setItem('nd-lang', 'es');
       } catch (e) {}
     },
     style: {
@@ -330,8 +318,15 @@ const Navbar = () => {
       color: 'var(--txt-s)',
       textDecoration: 'none'
     }
+  }, "ES"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      padding: '4px 14px',
+      borderRadius: 16,
+      background: 'var(--blue)',
+      color: '#fff'
+    }
   }, "PT")), /*#__PURE__*/React.createElement("a", {
-    href: "/contacto.html",
+    href: "#contacto",
     onClick: () => setOp(false),
     style: {
       marginTop: 8,
@@ -346,10 +341,8 @@ const Navbar = () => {
       color: '#fff',
       textDecoration: 'none'
     }
-  }, "Empezar \u2192"))), /*#__PURE__*/React.createElement("style", null, `.dnav{display:flex!important;align-items:center;gap:26px;} @media(max-width:1024px){.dnav{display:none!important;}.mbtn{display:inline-flex!important;}} @media(min-width:1025px){.mbtn{display:none!important;}}`));
+  }, "Come\xE7ar \u2192"))), /*#__PURE__*/React.createElement("style", null, `.dnav{display:flex!important;align-items:center;gap:26px;} @media(max-width:1024px){.dnav{display:none!important;}.mbtn{display:inline-flex!important;}} @media(min-width:1025px){.mbtn{display:none!important;}}`));
 };
-
-/* ── HERO ── */
 const Hero = () => /*#__PURE__*/React.createElement("section", {
   className: "sec-hero",
   style: {
@@ -362,17 +355,13 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
 }), /*#__PURE__*/React.createElement("div", {
   className: "aurora-layer"
 }), /*#__PURE__*/React.createElement("div", {
-  className: "orb orb1",
-  "aria-hidden": "true"
+  className: "orb orb1"
 }), /*#__PURE__*/React.createElement("div", {
-  className: "orb orb2",
-  "aria-hidden": "true"
+  className: "orb orb2"
 }), /*#__PURE__*/React.createElement("div", {
-  className: "orb orb3",
-  "aria-hidden": "true"
+  className: "orb orb3"
 }), /*#__PURE__*/React.createElement("div", {
   className: "ring",
-  "aria-hidden": "true",
   style: {
     width: 760,
     height: 760,
@@ -383,7 +372,6 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   }
 }), /*#__PURE__*/React.createElement("div", {
   className: "ring",
-  "aria-hidden": "true",
   style: {
     width: 520,
     height: 520,
@@ -408,7 +396,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   }
 }, /*#__PURE__*/React.createElement("span", {
   className: "dot"
-}), "Estudio Tech Premium")), /*#__PURE__*/React.createElement("h1", {
+}), "Ag\xEAncia Tech Premium")), /*#__PURE__*/React.createElement("h1", {
   className: "h1 ha2",
   style: {
     marginTop: 28,
@@ -416,7 +404,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     marginLeft: 'auto',
     marginRight: 'auto'
   }
-}, "Construimos sistemas digitales que trabajan por tu empresa, ", /*#__PURE__*/React.createElement("em", null, "incluso cuando no est\xE1s.")), /*#__PURE__*/React.createElement("p", {
+}, "Constru\xEDmos sistemas digitais que trabalham pela sua empresa, ", /*#__PURE__*/React.createElement("em", null, "mesmo quando n\xE3o est\xE1.")), /*#__PURE__*/React.createElement("p", {
   className: "ha3",
   style: {
     marginTop: 20,
@@ -426,7 +414,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: '42rem',
     margin: '20px auto 0'
   }
-}, "Webs, apps SaaS, CRM, automatizaciones, TPV y kioscos. Infraestructura segura y disponibilidad 24/7 para empresas en cualquier lugar."), /*#__PURE__*/React.createElement("div", {
+}, "Websites, apps SaaS, CRM, automatiza\xE7\xF5es, TPV e quiosques. Infraestrutura segura e disponibilidade 24/7 para empresas em qualquer lugar."), /*#__PURE__*/React.createElement("div", {
   className: "ha4",
   style: {
     marginTop: 34,
@@ -442,14 +430,14 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     background: 'linear-gradient(135deg,#1d4ed8,#7c3aed)',
     boxShadow: '0 4px 24px rgba(29,78,216,0.35)'
   }
-}, "Ver productos SaaS \u2192"), /*#__PURE__*/React.createElement("a", {
+}, "Ver produtos SaaS \u2192"), /*#__PURE__*/React.createElement("a", {
   href: "#contacto",
   className: "btn btn-s",
   style: {
     background: 'rgba(255,255,255,0.9)',
     backdropFilter: 'blur(12px)'
   }
-}, "Hablar con nosotros")), /*#__PURE__*/React.createElement("div", {
+}, "Falar connosco")), /*#__PURE__*/React.createElement("div", {
   className: "ha5",
   style: {
     marginTop: 28,
@@ -458,7 +446,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     gap: 8,
     flexWrap: 'wrap'
   }
-}, [['💻', '100% Remoto'], ['⚡', 'Respuesta en 24h'], ['🛡️', 'Infraestructura segura']].map(([ic, l]) => /*#__PURE__*/React.createElement("span", {
+}, [["💻", "100% Remoto"], ["⚡", "Resposta em 24h"], ["🛡️", "Infraestrutura segura"]].map(([ic, l]) => /*#__PURE__*/React.createElement("span", {
   key: l,
   style: {
     fontSize: 12,
@@ -488,7 +476,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     overflow: 'hidden',
     boxShadow: '0 8px 40px rgba(29,78,216,0.1)'
   }
-}, [['+88', 'Apps'], ['+70', 'Clientes'], ['99.9%', 'Uptime'], ['24h', 'Respuesta']].map(([v, l], i) => /*#__PURE__*/React.createElement("div", {
+}, [['+88', 'Apps'], ['+70', 'Clientes'], ['99.9%', 'Uptime'], ['24h', 'Resposta']].map(([v, l], i) => /*#__PURE__*/React.createElement("div", {
   key: l,
   style: {
     padding: '18px 12px',
@@ -515,155 +503,153 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
     fontWeight: 600
   }
 }, l))))));
-
-/* ── SOCIAL PROOF TICKER ── */
 const Ticker = () => {
   const [tp, setTp] = React.useState(false);
   const row1 = [{
     icon: '🚀',
     color: '#34d399',
-    label: 'Web lanzada',
-    loc: 'España',
-    time: 'hace 2 días'
+    label: 'Website lançado',
+    loc: 'Portugal',
+    time: 'há 2 dias'
   }, {
     icon: '💬',
     color: '#60a5fa',
-    label: 'Chatbot IA activado',
-    loc: 'Portugal',
-    time: 'hace 4 días'
+    label: 'Chatbot IA ativado',
+    loc: 'Espanha',
+    time: 'há 4 dias'
   }, {
     icon: '🛒',
     color: '#a78bfa',
-    label: 'Tienda online entregada',
-    loc: 'España',
-    time: 'hace 6 días'
+    label: 'Loja online entregue',
+    loc: 'Portugal',
+    time: 'há 6 dias'
   }, {
-    icon: '⚙️',
+    icon: '💻',
     color: '#2dd4bf',
-    label: 'CRM integrado con WhatsApp',
+    label: 'CRM integrado com WhatsApp',
     loc: 'Europa',
-    time: 'hace 8 días'
+    time: 'há 8 dias'
   }, {
     icon: '🔒',
     color: '#fb923c',
-    label: 'Auditoría de seguridad',
-    loc: 'España',
-    time: 'hace 10 días'
+    label: 'Auditoria de segurança',
+    loc: 'Portugal',
+    time: 'há 10 dias'
   }, {
     icon: '📊',
     color: '#fbbf24',
     label: 'Dashboard analítico',
-    loc: 'Portugal',
-    time: 'hace 12 días'
+    loc: 'Espanha',
+    time: 'há 12 dias'
   }, {
     icon: '🍽️',
     color: '#34d399',
     label: 'SaaS Restaurante',
-    loc: 'España',
-    time: 'hace 3 días'
+    loc: 'Espanha',
+    time: 'há 3 dias'
   }, {
     icon: '🦷',
     color: '#60a5fa',
-    label: 'SaaS Odontología',
+    label: 'SaaS Odontologia',
     loc: 'Brasil',
-    time: 'hace 6 días'
+    time: 'há 6 dias'
   }, {
     icon: '☕',
     color: '#a78bfa',
-    label: 'TPV Cafetería',
+    label: 'TPV Cafetaria',
     loc: 'Portugal',
-    time: 'hace 7 días'
+    time: 'há 7 dias'
   }, {
     icon: '🏋️',
     color: '#2dd4bf',
-    label: 'SaaS Gimnasio',
-    loc: 'España',
-    time: 'hace 9 días'
+    label: 'SaaS Ginásio',
+    loc: 'Espanha',
+    time: 'há 9 dias'
   }, {
     icon: '🧾',
     color: '#fb923c',
-    label: 'SaaS Facturación',
+    label: 'SaaS Faturação',
     loc: 'Europa',
-    time: 'hace 11 días'
+    time: 'há 11 dias'
   }, {
     icon: '📱',
     color: '#fbbf24',
-    label: 'App móvil Android & iOS',
-    loc: 'España',
-    time: 'hace 13 días'
+    label: 'App móvel Android & iOS',
+    loc: 'Espanha',
+    time: 'há 13 dias'
   }];
   const row2 = [{
     icon: '✅',
     color: '#34d399',
-    label: 'Nuevo cliente',
+    label: 'Novo cliente',
     loc: 'Portugal',
-    time: 'hace 1 día'
+    time: 'há 1 dia'
   }, {
     icon: '📱',
     color: '#60a5fa',
-    label: 'App publicada en stores',
-    loc: 'España',
-    time: 'hace 5 días'
+    label: 'App publicada',
+    loc: 'Espanha',
+    time: 'há 5 dias'
   }, {
     icon: '🎯',
     color: '#a78bfa',
-    label: 'Campaña Google Ads',
+    label: 'Campanha Google Ads',
     loc: 'Europa',
-    time: 'hace 7 días'
+    time: 'há 7 dias'
   }, {
     icon: '⚡',
     color: '#2dd4bf',
-    label: 'Automatización B2B',
-    loc: 'España',
-    time: 'hace 9 días'
+    label: 'Automatização B2B',
+    loc: 'Portugal',
+    time: 'há 9 dias'
   }, {
-    icon: '🌐',
+    icon: '💻',
     color: '#fb923c',
     label: 'Landing page premium',
-    loc: 'Portugal',
-    time: 'hace 11 días'
+    loc: 'Espanha',
+    time: 'há 11 dias'
   }, {
     icon: '📈',
     color: '#fbbf24',
-    label: 'SEO Audit · +67% visibilidad',
+    label: 'SEO Audit · +67% visibilidade',
     loc: 'Europa',
-    time: 'hace 13 días'
+    time: 'há 13 dias'
   }, {
     icon: '🏪',
     color: '#34d399',
-    label: 'TPV Minimarket',
-    loc: 'España',
-    time: 'hace 4 días'
+    label: 'TPV Minimercado',
+    loc: 'Espanha',
+    time: 'há 4 dias'
   }, {
     icon: '🎓',
     color: '#60a5fa',
     label: 'SaaS Academia',
     loc: 'Brasil',
-    time: 'hace 8 días'
+    time: 'há 8 dias'
   }, {
     icon: '🏨',
     color: '#a78bfa',
-    label: 'SaaS Hospedaje',
+    label: 'SaaS Hospedagem',
     loc: 'Portugal',
-    time: 'hace 10 días'
+    time: 'há 10 dias'
   }, {
     icon: '👗',
     color: '#2dd4bf',
-    label: 'SaaS Tienda de Moda',
-    loc: 'España',
-    time: 'hace 12 días'
+    label: 'SaaS Loja de Moda',
+    loc: 'Espanha',
+    time: 'há 12 dias'
   }, {
     icon: '🔧',
     color: '#fb923c',
-    label: 'ERP Taller Automotriz',
+    label: 'ERP Oficina Automóvel',
     loc: 'Brasil',
-    time: 'hace 14 días'
+    time: 'há 14 dias'
   }, {
     icon: '🧠',
     color: '#fbbf24',
     label: 'Luna · Agente IA',
-    loc: 'España',
-    time: 'hace 2 días'
+    loc: 'Espanha',
+    time: 'há 2 dias'
   }];
   const Item = ({
     icon,
@@ -762,8 +748,6 @@ const Ticker = () => {
     key: i
   }, t)))));
 };
-
-/* ── TECH MARQUEE ── */
 const Marquee = () => {
   const [mp, setMp] = React.useState(false);
   const items = [{
@@ -857,7 +841,7 @@ const Marquee = () => {
     t: 'WhatsApp API',
     c: '#065f46'
   }, {
-    t: 'Ciberseguridad',
+    t: 'Cibersegurança',
     c: '#b91c1c'
   }, {
     t: 'APIs REST',
@@ -869,7 +853,7 @@ const Marquee = () => {
     t: 'PWA',
     c: '#0f766e'
   }, {
-    t: 'Automatización',
+    t: 'Automatização',
     c: '#065f46'
   }, {
     t: 'CI/CD',
@@ -917,8 +901,7 @@ const Marquee = () => {
       textTransform: 'uppercase',
       letterSpacing: '.14em',
       color: t.c,
-      whiteSpace: 'nowrap',
-      transition: 'all .2s'
+      whiteSpace: 'nowrap'
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -931,57 +914,55 @@ const Marquee = () => {
     }
   }), t.t)))));
 };
-
-/* ── SAAS PRODUCTS ── */
 const SaasSection = () => {
   const P = [{
-    st: 'Disponible',
+    st: 'Disponível',
     sc: 'green',
     tag: 'SaaS',
     title: 'Nexo Invoicer',
-    desc: 'Facturación moderna para empresas de construcción, ventas y pequeños negocios. Control financiero y emisión sin fricción.',
-    feats: ['Facturas y recibos digitales', 'Gestión fiscal organizada', 'Historial e informes'],
+    desc: 'Faturação moderna para empresas de construção, vendas e pequenos negócios. Controlo financeiro e emissão sem complicações.',
+    feats: ['Faturas e recibos digitais', 'Gestão fiscal organizada', 'Histórico e relatórios'],
     cta: 'Solicitar demo'
   }, {
     st: 'Beta privada',
     sc: 'blue',
     tag: 'SaaS',
     title: 'SpeakEasily',
-    desc: 'Plataforma orientada a comunicación y experiencia digital con foco en simplicidad y crecimiento.',
-    feats: ['Flujos intuitivos', 'Experiencia mobile-first', 'Lista para SaaS beta privada'],
-    cta: 'Unirme a la lista'
+    desc: 'Plataforma de comunicação e experiência digital com foco em simplicidade e crescimento.',
+    feats: ['Fluxos intuitivos', 'Experiência mobile-first', 'Lista para beta privada SaaS'],
+    cta: 'Juntar-me à lista'
   }, {
-    st: 'En expansión',
+    st: 'Em expansão',
     sc: 'orange',
     tag: 'SaaS',
     title: 'Nexo CRM & WhatsApp',
-    desc: 'Relación comercial y atención centralizadas con automatización y contexto en tiempo real.',
-    feats: ['Pipeline comercial visual', 'WhatsApp integrado', 'Automatizaciones de seguimiento'],
-    cta: 'Agendar reunión'
+    desc: 'Relação comercial e atendimento centralizados com automatização e contexto em tempo real.',
+    feats: ['Pipeline comercial visual', 'WhatsApp integrado', 'Automatizações de seguimento'],
+    cta: 'Agendar reunião'
   }, {
-    st: 'Disponible',
+    st: 'Disponível',
     sc: 'green',
     tag: 'SaaS',
     title: 'Nexo SEO Audit',
-    desc: 'Diagnóstico técnico y estratégico para detectar bloqueos, oportunidades y prioridades SEO.',
-    feats: ['Análisis técnico completo', 'Prioridades accionables', 'Hoja de ruta de mejora'],
-    cta: 'Solicitar auditoría'
+    desc: 'Diagnóstico técnico e estratégico para detetar bloqueios, oportunidades e prioridades SEO.',
+    feats: ['Análise técnica completa', 'Prioridades acionáveis', 'Roteiro de melhoria'],
+    cta: 'Solicitar auditoria'
   }, {
-    st: 'Disponible',
+    st: 'Disponível',
     sc: 'blue',
     tag: 'Software',
-    title: 'TPV & Kioscos Software',
-    desc: 'Software de punto de venta y kioscos digitales llave en mano para negocios físicos. Sin complicaciones técnicas.',
-    feats: ['TPV táctil personalizado', 'Kioscos de autoservicio', 'Soporte y actualizaciones incluidas'],
+    title: 'TPV & Quiosques Software',
+    desc: 'Software de ponto de venda e quiosques digitais chave-na-mão para negócios físicos. Sem complicações técnicas.',
+    feats: ['TPV tátil personalizado', 'Quiosques de autoatendimento', 'Suporte e atualizações incluídos'],
     cta: 'Ver demo'
   }, {
-    st: 'Disponible',
+    st: 'Disponível',
     sc: 'green',
-    tag: 'Servicio',
+    tag: 'Serviço',
     title: 'Landing Page Pro',
-    desc: 'Páginas de aterrizaje de alta conversión con SEO técnico, diseño premium y optimización continua.',
-    feats: ['Diseño mobile-first y rápido', 'SEO técnico desde el día 1', 'Integración analítica y CRO'],
-    cta: 'Ver ejemplos'
+    desc: 'Páginas de destino de alta conversão com SEO técnico, design premium e otimização contínua.',
+    feats: ['Design mobile-first e rápido', 'SEO técnico desde o primeiro dia', 'Integração analítica e CRO'],
+    cta: 'Ver exemplos'
   }];
   return /*#__PURE__*/React.createElement("section", {
     id: "saas",
@@ -992,11 +973,11 @@ const SaasSection = () => {
     className: "sh c rev"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ew"
-  }, "Productos SaaS"), /*#__PURE__*/React.createElement("h2", {
+  }, "Produtos SaaS"), /*#__PURE__*/React.createElement("h2", {
     className: "sh-t"
-  }, "Plataformas propias dise\xF1adas para escalar."), /*#__PURE__*/React.createElement("p", {
+  }, "Plataformas pr\xF3prias criadas para escalar."), /*#__PURE__*/React.createElement("p", {
     className: "sh-d"
-  }, "Software desarrollado por Nexo Digital para acelerar operaciones, ventas y presencia online.")), /*#__PURE__*/React.createElement("div", {
+  }, "Software desenvolvido pela Nexo Digital para acelerar opera\xE7\xF5es, vendas e presen\xE7a online.")), /*#__PURE__*/React.createElement("div", {
     className: "g3"
   }, P.map((p, i) => /*#__PURE__*/React.createElement("div", {
     key: p.title,
@@ -1054,7 +1035,7 @@ const SaasSection = () => {
       letterSpacing: '-.015em',
       color: 'var(--txt)'
     }
-  }, "\xBFBuscas una app moderna creada a medida?"), /*#__PURE__*/React.createElement("p", {
+  }, "Procura uma app moderna criada \xE0 medida?"), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 8,
       fontSize: 13.5,
@@ -1062,75 +1043,73 @@ const SaasSection = () => {
       color: 'var(--txt-s)',
       maxWidth: 520
     }
-  }, "Aplicaciones SaaS, CRMs, TPVs, ERPs y apps m\xF3viles para Android e iOS. Analizamos tu caso y te proponemos la mejor soluci\xF3n.")), /*#__PURE__*/React.createElement("a", {
+  }, "Aplica\xE7\xF5es SaaS, CRMs, TPVs, ERPs e apps m\xF3veis para Android e iOS. Analisamos o seu caso e propomos a melhor solu\xE7\xE3o.")), /*#__PURE__*/React.createElement("a", {
     href: "#contacto",
     className: "btn btn-p",
     style: {
       flexShrink: 0
     }
-  }, "Quiero una app a medida \u2192"))));
+  }, "Quero uma app \xE0 medida \u2192"))));
 };
-
-/* ── SERVICES ── */
 const ServicesSection = () => {
   const S = [{
-    icon: '🌐',
-    title: 'Landing Page / Página Web',
-    desc: 'Diseño y desarrollo web premium orientado a conversión, con SEO técnico desde el primer día.',
-    feats: ['SEO técnico nacional e internacional', 'Diseño mobile-first', 'Core Web Vitals optimizados']
+    icon: '💻',
+    title: 'Landing Page / Website',
+    desc: 'Design e desenvolvimento web premium orientado à  conversão, com SEO técnico desde o primeiro dia.',
+    feats: ['SEO técnico nacional e internacional', 'Design mobile-first', 'Core Web Vitals otimizados']
   }, {
     icon: '🛒',
-    title: 'Tienda Online',
-    desc: 'E-commerce completo con gestión de productos, pagos integrados y experiencia de compra optimizada.',
-    feats: ['Catálogo y pasarela de pago', 'Gestión de pedidos e inventario', 'Integración con marketplaces']
+    title: 'Loja Online',
+    desc: 'E-commerce completo com gestão de produtos, pagamentos integrados e experiência de compra otimizada.',
+    feats: ['Catálogo e gateway de pagamento', 'Gestão de encomendas e inventário', 'Integração com marketplaces']
   }, {
     icon: '🤖',
     title: 'Chatbot IA',
-    desc: 'Asistentes virtuales con inteligencia artificial integrados en tu web o WhatsApp. Atención 24/7 sin coste de personal.',
-    feats: ['IA conversacional personalizada', 'Integración web y WhatsApp', 'Redirige a ventas o soporte']
+    desc: 'Assistentes virtuais com inteligência artificial integrados no seu website ou WhatsApp. Atendimento 24/7 sem custo de pessoal.',
+    feats: ['IA conversacional personalizada', 'Integração web e WhatsApp', 'Redireciona para vendas ou suporte']
   }, {
     icon: '🧾',
-    title: 'Facturación Digital',
-    desc: 'Sistema de facturación para empresas de construcción, ventas y pequeños negocios. Rápido, claro y sin complicaciones.',
-    feats: ['Facturas y recibos digitales', 'Gestión fiscal organizada', 'Para construcción, ventas y retail']
+    title: 'Faturação Digital',
+    desc: 'Sistema de faturação para empresas de construção, vendas e pequenos negócios. Rápido, claro e sem complicações.',
+    feats: ['Faturas e recibos digitais', 'Gestão fiscal organizada', 'Para construção, vendas e retalho']
   }, {
-    icon: '🖥️',
-    title: 'TPV & Kioscos Digitales',
-    desc: 'Software TPV e infraestructura de kioscos para pequeños y medianos negocios. Llave en mano.',
-    feats: ['Software TPV personalizado', 'Kioscos de autoservicio', 'Soporte y mantenimiento incluido']
+    icon: '💻',
+    title: 'TPV & Quiosques Digitais',
+    desc: 'Software TPV e infraestrutura de quiosques para pequenas e médias empresas. Chave-na-mão.',
+    feats: ['Software TPV personalizado', 'Quiosques de autoatendimento', 'Suporte e manutenção incluídos']
   }, {
-    icon: '⚙️',
-    title: 'Sistemas a Medida',
-    desc: 'ERP, CRM, dashboards y portales internos diseñados para la operación real del negocio.',
-    feats: ['ERP y CRM personalizados', 'Integraciones vía API REST', 'Arquitectura escalable']
+    icon: '💻',
+    title: 'Sistemas à Medida',
+    desc: 'ERP, CRM, dashboards e portais internos criados para a operação real do negócio.',
+    feats: ['ERP e CRM personalizados', 'Integrações via API REST', 'Arquitetura escalável']
   }, {
     icon: '📣',
-    title: 'Tráfico Pago / Anuncios',
-    desc: 'Campañas Google Ads y Meta Ads orientadas a resultados medibles para negocios locales y nacionales.',
-    feats: ['Google Ads y Meta Ads', 'Segmentación geográfica precisa', 'Informes y optimización continua']
+    title: 'Tráfego Pago / Anúncios',
+    desc: 'Campanhas Google Ads e Meta Ads orientadas a resultados mensuráveis para negócios locais e nacionais.',
+    feats: ['Google Ads e Meta Ads', 'Segmentação geográfica precisa', 'Relatórios e otimização contínua']
   }, {
     icon: '🔒',
-    title: 'Ciberseguridad & Infraestructura',
-    desc: 'Auditorías de seguridad, hardening, SSL, firewall Cloudflare y monitorización activa 24/7.',
-    feats: ['Auditoría de seguridad web', 'Firewall y protección DDoS', 'Backups automáticos diarios']
+    title: 'Cibersegurança & Infraestrutura',
+    desc: 'Auditorias de segurança, hardening, SSL, firewall Cloudflare e monitorização ativa 24/7.',
+    feats: ['Auditoria de segurança web', 'Firewall e proteção DDoS', 'Backups automáticos diários']
   }, {
     icon: '📱',
-    title: 'Apps Móviles (Android & iOS)',
-    desc: 'Aplicaciones móviles nativas e híbridas para Android e iOS: publicamos tu app en Google Play y App Store.',
-    feats: ['Android & iOS (React Native / Flutter)', 'Publicación en Google Play y App Store', 'Notificaciones push y offline']
+    title: 'Apps Móveis (Android & iOS)',
+    desc: 'Aplicações móveis nativas e híbridas para Android e iOS: publicamos a sua app na Google Play e App Store.',
+    feats: ['Android & iOS (React Native / Flutter)', 'Publicação na Google Play e App Store', 'Notificações push e offline']
   }, {
     icon: '☁️',
-    title: 'Aplicaciones SaaS a medida',
-    desc: 'Software como servicio por sectores: restaurantes, clínicas, academias, gimnasios y más. Multiusuario y escalable.',
-    feats: ['SaaS por sector (restaurante, clínica…)', 'Suscripciones y gestión de usuarios', 'Panel de administración']
+    title: 'Aplicações SaaS à medida',
+    desc: 'Software como serviço por setores: restaurantes, clínicas, academias, ginásios e mais. Multiusuário e escalável.',
+    feats: ['SaaS por setor (restaurante, clínica…)', 'Subscrições e gestão de utilizadores', 'Painel de administração']
   }, {
     icon: '🤝',
-    title: 'CRMs a medida',
-    desc: 'Sistemas de relación con clientes personalizados para tu operación: ventas, delivery, tiendas y servicios.',
-    feats: ['Pipeline y seguimiento comercial', 'Integración con WhatsApp', 'Reportes y automatización']
+    title: 'CRMs à medida',
+    desc: 'Sistemas de relação com clientes personalizados para a sua operação: vendas, delivery, lojas e serviços.',
+    feats: ['Pipeline e acompanhamento comercial', 'Integração com WhatsApp', 'Relatórios e automatização']
   }];
   return /*#__PURE__*/React.createElement("section", {
-    id: "servicios",
+    id: "servicos",
     className: "sec-lg",
     style: {
       background: 'linear-gradient(to bottom,rgba(238,241,248,0.7),transparent)'
@@ -1141,11 +1120,11 @@ const ServicesSection = () => {
     className: "sh c rev"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ew"
-  }, "Servicios de desarrollo"), /*#__PURE__*/React.createElement("h2", {
+  }, "Servi\xE7os de desenvolvimento"), /*#__PURE__*/React.createElement("h2", {
     className: "sh-t"
-  }, "Lo que construimos para tu empresa."), /*#__PURE__*/React.createElement("p", {
+  }, "O que constru\xEDmos para a sua empresa."), /*#__PURE__*/React.createElement("p", {
     className: "sh-d"
-  }, "Desde webs y tiendas online hasta sistemas internos, TPV y seguridad. Todo con criterio t\xE9cnico y foco en negocio.")), /*#__PURE__*/React.createElement("div", {
+  }, "Desde websites e lojas online at\xE9 sistemas internos, TPV e seguran\xE7a. Tudo com crit\xE9rio t\xE9cnico e foco no neg\xF3cio.")), /*#__PURE__*/React.createElement("div", {
     className: "g3"
   }, S.map((s, i) => /*#__PURE__*/React.createElement("div", {
     key: s.title,
@@ -1173,8 +1152,6 @@ const ServicesSection = () => {
     href: "#contacto"
   }, "Consultar \u2192")))))));
 };
-
-/* ── AGENDA CTA ── */
 const AgendaSection = () => /*#__PURE__*/React.createElement("section", {
   className: "sec"
 }, /*#__PURE__*/React.createElement("div", {
@@ -1194,7 +1171,7 @@ const AgendaSection = () => /*#__PURE__*/React.createElement("section", {
     marginBottom: 20,
     display: 'inline-flex'
   }
-}, "\xBFHablamos?"), /*#__PURE__*/React.createElement("h2", {
+}, "Falamos?"), /*#__PURE__*/React.createElement("h2", {
   style: {
     fontFamily: 'var(--disp)',
     fontSize: 'clamp(1.7rem,3.5vw,2.5rem)',
@@ -1203,7 +1180,7 @@ const AgendaSection = () => /*#__PURE__*/React.createElement("section", {
     color: 'var(--txt)',
     marginTop: 16
   }
-}, "La primera conversaci\xF3n es gratis y sin compromiso."), /*#__PURE__*/React.createElement("p", {
+}, "A primeira conversa \xE9 gratuita e sem compromisso."), /*#__PURE__*/React.createElement("p", {
   style: {
     marginTop: 14,
     fontSize: 'clamp(14px,1.9vw,17px)',
@@ -1212,7 +1189,7 @@ const AgendaSection = () => /*#__PURE__*/React.createElement("section", {
     maxWidth: '38rem',
     margin: '14px auto 0'
   }
-}, "Cu\xE9ntanos tu proyecto, tu problema o tu idea. En 24h te decimos si podemos ayudarte y c\xF3mo."), /*#__PURE__*/React.createElement("div", {
+}, "Conte-nos o seu projeto, o seu problema ou a sua ideia. Em 24h dizemos se podemos ajudar e como."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 32,
     display: 'flex',
@@ -1226,37 +1203,35 @@ const AgendaSection = () => /*#__PURE__*/React.createElement("section", {
 }, "Enviar consulta \u2192"), /*#__PURE__*/React.createElement("a", {
   href: "mailto:contacto@nexo-digital.app",
   className: "btn btn-teal"
-}, "\u2709 Escribir por email"), /*#__PURE__*/React.createElement("a", {
-  href: "https://wa.me/34689135159?text=Hola%20Nexo%20Digital,%20me%20interesa%20vuestros%20servicios",
+}, "\u2709 Escrever por email"), /*#__PURE__*/React.createElement("a", {
+  href: "https://wa.me/34689135159?text=Ol\xE1%20Nexo%20Digital,%20tenho%20interesse%20nos%20vossos%20servi\xE7os",
   target: "_blank",
   rel: "noreferrer",
   className: "btn btn-s"
-}, "\uD83D\uDCAC WhatsApp directo")), /*#__PURE__*/React.createElement("p", {
+}, "\uD83D\uDCAC WhatsApp direto")), /*#__PURE__*/React.createElement("p", {
   style: {
     marginTop: 18,
     fontSize: 12,
     color: 'var(--txt-m)'
   }
-}, "Espa\xF1a \xB7 Portugal \xB7 Europa \u2014 Respuesta garantizada en menos de 24h"))));
-
-/* ── STATS ── */
+}, "Europa \xB7 Portugal \xB7 Espanha \u2014 Resposta garantida em menos de 24h"))));
 const StatsSection = () => {
   const S = [{
     v: '+88',
-    l: 'Aplicaciones en catálogo',
-    d: 'TPVs, SaaS, ERPs, CRMs y sistemas de gestión listos para cada sector.'
+    l: 'Aplicações em catálogo',
+    d: 'TPVs, SaaS, ERPs, CRMs e sistemas de gestão prontos para cada setor.'
   }, {
     v: '+70',
-    l: 'Proyectos entregados',
-    d: 'Sitios, plataformas y sistemas a medida en producción.'
+    l: 'Projetos entregues',
+    d: 'Sites, plataformas e sistemas à medida em produção.'
   }, {
     v: '24/7',
-    l: 'Monitoreo y seguridad',
-    d: 'Vigilancia inteligente con alertas automáticas y protección proactiva.'
+    l: 'Monitorização e segurança',
+    d: 'Vigilância inteligente com alertas automáticos e proteção proativa.'
   }, {
     v: '4',
-    l: 'Idiomas soportados',
-    d: 'Plataformas y tienda en español, portugués, inglés y catalán — con francés e italiano en camino.'
+    l: 'Idiomas suportados',
+    d: 'Plataformas e loja em espanhol, português, inglês e catalão — com francês e italiano a caminho.'
   }];
   return /*#__PURE__*/React.createElement("section", {
     className: "sec"
@@ -1266,9 +1241,9 @@ const StatsSection = () => {
     className: "sh c rev"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ew"
-  }, "Confianza y m\xE9tricas"), /*#__PURE__*/React.createElement("h2", {
+  }, "Confian\xE7a e m\xE9tricas"), /*#__PURE__*/React.createElement("h2", {
     className: "sh-t"
-  }, "Una forma de trabajar orientada a consistencia y rendimiento.")), /*#__PURE__*/React.createElement("div", {
+  }, "Uma forma de trabalhar orientada para consist\xEAncia e desempenho.")), /*#__PURE__*/React.createElement("div", {
     className: "g4"
   }, S.map((s, i) => /*#__PURE__*/React.createElement("div", {
     key: s.l,
@@ -1284,10 +1259,8 @@ const StatsSection = () => {
     className: "stat-d"
   }, s.d))))));
 };
-
-/* ── CLIENTS ── */
 const ClientsSection = () => {
-  const C = ['Santa Fe Construcciones', 'Fornells Studio', 'Onadance', 'Reformas Machado', 'Soltur Reformas', 'Santafe Reformas', 'Super Clim', 'Saviesa', 'Bresami', 'Viviane Cordeiro', 'Misme Electric', 'Ecants'];
+  const C = ['Santa Fe Construções', 'Fornells Studio', 'Onadance', 'Reformas Machado', 'Soltur Reformas', 'Santafe Reformas', 'Super Clim', 'Saviesa', 'Bresami', 'Viviane Cordeiro', 'Misme Electric', 'Ecants'];
   return /*#__PURE__*/React.createElement("section", {
     id: "clientes",
     className: "sec",
@@ -1300,11 +1273,11 @@ const ClientsSection = () => {
     className: "sh c rev"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ew"
-  }, "Empresas que conf\xEDan en nosotros"), /*#__PURE__*/React.createElement("h2", {
+  }, "Empresas que confiam em n\xF3s"), /*#__PURE__*/React.createElement("h2", {
     className: "sh-t"
-  }, "Proyectos reales para negocios que apuestan por lo digital."), /*#__PURE__*/React.createElement("p", {
+  }, "Projetos reais para neg\xF3cios que apostam no digital."), /*#__PURE__*/React.createElement("p", {
     className: "sh-d"
-  }, "Hemos trabajado con empresas locales, e-commerces y negocios en expansi\xF3n en Espa\xF1a, Portugal y m\xE1s.")), /*#__PURE__*/React.createElement("div", {
+  }, "Trabalh\xE1mos com empresas locais, e-commerces e neg\xF3cios em expans\xE3o em Portugal, Espanha e al\xE9m.")), /*#__PURE__*/React.createElement("div", {
     className: "client-wrap rev"
   }, C.map(c => /*#__PURE__*/React.createElement("span", {
     key: c,
@@ -1318,64 +1291,62 @@ const ClientsSection = () => {
       fontWeight: 600,
       color: 'var(--txt)'
     }
-  }, "\xBFTu empresa podr\xEDa ser la siguiente?"), /*#__PURE__*/React.createElement("p", {
+  }, "A sua empresa pode ser a pr\xF3xima?"), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 5,
       fontSize: 13,
       color: 'var(--txt-s)'
     }
-  }, "\xDAnete a las empresas que ya conf\xEDan en nosotros y haz crecer tu negocio.")), /*#__PURE__*/React.createElement("a", {
+  }, "Junte-se \xE0s empresas que j\xE1 confiam em n\xF3s e fa\xE7a crescer o seu neg\xF3cio.")), /*#__PURE__*/React.createElement("a", {
     href: "#contacto",
     className: "btn btn-p btn-sm",
     style: {
       flexShrink: 0
     }
-  }, "Contactar ahora \u2192"))));
+  }, "Contactar agora \u2192"))));
 };
-
-/* ── APPS CATALOG ── */
 const AppsCatalogSection = () => {
   const groups = [{
     icon: '🛍️',
-    title: 'TPVs por sector',
+    title: 'TPVs por setor',
     count: '11',
-    items: ['Cafetería', 'Hostelería', 'Fast Food', 'Panadería', 'Peluquería', 'Estética & SPA', 'Minimarket', 'Zapatería', 'Joyería', 'Papelería', 'Bares']
+    items: ['Cafetaria', 'Restauração', 'Fast Food', 'Padaria', 'Cabeleireiro', 'Estética & SPA', 'Minimercado', 'Sapataria', 'Joiaria', 'Papelaria', 'Bares']
   }, {
     icon: '☁️',
-    title: 'SaaS multinegocio',
+    title: 'SaaS multinegócio',
     count: '15',
-    items: ['Restaurante', 'Clínica', 'Odontología', 'Gimnasio', 'Colegio', 'Academia', 'Ferretería', 'Minimarket', 'Hospedaje', 'Taller Automotriz', 'Taller Textil', 'Tienda de Moda', 'Botica', 'Citas Médicas', 'Préstamos']
+    items: ['Restaurante', 'Clínica', 'Odontologia', 'Ginásio', 'Colégio', 'Academia', 'Ferragens', 'Minimercado', 'Hospedagem', 'Oficina Automóvel', 'Oficina Têxtil', 'Loja de Moda', 'Farmácia', 'Consultas Médicas', 'Crédito']
   }, {
     icon: '🏢',
-    title: 'Gestión & ERPs',
+    title: 'Gestão & ERPs',
     count: '10+',
-    items: ['Almacenes', 'Gestor documental', 'Contabilidad', 'Consultorio médico', 'Asistencia digital', 'Encomiendas', 'Planilla', 'Servicio técnico', 'ERP educativo', 'ERP farmacia']
+    items: ['Armazéns', 'Gestor documental', 'Contabilidade', 'Consultório médico', 'Assiduidade digital', 'Encomendas', 'Folha de pagamento', 'Serviço técnico', 'ERP educativo', 'ERP farmácia']
   }, {
     icon: '🤝',
-    title: 'CRMs a medida',
+    title: 'CRMs à medida',
     count: '8',
-    items: ['Tienda online', 'Delivery', 'Odontología', 'Agencia de viajes', 'Colegio', 'Condominio', 'Ventas', 'Tienda de móviles']
+    items: ['Loja online', 'Delivery', 'Odontologia', 'Agência de viagens', 'Colégio', 'Condomínio', 'Vendas', 'Loja de telemóveis']
   }];
   const extras = [{
     icon: '📊',
-    title: 'Dashboard todo-en-uno',
-    desc: 'Gastos, CRM, tareas, documentos y metas en una sola plataforma.',
-    tag: 'Todo en 1'
+    title: 'Dashboard tudo-em-um',
+    desc: 'Despesas, CRM, tarefas, documentos e metas numa só plataforma.',
+    tag: 'Tudo em 1'
   }, {
     icon: '📱',
-    title: 'Apps móviles validadas',
-    desc: 'Android & iOS publicadas en Google Play y App Store.',
+    title: 'Apps móveis validadas',
+    desc: 'Android & iOS publicadas na Google Play e App Store.',
     tag: 'Android · iOS'
   }, {
     icon: '🎮',
-    title: 'Juegos & Gamificación',
-    desc: 'Juegos web y móviles, casuales y arcade.',
-    tag: 'Web · Móvil'
+    title: 'Jogos & Gamificação',
+    desc: 'Jogos web e móveis, casuais e arcade.',
+    tag: 'Web · Móvel'
   }, {
     icon: '🧠',
     title: 'IA & Agentes',
-    desc: 'Chatbots IA y agentes autónomos como Luna.',
-    tag: 'IA propia'
+    desc: 'Chatbots IA e agentes autónomos como Luna.',
+    tag: 'IA própria'
   }];
   return /*#__PURE__*/React.createElement("section", {
     id: "apps",
@@ -1389,11 +1360,11 @@ const AppsCatalogSection = () => {
     className: "sh c rev"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ew"
-  }, "Aplicaciones a medida"), /*#__PURE__*/React.createElement("h2", {
+  }, "Aplica\xE7\xF5es \xE0 medida"), /*#__PURE__*/React.createElement("h2", {
     className: "sh-t"
-  }, "Software hecho por sectores, no plantillas."), /*#__PURE__*/React.createElement("p", {
+  }, "Software feito por setores, n\xE3o modelos."), /*#__PURE__*/React.createElement("p", {
     className: "sh-d"
-  }, "Un cat\xE1logo propio con m\xE1s de 88 soluciones: TPV, SaaS, ERPs, CRMs y sistemas de gesti\xF3n adaptados al d\xEDa a d\xEDa de cada negocio.")), /*#__PURE__*/React.createElement("div", {
+  }, "Um cat\xE1logo pr\xF3prio com mais de 88 solu\xE7\xF5es: TPV, SaaS, ERPs, CRMs e sistemas de gest\xE3o adaptados ao dia a dia de cada neg\xF3cio.")), /*#__PURE__*/React.createElement("div", {
     className: "g4"
   }, groups.map((g, i) => /*#__PURE__*/React.createElement("div", {
     key: g.title,
@@ -1437,7 +1408,7 @@ const AppsCatalogSection = () => {
     className: "card-cta"
   }, /*#__PURE__*/React.createElement("a", {
     href: "#contacto"
-  }, "Quiero una app as\xED \u2192"))))), /*#__PURE__*/React.createElement("div", {
+  }, "Quero uma app assim \u2192"))))), /*#__PURE__*/React.createElement("div", {
     className: "apps-strip rev"
   }, extras.map(x => /*#__PURE__*/React.createElement("div", {
     key: x.title,
@@ -1456,35 +1427,33 @@ const AppsCatalogSection = () => {
       fontSize: 13,
       color: 'var(--txt-s)'
     }
-  }, "+88 aplicaciones en cat\xE1logo \xB7 Entrega digital \xB7 Multidioma (es \xB7 pt \xB7 en \xB7 ca) \xB7 Pago flexible")));
+  }, "+88 aplica\xE7\xF5es em cat\xE1logo \xB7 Entrega digital \xB7 Multilingue (es \xB7 pt \xB7 en \xB7 ca) \xB7 Pagamento flex\xEDvel")));
 };
-
-/* ── NEXO ECOSYSTEM ── */
 const EcosystemSection = () => {
   const cards = [{
     icon: '🧠',
     title: 'Luna — Agente autónomo',
-    tag: 'IA propia',
+    tag: 'IA própria',
     sc: 'blue',
-    desc: 'Sistema de inteligencia propio que razona en la nube y ejecuta acciones reales en el servidor: archivos, shell, git y dashboards de forma autónoma.',
-    feats: ['Monitoreo inteligente 24/7', 'Firewall activo y anti fuerza bruta', 'Detección de ataques con geolocalización de IPs', 'Accesos controlados y contraseñas reforzadas']
+    desc: 'Sistema de inteligência próprio que raciocina na nuvem e executa ações reais no servidor: ficheiros, shell, git e dashboards de forma autónoma.',
+    feats: ['Monitorização inteligente 24/7', 'Firewall ativo e anti força bruta', 'Deteção de ataques com geolocalização de IPs', 'Acessos controlados e palavras-passe reforçadas']
   }, {
     icon: '🛒',
     title: 'Nexo Digital Store',
     tag: 'Plataforma',
     sc: 'green',
-    desc: 'Plataforma completa de aplicaciones de negocio con +88 productos: TPV, SaaS, webs y apps, con catálogo, ficha de producto y entrega digital.',
-    feats: ['+88 productos organizados', 'Transferencia y Bizum, Stripe en camino', 'Descarga con verificación de compra', 'Panel de administración centralizado', 'Español · Portugués · Inglés · Catalán']
+    desc: 'Plataforma completa de aplicações de negócio com +88 produtos: TPV, SaaS, websites e apps, com catálogo, ficha de produto e entrega digital.',
+    feats: ['+88 produtos organizados', 'Transferência e Bizum, Stripe a caminho', 'Download com verificação de compra', 'Painel de administração centralizado', 'Espanhol · Português · Inglês · Catalão']
   }, {
     icon: '💼',
     title: 'Nexo Business Suite',
-    tag: 'Suite de negocio',
+    tag: 'Suite de negócio',
     sc: 'orange',
-    desc: 'Soluciones listas para usar: gestión documental por áreas (Nexus), RRHH, logística, contabilidad, clínicas y retail, más un creador de landing pages.',
-    feats: ['Nexus: expedientes por áreas', 'RRHH, logística y contabilidad', 'Soluciones para clínicas y retail', 'Creador de landing pages']
+    desc: 'Soluções prontas a usar: gestão documental por áreas (Nexus), RH, logística, contabilidade, clínicas e retalho, mais um criador de landing pages.',
+    feats: ['Nexus: processos por áreas', 'RH, logística e contabilidade', 'Soluções para clínicas e retalho', 'Criador de landing pages']
   }];
   return /*#__PURE__*/React.createElement("section", {
-    id: "ecosistema",
+    id: "ecossistema",
     className: "sec"
   }, /*#__PURE__*/React.createElement("div", {
     className: "wrap"
@@ -1492,11 +1461,11 @@ const EcosystemSection = () => {
     className: "sh c rev"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ew"
-  }, "El ecosistema Nexo"), /*#__PURE__*/React.createElement("h2", {
+  }, "O ecossistema Nexo"), /*#__PURE__*/React.createElement("h2", {
     className: "sh-t"
-  }, "Tecnolog\xEDa propia, operada por nosotros."), /*#__PURE__*/React.createElement("p", {
+  }, "Tecnologia pr\xF3pria, operada por n\xF3s."), /*#__PURE__*/React.createElement("p", {
     className: "sh-d"
-  }, "IA aut\xF3noma, tienda de software y suite de negocio: lo que usamos para construir \u2014 y operar \u2014 productos reales cada d\xEDa.")), /*#__PURE__*/React.createElement("div", {
+  }, "IA aut\xF3noma, loja de software e suite de neg\xF3cio: o que usamos para construir \u2014 e operar \u2014 produtos reais todos os dias.")), /*#__PURE__*/React.createElement("div", {
     className: "g3"
   }, cards.map((c, i) => /*#__PURE__*/React.createElement("div", {
     key: c.title,
@@ -1531,31 +1500,29 @@ const EcosystemSection = () => {
     href: "#contacto"
   }, "Solicitar demo \u2192")))))));
 };
-
-/* ── TEAM ── */
 const TeamSection = () => {
   const T = [{
     i: 'E',
     g: 'linear-gradient(135deg,#1a56db,#0d9488)',
     n: 'Enoque Santos',
-    r: 'System IT · Seguridad · Developer',
-    b: 'Especialista en infraestructura IT, ciberseguridad y arquitectura de sistemas. Garantiza que cada proyecto se despliega sobre una base robusta, segura y escalable.',
+    r: 'System IT · Segurança · Developer',
+    b: 'Especialista em infraestrutura IT, cibersegurança e arquitetura de sistemas. Garante que cada projeto é implementado sobre uma base robusta, segura e escalável.',
     li: 'https://www.linkedin.com/in/enoque-santos/',
     portfolio: null
   }, {
     i: 'A',
     g: 'linear-gradient(135deg,#1e3a8a,#1a56db)',
     n: 'Abner Gabriel',
-    r: 'Developer Senior · Web & Apps',
-    b: 'Desarrollador senior con amplia experiencia en aplicaciones web de alto rendimiento. Transforma requisitos complejos en productos digitales claros y precisos.',
+    r: 'Developer Sénior · Web & Apps',
+    b: 'Desenvolvedor sénior com vasta experiência em aplicações web de alto desempenho. Transforma requisitos complexos em produtos digitais claros e precisos.',
     li: 'https://www.linkedin.com/in/abner-gabriel-b830163a1',
     portfolio: 'https://meu-portifolio-silk-xi.vercel.app/'
   }, {
     i: 'L',
     g: 'linear-gradient(135deg,#0f766e,#0d9488)',
     n: 'Elias Mendes',
-    r: 'Developer · Web & Apps · Empresario',
-    b: 'Desarrollador de aplicaciones con visión empresarial. Combina criterio técnico y enfoque de negocio para construir productos que generan valor real y duradero.',
+    r: 'Developer · Web & Apps · Empresário',
+    b: 'Desenvolvedor de aplicações com visão empresarial. Combina critério técnico e enfoque de negócio para construir produtos que geram valor real e duradouro.',
     li: 'https://www.linkedin.com/in/hiperclimservicos/',
     portfolio: null
   }];
@@ -1587,7 +1554,7 @@ const TeamSection = () => {
     y2: 3
   }));
   return /*#__PURE__*/React.createElement("section", {
-    id: "equipo",
+    id: "equipa",
     className: "sec-lg",
     style: {
       background: 'linear-gradient(to bottom,rgba(238,241,248,0.7),transparent)'
@@ -1598,11 +1565,11 @@ const TeamSection = () => {
     className: "sh c rev"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ew"
-  }, "Nuestro equipo"), /*#__PURE__*/React.createElement("h2", {
+  }, "A nossa equipa"), /*#__PURE__*/React.createElement("h2", {
     className: "sh-t"
-  }, "Personas reales detr\xE1s de cada proyecto."), /*#__PURE__*/React.createElement("p", {
+  }, "Pessoas reais por detr\xE1s de cada projeto."), /*#__PURE__*/React.createElement("p", {
     className: "sh-d"
-  }, "Equipo t\xE9cnico con experiencia en sistemas IT, seguridad, desarrollo y aplicaciones. Acompa\xF1amiento directo y soporte continuo en cada proyecto.")), /*#__PURE__*/React.createElement("div", {
+  }, "Equipa t\xE9cnica com experi\xEAncia em sistemas IT, seguran\xE7a, desenvolvimento e aplica\xE7\xF5es. Acompanhamento direto e suporte cont\xEDnuo em cada projeto.")), /*#__PURE__*/React.createElement("div", {
     className: "g3"
   }, T.map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: t.n,
@@ -1660,27 +1627,25 @@ const TeamSection = () => {
       textDecoration: 'none',
       transition: 'all .2s'
     }
-  }, React.createElement(IconPortfolio, null), 'Portafolio')))))));
+  }, React.createElement(IconPortfolio, null), 'Portfólio')))))));
 };
-
-/* ── FAQ ── */
 const FaqSection = () => {
   const [open, setOpen] = React.useState(null);
   const Q = [{
-    q: '¿Qué servicios de desarrollo web ofrecéis?',
-    a: 'En Nexo Digital ofrecemos desarrollo web, tiendas online, aplicaciones SaaS, CRM con WhatsApp, chatbots IA, TPV, kioscos digitales, ciberseguridad y auditorías SEO. Trabajamos con empresas de toda España, Portugal y más allá.'
+    q: 'Que serviços de desenvolvimento web oferecem?',
+    a: 'Na Nexo Digital oferecemos desenvolvimento web, lojas online, aplicações SaaS, CRM com WhatsApp, chatbots IA, TPV, quiosques digitais, cibersegurança e auditorias SEO. Trabalhamos com empresas de todo Portugal, Espanha e além.'
   }, {
-    q: '¿Cuánto cuesta una página web?',
-    a: 'El precio depende del proyecto. Una web informativa puede partir de 350€, una tienda online de 800€, y los sistemas a medida desde 1.500€. Contacta con nosotros para una propuesta personalizada sin compromiso y con respuesta en menos de 24h.'
+    q: 'Quanto custa um website?',
+    a: 'O preço depende do projeto. Um website informativo pode partir de 350€, uma loja online de 800€, e os sistemas à medida a partir de 1.500€. Contacte-nos para uma proposta personalizada sem compromisso e com resposta em menos de 24h.'
   }, {
-    q: '¿En cuánto tiempo desarrolláis una web?',
-    a: 'El plazo habitual es de 2 a 6 semanas para webs estándar y de 4 a 12 semanas para sistemas más complejos. Siempre acordamos un calendario concreto antes de empezar para que tengas visibilidad completa del proceso.'
+    q: 'Em quanto tempo desenvolvem um website?',
+    a: 'O prazo habitual é de 2 a 6 semanas para websites standard e de 4 a 12 semanas para sistemas mais complexos. Acordamos sempre um calendário concreto antes de começar para que tenha visibilidade completa do processo.'
   }, {
-    q: '¿Trabajáis en remoto o solo de forma presencial?',
-    a: 'Trabajamos 100% en remoto con cualquier empresa, independientemente de su ubicación. Tenemos clientes en España, Portugal y Europa. Toda la comunicación y seguimiento es directo y sin intermediarios.'
+    q: 'Trabalham em regime remoto ou apenas presencial?',
+    a: 'Trabalhamos 100% em regime remoto com qualquer empresa, independentemente da sua localização. Temos clientes em Portugal, Espanha e Europa. Toda a comunicação e acompanhamento é feito de forma direta e sem intermediários.'
   }, {
-    q: '¿Qué es un sistema TPV y cómo puede ayudar a mi negocio?',
-    a: 'Un TPV (Terminal Punto de Venta) es el software que gestiona las ventas, el inventario y los cobros de tu negocio. En Nexo Digital lo desarrollamos a medida o configuramos soluciones llave en mano para pequeños y medianos negocios.'
+    q: 'O que é um sistema TPV e como pode ajudar o meu negócio?',
+    a: 'Um TPV (Terminal Ponto de Venda) é o software que gere as vendas, o inventário e os pagamentos do seu negócio. Na Nexo Digital desenvolvemo-lo à medida ou configuramos soluções chave-na-mão para pequenas e médias empresas.'
   }];
   return /*#__PURE__*/React.createElement("section", {
     className: "sec"
@@ -1695,9 +1660,9 @@ const FaqSection = () => {
     className: "sh c rev"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ew"
-  }, "Preguntas frecuentes"), /*#__PURE__*/React.createElement("h2", {
+  }, "Perguntas frequentes"), /*#__PURE__*/React.createElement("h2", {
     className: "sh-t"
-  }, "Todo lo que necesitas saber.")), /*#__PURE__*/React.createElement("div", {
+  }, "Tudo o que precisa de saber.")), /*#__PURE__*/React.createElement("div", {
     className: "rev"
   }, Q.map((q, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
@@ -1711,8 +1676,6 @@ const FaqSection = () => {
     className: "faq-a"
   }, q.a)))))));
 };
-
-/* ── CONTACT FORM ── */
 const ContactSection = () => {
   const [st, setSt] = React.useState('idle');
   const [msg, setMsg] = React.useState('');
@@ -1720,25 +1683,37 @@ const ContactSection = () => {
   const ref = React.useRef();
   const buildMailto = d => {
     if (!d) return 'mailto:contacto@nexo-digital.app';
-    const subj = 'Nueva consulta: ' + (d.nombre || '') + (d.empresa ? ' — ' + d.empresa : '');
-    const body = ['Nombre: ' + (d.nombre || ''), 'Email: ' + (d.email || ''), 'Teléfono: ' + (d.telefono || ''), 'Empresa: ' + (d.empresa || ''), 'Servicio: ' + (d.servicio || ''), 'Presupuesto: ' + (d.presupuesto || ''), 'Plazo: ' + (d.timeline || ''), '', 'Descripción:', d.descripcion || ''].join('\n');
+    const subj = 'Nova consulta: ' + (d.nome || '') + (d.empresa ? ' — ' + d.empresa : '');
+    const body = ['Nome: ' + (d.nome || ''), 'Email: ' + (d.email || ''), 'Telefone: ' + (d.telefone || ''), 'Empresa: ' + (d.empresa || ''), 'Serviço: ' + (d.servico || ''), 'Orçamento: ' + (d.orcamento || ''), 'Prazo: ' + (d.prazo || ''), '', 'Descrição:', d.descricao || ''].join('\n');
     return 'mailto:contacto@nexo-digital.app?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
   };
   const buildWa = d => {
     if (!d) return 'https://wa.me/34689135159';
-    const txt = 'Hola Nexo Digital! Me interesa ' + (d.servicio || 'vuestros servicios') + '. Soy ' + (d.nombre || 'un cliente potencial') + (d.empresa ? ' de ' + d.empresa : '') + (d.descripcion ? '. ' + d.descripcion.substring(0, 120) : '.') + ' ¿Podéis ayudarme?';
+    const txt = 'Olá Nexo Digital! Tenho interesse em ' + (d.servico || 'os vossos serviços') + '. Sou ' + (d.nome || 'um potencial cliente') + (d.empresa ? ' da ' + d.empresa : '') + (d.descricao ? '. ' + d.descricao.substring(0, 120) : '.') + ' Podem ajudar-me?';
     return 'https://wa.me/34689135159?text=' + encodeURIComponent(txt);
   };
   const submit = async e => {
     e.preventDefault();
     setSt('loading');
-    const data = Object.fromEntries(new FormData(ref.current).entries());
-    data.tipo = 'consulta-proyecto';
-    data._url = window.location.href;
-    setFdata(data);
+    const raw = Object.fromEntries(new FormData(ref.current).entries());
+    const data = {
+      nombre: raw.nome,
+      empresa: raw.empresa,
+      email: raw.email,
+      telefono: raw.telefone,
+      servicio: raw.servico,
+      presupuesto: raw.orcamento,
+      timeline: raw.prazo,
+      descripcion: raw.descricao,
+      tipo: 'consulta-projeto-pt',
+      _url: window.location.href
+    };
+    setFdata({
+      ...raw
+    });
     try {
       const params = new URLSearchParams();
-      Object.entries(data).forEach(([k, v]) => params.append(k, String(v)));
+      Object.entries(data).forEach(([k, v]) => params.append(k, String(v || '')));
       const r = await fetch('/api/send', {
         method: 'POST',
         headers: {
@@ -1752,7 +1727,7 @@ const ContactSection = () => {
       } catch (_) {
         j = {
           success: false,
-          message: 'El servidor no respondió correctamente (' + r.status + ').'
+          message: 'O servidor não respondeu corretamente (' + r.status + ').'
         };
       }
       if (j.success) {
@@ -1760,11 +1735,11 @@ const ContactSection = () => {
         ref.current.reset();
         setFdata(null);
       } else {
-        setMsg(j.message || 'Error al enviar.');
+        setMsg(j.message || 'Erro ao enviar.');
         setSt('err');
       }
     } catch (err) {
-      setMsg('No se pudo conectar con el servidor.');
+      setMsg('Não foi possível conectar ao servidor.');
       setSt('err');
     }
   };
@@ -1808,17 +1783,6 @@ const ContactSection = () => {
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'absolute',
-      width: 280,
-      height: 280,
-      borderRadius: '50%',
-      top: '50%',
-      left: '-60px',
-      background: 'radial-gradient(circle,rgba(13,148,136,0.18) 0%,transparent 70%)',
-      filter: 'blur(60px)'
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'absolute',
       inset: 0,
       backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px)',
       backgroundSize: '48px 48px',
@@ -1838,17 +1802,17 @@ const ContactSection = () => {
       borderColor: 'rgba(255,255,255,0.2)',
       color: 'rgba(255,255,255,0.85)'
     }
-  }, "Siguiente paso"), /*#__PURE__*/React.createElement("h2", {
+  }, "Pr\xF3ximo passo"), /*#__PURE__*/React.createElement("h2", {
     className: "sh-t",
     style: {
       color: '#ffffff'
     }
-  }, "\xBFTienes un proyecto en mente? Cu\xE9ntanoslo."), /*#__PURE__*/React.createElement("p", {
+  }, "Tem um projeto em mente? Conte-nos."), /*#__PURE__*/React.createElement("p", {
     className: "sh-d",
     style: {
       color: 'rgba(255,255,255,0.65)'
     }
-  }, "Te respondemos en menos de 24h. Trabajamos con empresas de cualquier lugar.")), /*#__PURE__*/React.createElement("div", {
+  }, "Respondemos em menos de 24h. Trabalhamos com empresas de qualquer lugar.")), /*#__PURE__*/React.createElement("div", {
     className: "fbox rev",
     style: {
       background: 'rgba(255,255,255,0.04)',
@@ -1868,7 +1832,7 @@ const ContactSection = () => {
     style: {
       fontSize: 18
     }
-  }, "\u2713"), /*#__PURE__*/React.createElement("span", null, "Consulta recibida. Te contactaremos en menos de 24 horas.")), st === 'err' && /*#__PURE__*/React.createElement("div", {
+  }, "\u2713"), /*#__PURE__*/React.createElement("span", null, "Consulta recebida. Entraremos em contacto em menos de 24 horas.")), st === 'err' && /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '14px 16px',
       borderRadius: 12,
@@ -1889,7 +1853,7 @@ const ContactSection = () => {
       color: 'rgba(255,255,255,0.5)',
       margin: '0 0 10px'
     }
-  }, "Contacta con nosotros directamente:"), /*#__PURE__*/React.createElement("div", {
+  }, "Contacte-nos diretamente:"), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       gap: 8,
@@ -1935,12 +1899,12 @@ const ContactSection = () => {
     className: "fg2"
   }, /*#__PURE__*/React.createElement("label", {
     className: "fl2"
-  }, "Nombre *"), /*#__PURE__*/React.createElement("input", {
-    name: "nombre",
+  }, "Nome *"), /*#__PURE__*/React.createElement("input", {
+    name: "nome",
     type: "text",
     className: "fi2",
     required: true,
-    placeholder: "Tu nombre"
+    placeholder: "O seu nome"
   })), /*#__PURE__*/React.createElement("div", {
     className: "fg2"
   }, /*#__PURE__*/React.createElement("label", {
@@ -1949,7 +1913,7 @@ const ContactSection = () => {
     name: "empresa",
     type: "text",
     className: "fi2",
-    placeholder: "Tu empresa"
+    placeholder: "A sua empresa"
   }))), /*#__PURE__*/React.createElement("div", {
     className: "fr2"
   }, /*#__PURE__*/React.createElement("div", {
@@ -1961,82 +1925,82 @@ const ContactSection = () => {
     type: "email",
     className: "fi2",
     required: true,
-    placeholder: "tu@email.com"
+    placeholder: "o.seu@email.com"
   })), /*#__PURE__*/React.createElement("div", {
     className: "fg2"
   }, /*#__PURE__*/React.createElement("label", {
     className: "fl2"
-  }, "Tel\xE9fono *"), /*#__PURE__*/React.createElement("input", {
-    name: "telefono",
+  }, "Telefone *"), /*#__PURE__*/React.createElement("input", {
+    name: "telefone",
     type: "tel",
     className: "fi2",
     required: true,
-    placeholder: "N\xFAmero de tel\xE9fono"
+    placeholder: "N\xFAmero de telefone"
   }))), /*#__PURE__*/React.createElement("div", {
     className: "fg2"
   }, /*#__PURE__*/React.createElement("label", {
     className: "fl2"
-  }, "\xBFQu\xE9 servicio te interesa? *"), /*#__PURE__*/React.createElement("select", {
-    name: "servicio",
+  }, "Que servi\xE7o lhe interessa? *"), /*#__PURE__*/React.createElement("select", {
+    name: "servico",
     className: "fs2",
     required: true
   }, /*#__PURE__*/React.createElement("option", {
     value: ""
-  }, "Selecciona una opci\xF3n"), /*#__PURE__*/React.createElement("optgroup", {
-    label: "\u2500\u2500 Productos SaaS \u2500\u2500"
+  }, "Selecione uma op\xE7\xE3o"), /*#__PURE__*/React.createElement("optgroup", {
+    label: "\u2500\u2500 Produtos SaaS \u2500\u2500"
   }, /*#__PURE__*/React.createElement("option", {
     value: "Nexo Invoicer"
-  }, "Nexo Invoicer (Facturaci\xF3n)"), /*#__PURE__*/React.createElement("option", {
+  }, "Nexo Invoicer (Fatura\xE7\xE3o)"), /*#__PURE__*/React.createElement("option", {
     value: "SpeakEasily"
-  }, "SpeakEasily (Comunicaci\xF3n digital)"), /*#__PURE__*/React.createElement("option", {
+  }, "SpeakEasily (Comunica\xE7\xE3o digital)"), /*#__PURE__*/React.createElement("option", {
     value: "Nexo CRM & WhatsApp"
   }, "Nexo CRM & WhatsApp"), /*#__PURE__*/React.createElement("option", {
     value: "Nexo SEO Audit"
   }, "Nexo SEO Audit")), /*#__PURE__*/React.createElement("optgroup", {
-    label: "\u2500\u2500 Servicios \u2500\u2500"
+    label: "\u2500\u2500 Servi\xE7os \u2500\u2500"
   }, /*#__PURE__*/React.createElement("option", {
-    value: "Landing Page / P\xE1gina Web"
-  }, "Landing Page / P\xE1gina Web"), /*#__PURE__*/React.createElement("option", {
-    value: "Tienda Online"
-  }, "Tienda Online"), /*#__PURE__*/React.createElement("option", {
-    value: "TPV & Kioscos"
-  }, "TPV & Kioscos Digitales"), /*#__PURE__*/React.createElement("option", {
-    value: "Sistemas a Medida"
-  }, "Sistemas a Medida (ERP/CRM)"), /*#__PURE__*/React.createElement("option", {
-    value: "Tr\xE1fico pago / Anuncios"
-  }, "Tr\xE1fico Pago / Anuncios"), /*#__PURE__*/React.createElement("option", {
-    value: "Ciberseguridad"
-  }, "Ciberseguridad & Infraestructura"), /*#__PURE__*/React.createElement("option", {
-    value: "Otro"
-  }, "Otro / No definido")))), /*#__PURE__*/React.createElement("div", {
+    value: "Landing Page / Website"
+  }, "Landing Page / Website"), /*#__PURE__*/React.createElement("option", {
+    value: "Loja Online"
+  }, "Loja Online"), /*#__PURE__*/React.createElement("option", {
+    value: "TPV & Quiosques"
+  }, "TPV & Quiosques Digitais"), /*#__PURE__*/React.createElement("option", {
+    value: "Sistemas \xE0 Medida"
+  }, "Sistemas \xE0 Medida (ERP/CRM)"), /*#__PURE__*/React.createElement("option", {
+    value: "Tr\xE1fego pago / An\xFAncios"
+  }, "Tr\xE1fego Pago / An\xFAncios"), /*#__PURE__*/React.createElement("option", {
+    value: "Ciberseguran\xE7a"
+  }, "Ciberseguran\xE7a & Infraestrutura"), /*#__PURE__*/React.createElement("option", {
+    value: "Outro"
+  }, "Outro / N\xE3o definido")))), /*#__PURE__*/React.createElement("div", {
     className: "fr2"
   }, /*#__PURE__*/React.createElement("div", {
     className: "fg2"
   }, /*#__PURE__*/React.createElement("label", {
     className: "fl2"
-  }, "Presupuesto aproximado"), /*#__PURE__*/React.createElement("select", {
-    name: "presupuesto",
+  }, "Or\xE7amento aproximado"), /*#__PURE__*/React.createElement("select", {
+    name: "orcamento",
     className: "fs2"
   }, /*#__PURE__*/React.createElement("option", {
     value: ""
-  }, "Selecciona un rango"), /*#__PURE__*/React.createElement("option", null, "350\u20AC \u2013 800\u20AC"), /*#__PURE__*/React.createElement("option", null, "800\u20AC \u2013 1.500\u20AC"), /*#__PURE__*/React.createElement("option", null, "1.500\u20AC \u2013 3.000\u20AC"), /*#__PURE__*/React.createElement("option", null, "3.000\u20AC \u2013 5.000\u20AC"), /*#__PURE__*/React.createElement("option", null, "M\xE1s de 5.000\u20AC"), /*#__PURE__*/React.createElement("option", null, "Pago mensual"))), /*#__PURE__*/React.createElement("div", {
+  }, "Selecione um intervalo"), /*#__PURE__*/React.createElement("option", null, "350\u20AC \u2013 800\u20AC"), /*#__PURE__*/React.createElement("option", null, "800\u20AC \u2013 1.500\u20AC"), /*#__PURE__*/React.createElement("option", null, "1.500\u20AC \u2013 3.000\u20AC"), /*#__PURE__*/React.createElement("option", null, "3.000\u20AC \u2013 5.000\u20AC"), /*#__PURE__*/React.createElement("option", null, "Mais de 5.000\u20AC"), /*#__PURE__*/React.createElement("option", null, "Pagamento mensal"))), /*#__PURE__*/React.createElement("div", {
     className: "fg2"
   }, /*#__PURE__*/React.createElement("label", {
     className: "fl2"
-  }, "\xBFCu\xE1ndo lo necesitas?"), /*#__PURE__*/React.createElement("select", {
-    name: "timeline",
+  }, "Quando precisa?"), /*#__PURE__*/React.createElement("select", {
+    name: "prazo",
     className: "fs2"
   }, /*#__PURE__*/React.createElement("option", {
     value: ""
-  }, "Selecciona"), /*#__PURE__*/React.createElement("option", null, "Lo antes posible"), /*#__PURE__*/React.createElement("option", null, "En 1 mes"), /*#__PURE__*/React.createElement("option", null, "En 2\u20133 meses"), /*#__PURE__*/React.createElement("option", null, "Sin prisa")))), /*#__PURE__*/React.createElement("div", {
+  }, "Selecione"), /*#__PURE__*/React.createElement("option", null, "O mais r\xE1pido poss\xEDvel"), /*#__PURE__*/React.createElement("option", null, "Em 1 m\xEAs"), /*#__PURE__*/React.createElement("option", null, "Em 2\u20133 meses"), /*#__PURE__*/React.createElement("option", null, "Sem pressa")))), /*#__PURE__*/React.createElement("div", {
     className: "fg2"
   }, /*#__PURE__*/React.createElement("label", {
     className: "fl2"
-  }, "Describe tu proyecto *"), /*#__PURE__*/React.createElement("textarea", {
-    name: "descripcion",
+  }, "Descreva o seu projeto *"), /*#__PURE__*/React.createElement("textarea", {
+    name: "descricao",
     className: "ft2",
     required: true,
-    placeholder: "\xBFQu\xE9 necesitas? \xBFQu\xE9 objetivos tienes?"
+    placeholder: "O que precisa? Quais s\xE3o os seus objetivos?"
   })), /*#__PURE__*/React.createElement("button", {
     type: "submit",
     className: "btn btn-p",
@@ -2048,17 +2012,15 @@ const ContactSection = () => {
       boxShadow: '0 4px 24px rgba(37,99,235,0.5)'
     },
     disabled: st === 'loading'
-  }, st === 'loading' ? 'Enviando…' : 'Enviar consulta →'), /*#__PURE__*/React.createElement("p", {
+  }, st === 'loading' ? 'A enviar…' : 'Enviar consulta →'), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 11,
       fontSize: 11.5,
       color: 'rgba(255,255,255,0.4)',
       textAlign: 'center'
     }
-  }, "Respuesta en <24h \xB7 contacto@nexo-digital.app")))));
+  }, "Resposta em <24h \xB7 contacto@nexo-digital.app")))));
 };
-
-/* ── FOOTER ── */
 const Footer = () => /*#__PURE__*/React.createElement("footer", {
   className: "footer"
 }, /*#__PURE__*/React.createElement("div", {
@@ -2073,7 +2035,7 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
     color: 'var(--txt-s)',
     maxWidth: 250
   }
-}, "Soluciones digitales con dise\xF1o premium, claridad t\xE9cnica y foco en negocio. Espa\xF1a \xB7 Portugal \xB7 Europa."), /*#__PURE__*/React.createElement("div", {
+}, "Solu\xE7\xF5es digitais com design premium, clareza t\xE9cnica e foco no neg\xF3cio. Portugal \xB7 Espanha \xB7 Europa."), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 16,
     display: 'flex',
@@ -2083,21 +2045,24 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
 }, ['LinkedIn', 'Instagram', 'X'].map(s => /*#__PURE__*/React.createElement("a", {
   key: s,
   href: "#",
-  className: "badge",
   style: {
-    fontSize: 10
+    fontSize: 10,
+    borderRadius: 6,
+    border: '1px solid rgba(255,255,255,0.12)',
+    padding: '4px 10px',
+    color: '#94a3b8'
   }
 }, s)))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
   className: "fh"
-}, "Productos SaaS"), ['Nexo Invoicer', 'SpeakEasily', 'Nexo CRM & WhatsApp', 'Nexo SEO Audit'].map(l => /*#__PURE__*/React.createElement("a", {
+}, "Produtos SaaS"), ['Nexo Invoicer', 'SpeakEasily', 'Nexo CRM & WhatsApp', 'Nexo SEO Audit'].map(l => /*#__PURE__*/React.createElement("a", {
   key: l,
   href: "#saas",
   className: "flk"
 }, l))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
   className: "fh"
-}, "Servicios"), ['Landing Page / Web', 'Tienda Online', 'TPV & Kioscos', 'Sistemas a Medida', 'Ciberseguridad'].map(l => /*#__PURE__*/React.createElement("a", {
+}, "Servi\xE7os"), ['Landing Page / Website', 'Loja Online', 'TPV & Quiosques', 'Sistemas à Medida', 'Cibersegurança'].map(l => /*#__PURE__*/React.createElement("a", {
   key: l,
-  href: "#servicios",
+  href: "#servicos",
   className: "flk"
 }, l))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
   className: "fh"
@@ -2109,13 +2074,13 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
   style: {
     cursor: 'default'
   }
-}, "Espa\xF1a \xB7 Portugal \xB7 Europa"), /*#__PURE__*/React.createElement("a", {
-  href: "#equipo",
+}, "Portugal \xB7 Espanha \xB7 Europa"), /*#__PURE__*/React.createElement("a", {
+  href: "#equipa",
   className: "flk",
   style: {
     marginTop: 12
   }
-}, "Nuestro equipo"), /*#__PURE__*/React.createElement("a", {
+}, "A nossa equipa"), /*#__PURE__*/React.createElement("a", {
   href: "#clientes",
   className: "flk"
 }, "Clientes"))), /*#__PURE__*/React.createElement("div", {
@@ -2128,26 +2093,364 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
     justifyContent: 'flex-end'
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "/aviso-legal.html",
+  href: "aviso-legal.html",
   className: "flk",
   style: {
     fontSize: 12
   }
 }, "Aviso Legal"), /*#__PURE__*/React.createElement("a", {
-  href: "/privacidad.html",
+  href: "privacidade.html",
   className: "flk",
   style: {
     fontSize: 12
   }
-}, "Privacidad"), /*#__PURE__*/React.createElement("a", {
+}, "Privacidade"), /*#__PURE__*/React.createElement("a", {
   href: "cookies.html",
   className: "flk",
   style: {
     fontSize: 12
   }
 }, "Cookies")))));
-
-/* ── STICKY BAR ── */
+const ProcessSection = () => {
+  const steps = [{
+    n: '01',
+    color: 'linear-gradient(135deg,#059669,#0d9488)',
+    icon: '💬',
+    title: 'Consulta gratuita',
+    desc: 'Conte-nos o seu projeto. Ouvimo-lo sem compromisso e em 24h dizemos exatamente o que podemos fazer e quanto custaria.'
+  }, {
+    n: '02',
+    color: 'linear-gradient(135deg,#7c3aed,#1a56db)',
+    icon: '📋',
+    title: 'Proposta técnica',
+    desc: 'Recebe um documento com âmbito, tecnologia, prazos e preço fechado. Sem custos ocultos nem surpresas no final.'
+  }, {
+    n: '03',
+    color: 'linear-gradient(135deg,#1a56db,#0d9488)',
+    icon: '💻',
+    title: 'Desenvolvimento iterativo',
+    desc: 'Construímos em sprints com entregas visíveis. Tem acesso a cada avanço e canais diretos com a equipa.'
+  }, {
+    n: '04',
+    color: 'linear-gradient(135deg,#d97706,#059669)',
+    icon: '🚀',
+    title: 'Lançamento e suporte',
+    desc: 'Fazemos o deploy com CI/CD, monitorização 24/7 e acompanhamos com suporte pós-lançamento incluído.'
+  }];
+  return /*#__PURE__*/React.createElement("section", {
+    id: "processo",
+    className: "sec-lg"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sh c rev"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "ew",
+    style: {
+      color: 'var(--emerald-s)',
+      borderColor: 'rgba(52,211,153,0.2)'
+    }
+  }, "O nosso processo"), /*#__PURE__*/React.createElement("h2", {
+    className: "sh-t"
+  }, "Da ideia ao lan\xE7amento, sem fric\xE7\xE3o."), /*#__PURE__*/React.createElement("p", {
+    className: "sh-d"
+  }, "Um processo claro, iterativo e com comunica\xE7\xE3o direta em cada fase.")), /*#__PURE__*/React.createElement("div", {
+    className: "g2",
+    style: {
+      maxWidth: 860,
+      margin: '0 auto'
+    }
+  }, steps.map((s, i) => /*#__PURE__*/React.createElement("div", {
+    key: s.title,
+    className: `card rev d${i % 4 + 1}`,
+    style: {
+      flexDirection: 'row',
+      gap: 18,
+      alignItems: 'flex-start'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "proc-icon",
+    style: {
+      background: s.color
+    }
+  }, s.icon), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "proc-num"
+  }, "Passo ", s.n), /*#__PURE__*/React.createElement("div", {
+    className: "card-h",
+    style: {
+      marginTop: 0
+    }
+  }, s.title), /*#__PURE__*/React.createElement("p", {
+    className: "card-p",
+    style: {
+      marginTop: 6
+    }
+  }, s.desc)))))));
+};
+const IconStar = () => /*#__PURE__*/React.createElement("svg", {
+  width: "14",
+  height: "14",
+  viewBox: "0 0 24 24",
+  fill: "#f59e0b",
+  xmlns: "http://www.w3.org/2000/svg"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M12 2l2.9 6.26L21.5 9.27l-4.75 4.63 1.12 6.54L12 17.42l-5.87 3.02 1.12-6.54L2.5 9.27l6.6-1.01z"
+}));
+const TestimonialsSection = () => {
+  const T = [{
+    q: 'Passámos de perder leads por não responder a tempo a ter um chatbot que os atende em segundos. Em 6 semanas conseguimos +38% em conversões.',
+    author: 'Carlos M.',
+    role: 'Oficina mecânica',
+    initials: 'CM',
+    color: 'linear-gradient(135deg,#059669,#0d9488)'
+  }, {
+    q: 'A auditoria técnica revelou-nos 67% de rejeição em mobile. Em 2 semanas baixámos para 22%. As vendas subiram nesse mesmo mês.',
+    author: 'Mariana S.',
+    role: 'E-commerce',
+    initials: 'MS',
+    color: 'linear-gradient(135deg,#7c3aed,#1a56db)'
+  }, {
+    q: 'Ligaram o nosso CRM ao sistema de faturação. 15 horas semanais de trabalho manual eliminadas. O ROI pagou-se no primeiro mês.',
+    author: 'João P.',
+    role: 'Consultoria B2B · Lisboa',
+    initials: 'JP',
+    color: 'linear-gradient(135deg,#1e3a8a,#0d9488)'
+  }, {
+    q: 'Montaram-nos um SaaS à medida para o nosso restaurante com gestão de mesas, pedidos e relatórios. Hoje funciona tudo sem atrito e a equipa usa diariamente.',
+    author: 'Ana C.',
+    role: 'Restaurante · Porto',
+    initials: 'AC',
+    color: 'linear-gradient(135deg,#0d9488,#7c3aed)'
+  }, {
+    q: 'O TPV à medida para a nossa pastelaria reduziu as filas e os erros de caixa quase a zero. O suporte responde em minutos quando precisamos.',
+    author: 'Rita F.',
+    role: 'Pastelaria · Braga',
+    initials: 'RF',
+    color: 'linear-gradient(135deg,#f59e0b,#ef4444)'
+  }, {
+    q: 'Ajudaram-nos a lançar a nossa loja online em 14 dias com SEO incluído. Hoje 40% das vendas chegam pelo Google.',
+    author: 'Tiago M.',
+    role: 'Loja online · Faro',
+    initials: 'TM',
+    color: 'linear-gradient(135deg,#0ea5e9,#7c3aed)'
+  }, {
+    q: 'O dashboard tudo-em-um centraliza despesas, tarefas e documentos da clínica. A gestão administrativa passou de horas a minutos.',
+    author: 'Helena V.',
+    role: 'Clínica dentária · Coimbra',
+    initials: 'HV',
+    color: 'linear-gradient(135deg,#059669,#2563eb)'
+  }, {
+    q: 'O agente autónomo responde a consultas, organiza ficheiros e vigia o site 24/7. É como ter um funcionário digital que nunca dorme.',
+    author: 'Bruno S.',
+    role: 'Agência de viagens · Algarve',
+    initials: 'BS',
+    color: 'linear-gradient(135deg,#7c3aed,#0d9488)'
+  }];
+  const [idx, setIdx] = React.useState(0);
+  const [paused, setPaused] = React.useState(false);
+  const n = T.length;
+  React.useEffect(() => {
+    if (paused) return;
+    const t = setInterval(() => setIdx(i => (i + 1) % n), 7000);
+    return () => clearInterval(t);
+  }, [paused, n]);
+  const go = i => setIdx((i % n + n) % n);
+  return /*#__PURE__*/React.createElement("section", {
+    className: "sec-lg",
+    style: {
+      background: 'linear-gradient(to bottom,rgba(238,241,248,0.7),transparent)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sh c rev"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "ew",
+    style: {
+      color: 'var(--amber-s)',
+      borderColor: 'rgba(251,191,36,0.2)'
+    }
+  }, "Resultados reais"), /*#__PURE__*/React.createElement("h2", {
+    className: "sh-t"
+  }, "O que dizem os nossos clientes."), /*#__PURE__*/React.createElement("p", {
+    className: "sh-d"
+  }, "Empresas reais. N\xFAmeros reais. Sem testemunhos de stock.")), /*#__PURE__*/React.createElement("div", {
+    className: "rev",
+    style: {
+      maxWidth: 780,
+      margin: '0 auto',
+      position: 'relative'
+    },
+    onMouseEnter: () => setPaused(true),
+    onMouseLeave: () => setPaused(false),
+    onTouchStart: () => setPaused(true),
+    onTouchEnd: () => setPaused(false)
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      overflow: 'hidden',
+      borderRadius: 20
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      transition: 'transform .55s cubic-bezier(.16,1,.3,1)',
+      transform: 'translateX(-' + idx * 100 + '%)'
+    }
+  }, T.map((t, i) => /*#__PURE__*/React.createElement("div", {
+    key: t.author,
+    style: {
+      flex: '0 0 100%',
+      minWidth: '100%',
+      padding: '4px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "card",
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: 210
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "test-stars"
+  }, Array.from({
+    length: 5
+  }).map((_, j) => /*#__PURE__*/React.createElement("span", {
+    key: j,
+    className: "test-star"
+  }, /*#__PURE__*/React.createElement(IconStar, null)))), /*#__PURE__*/React.createElement("p", {
+    className: "test-q"
+  }, "\u201C", t.q, "\u201D"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      marginTop: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "test-av",
+    style: {
+      background: t.color
+    }
+  }, t.initials), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 600,
+      color: 'var(--txt)'
+    }
+  }, t.author), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: 'var(--txt-m)',
+      marginTop: 2
+    }
+  }, t.role)))))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 10,
+      marginTop: 18
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => go(idx - 1),
+    "aria-label": "Anterior",
+    style: {
+      width: 34,
+      height: 34,
+      borderRadius: '50%',
+      border: '1px solid rgba(29,78,216,0.2)',
+      background: '#fff',
+      color: '#1d4ed8',
+      cursor: 'pointer',
+      fontSize: 14,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      transition: 'all .2s'
+    }
+  }, "\u276E"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 6,
+      alignItems: 'center'
+    }
+  }, T.map((t, i) => /*#__PURE__*/React.createElement("button", {
+    key: t.author,
+    onClick: () => go(i),
+    "aria-label": 'Testemunho ' + (i + 1),
+    style: {
+      width: i === idx ? 22 : 8,
+      height: 8,
+      borderRadius: 999,
+      border: 'none',
+      cursor: 'pointer',
+      background: i === idx ? 'linear-gradient(135deg,#1d4ed8,#7c3aed)' : 'rgba(29,78,216,0.2)',
+      transition: 'all .3s'
+    }
+  }))), /*#__PURE__*/React.createElement("button", {
+    onClick: () => go(idx + 1),
+    "aria-label": "Seguinte",
+    style: {
+      width: 34,
+      height: 34,
+      borderRadius: '50%',
+      border: '1px solid rgba(29,78,216,0.2)',
+      background: '#fff',
+      color: '#1d4ed8',
+      cursor: 'pointer',
+      fontSize: 14,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      transition: 'all .2s'
+    }
+  }, "\u276F"))), /*#__PURE__*/React.createElement("div", {
+    className: "rev",
+    style: {
+      marginTop: 44,
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      gap: 'clamp(24px,5vw,56px)'
+    }
+  }, [{
+    v: '+70',
+    l: 'Clientes ativos'
+  }, {
+    v: '99.9%',
+    l: 'Uptime garantido'
+  }, {
+    v: '14d',
+    l: 'Entrega média'
+  }, {
+    v: '4.9',
+    l: 'Valorização média'
+  }].map(s => /*#__PURE__*/React.createElement("div", {
+    key: s.l,
+    style: {
+      textAlign: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 6,
+      fontFamily: 'var(--disp)',
+      fontSize: 'clamp(1.4rem,3vw,2rem)',
+      fontWeight: 600,
+      color: 'var(--txt)'
+    }
+  }, /*#__PURE__*/React.createElement(IconStar, null), s.v), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: 'var(--txt-m)',
+      marginTop: 4,
+      textTransform: 'uppercase',
+      letterSpacing: '.1em'
+    }
+  }, s.l))))));
+};
 const StickyBar = () => {
   const [show, setShow] = React.useState(false);
   const [dismissed, setDismissed] = React.useState(false);
@@ -2167,7 +2470,7 @@ const StickyBar = () => {
     className: "sticky-inner"
   }, /*#__PURE__*/React.createElement("p", {
     className: "sticky-txt"
-  }, /*#__PURE__*/React.createElement("strong", null, "\xBFBuscas soluciones digitales?"), " Habla con nosotros hoy."), /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("strong", null, "Procura solu\xE7\xF5es digitais?"), " Fale connosco hoje."), /*#__PURE__*/React.createElement("a", {
     href: "#contacto",
     className: "btn btn-p btn-sm"
   }, "Consulta gratuita \u2192"), /*#__PURE__*/React.createElement("button", {
@@ -2176,11 +2479,9 @@ const StickyBar = () => {
       setDismissed(true);
       setShow(false);
     },
-    "aria-label": "Cerrar"
+    "aria-label": "Fechar"
   }, "\u2715")));
 };
-
-/* ── SCROLL FAB ── */
 const ChatWidget = () => {
   const [open, setOpen] = React.useState(false);
   const [msgs, setMsgs] = React.useState([]);
@@ -2201,7 +2502,7 @@ const ChatWidget = () => {
       setInited(true);
       setMsgs([{
         r: 'b',
-        t: 'Hola! Soy el asistente de Nexo Digital. Puedo ayudarte con info sobre nuestros servicios, precios o encaminarte con el equipo.\n\nEn que puedo ayudarte?'
+        t: 'Olá! Sou o assistente da Nexo Digital. Posso ajudá-lo com informações sobre os nossos serviços, preços ou encaminhá-lo para a equipa.\n\nEm que posso ajudá-lo?'
       }]);
     }
     if (open) setTimeout(() => endRef.current && endRef.current.scrollIntoView({
@@ -2213,11 +2514,11 @@ const ChatWidget = () => {
       behavior: 'smooth'
     });
   }, [msgs, busy]);
-  const waLink = 'https://wa.me/34689135159?text=Hola%20Nexo%20Digital,%20vengo%20del%20chat%20de%20vuestra%20web';
+  const waLink = 'https://wa.me/34689135159?text=Olá%20Nexo%20Digital,%20venho%20do%20chat%20do%20vosso%20site';
   const localAnswer = txt => {
     try {
-      const stops = ['para', 'como', 'que', 'los', 'las', 'una', 'unos', 'unas', 'con', 'por', 'del', 'al', 'el', 'la', 'de', 'y', 'a', 'en', 'es', 'se', 'su', 'sus', 'este', 'esta', 'estos', 'quiero', 'quieres', 'cuanto', 'cual', 'puede', 'puedes', 'hacer', 'hace', 'seria', 'estaria', 'tener', 'necesito', 'queria', 'dime', 'informacion'];
-      const words = txt.toLowerCase().replace(/[^a-záéíóúüñç0-9\s]/gi, ' ').split(/\s+/).filter(w => w.length > 3 && stops.indexOf(w) === -1);
+      const stops = ['para', 'como', 'que', 'os', 'as', 'uma', 'uns', 'umas', 'com', 'por', 'do', 'da', 'ao', 'à', 'às', 'o', 'a', 'de', 'e', 'em', 'é', 'se', 'sua', 'seu', 'seus', 'suas', 'este', 'esta', 'estes', 'quero', 'quanto', 'qual', 'pode', 'podes', 'fazer', 'faz', 'seria', 'estar', 'ter', 'preciso', 'queria', 'diz', 'informacao', 'informação'];
+      const words = txt.toLowerCase().replace(/[^a-záéíóúüñçãõâêô0-9\s]/gi, ' ').split(/\s+/).filter(w => w.length > 3 && stops.indexOf(w) === -1);
       const body = document.body && document.body.innerText ? document.body.innerText.replace(/\s+/g, ' ') : '';
       if (!words.length || !body) return null;
       const paras = body.split(/(?<=[.!?])\s+/).filter(p => p.length > 30 && p.length < 420);
@@ -2234,7 +2535,7 @@ const ChatWidget = () => {
       }
       if (best && bestScore >= 1) {
         const clean = best.trim().replace(/^\s*[•\-\*#]+\s*/, '');
-        return 'He buscado en la web y esto es lo que he encontrado:\n\n' + clean.slice(0, 320) + '\n\n¿Te ayudo con algo más, o prefieres que te pase al equipo por WhatsApp?';
+        return 'Pesquisei no site e isto é o que encontrei:\n\n' + clean.slice(0, 320) + '\n\nPosso ajudar em mais alguma coisa, ou prefere que o passe para a equipa por WhatsApp?';
       }
       return null;
     } catch (e) {
@@ -2251,9 +2552,10 @@ const ChatWidget = () => {
     }];
     setMsgs(history);
     setBusy(true);
-    const fallback = localAnswer(txt) || 'Lo siento, no he podido conectar con el servicio y no tengo esa info en la página. Escríbenos por WhatsApp o a contacto@nexo-digital.app y te respondemos en 24h.';
+    const fallback = localAnswer(txt) || 'Lamento, não consegui ligar ao serviço e não tenho essa informação na página. Escreva-nos por WhatsApp ou para contacto@nexo-digital.app e respondemos em 24h.';
     try {
       const data = await _nexoChat({
+        lang: 'pt',
         messages: history.map(m => ({
           role: m.r === 'u' ? 'user' : 'assistant',
           content: m.t
@@ -2275,11 +2577,11 @@ const ChatWidget = () => {
     }
     setBusy(false);
   };
-  const chips = ['Que servicios ofreceis?', 'Cuanto cuesta una web?', 'Cuanto tarda el proyecto?', 'Quiero hablar con alguien'];
+  const chips = ['Que serviços oferecem?', 'Quanto custa um website?', 'Quanto demora o projeto?', 'Quero falar com alguém'];
   const Bubble = function (props) {
     const m = props.m;
     const isBot = m.r === 'b';
-    const hasWa = isBot && (m.t.toLowerCase().indexOf('whatsapp') !== -1 || m.t.toLowerCase().indexOf('contactar') !== -1 || m.t.toLowerCase().indexOf('escribi') !== -1);
+    const hasWa = isBot && (m.t.toLowerCase().indexOf('whatsapp') !== -1 || m.t.toLowerCase().indexOf('contactar') !== -1 || m.t.toLowerCase().indexOf('escrever') !== -1);
     return React.createElement('div', {
       style: {
         display: 'flex',
@@ -2329,7 +2631,7 @@ const ChatWidget = () => {
       backdropFilter: 'blur(20px)',
       borderRadius: 20,
       border: '1px solid rgba(0,0,0,0.09)',
-      boxShadow: '0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(255,255,255,0.05)',
+      boxShadow: '0 20px 60px rgba(0,0,0,0.55)',
       zIndex: 9998,
       display: 'flex',
       flexDirection: 'column',
@@ -2389,7 +2691,7 @@ const ChatWidget = () => {
       color: 'rgba(255,255,255,0.8)',
       fontWeight: 500
     }
-  }, "En l\xEDnea"))), /*#__PURE__*/React.createElement("button", {
+  }, "Online"))), /*#__PURE__*/React.createElement("button", {
     onClick: function () {
       setOpen(false);
     },
@@ -2493,7 +2795,7 @@ const ChatWidget = () => {
         send();
       }
     },
-    placeholder: "Escribe tu pregunta...",
+    placeholder: "Escreva a sua pergunta...",
     style: {
       flex: 1,
       background: '#f0f4ff',
@@ -2623,17 +2925,13 @@ const ScrollFab = () => {
     return () => window.removeEventListener('scroll', fn);
   }, []);
   const handleClick = () => {
-    if (atBottom) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: 'smooth'
-      });
-    }
+    if (atBottom) window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });else window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth'
+    });
   };
   const base = {
     position: 'fixed',
@@ -2654,13 +2952,13 @@ const ScrollFab = () => {
     pointerEvents: vis ? 'all' : 'none',
     boxShadow: '0 4px 20px rgba(29,78,216,0.45)'
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+  return /*#__PURE__*/React.createElement("button", {
     onClick: handleClick,
     style: {
       ...base,
       bottom: 148
     },
-    "aria-label": atBottom ? 'Volver arriba' : 'Ir abajo',
+    "aria-label": atBottom ? 'Voltar ao topo' : 'Ir para baixo',
     onMouseEnter: e => {
       e.currentTarget.style.transform = 'scale(1.1) translateY(0)';
       e.currentTarget.style.boxShadow = '0 6px 28px rgba(29,78,216,0.6)';
@@ -2684,12 +2982,10 @@ const ScrollFab = () => {
     }
   }, /*#__PURE__*/React.createElement("path", {
     d: "M18 15l-6-6-6 6"
-  }))));
+  })));
 };
-
-/* ── WHATSAPP FAB ── */
 const WaFab = () => /*#__PURE__*/React.createElement("a", {
-  href: "https://wa.me/34689135159?text=Hola%20Nexo%20Digital,%20me%20interesa%20vuestros%20servicios",
+  href: "https://wa.me/34689135159?text=Ol\xE1%20Nexo%20Digital,%20tenho%20interesse%20nos%20vossos%20servi\xE7os",
   target: "_blank",
   rel: "noreferrer",
   className: "wa-fab",
@@ -2701,354 +2997,6 @@ const WaFab = () => /*#__PURE__*/React.createElement("a", {
 }, /*#__PURE__*/React.createElement("path", {
   d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
 })));
-
-/* ── PROCESS ── */
-const ProcessSection = () => {
-  const steps = [{
-    n: '01',
-    color: 'linear-gradient(135deg,#059669,#0d9488)',
-    icon: '💬',
-    title: 'Consulta gratuita',
-    desc: 'Cuéntanos tu proyecto. Te escuchamos sin compromiso y en 24h te decimos exactamente qué podemos hacer y cuánto costaría.'
-  }, {
-    n: '02',
-    color: 'linear-gradient(135deg,#7c3aed,#1a56db)',
-    icon: '📋',
-    title: 'Propuesta técnica',
-    desc: 'Recibes un documento con alcance, tecnología, plazos y precio cerrado. Sin costes ocultos ni sorpresas al final.'
-  }, {
-    n: '03',
-    color: 'linear-gradient(135deg,#1a56db,#0d9488)',
-    icon: '⚙️',
-    title: 'Desarrollo iterativo',
-    desc: 'Construimos en sprints con entregas visibles. Tienes acceso a cada avance y canales directos con el equipo.'
-  }, {
-    n: '04',
-    color: 'linear-gradient(135deg,#d97706,#059669)',
-    icon: '🚀',
-    title: 'Lanzamiento y soporte',
-    desc: 'Desplegamos con CI/CD, monitorización 24/7 y te acompañamos con soporte post-lanzamiento incluido.'
-  }];
-  return /*#__PURE__*/React.createElement("section", {
-    id: "proceso",
-    className: "sec-lg"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "wrap"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "sh c rev"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "ew",
-    style: {
-      color: 'var(--emerald-s)',
-      borderColor: 'rgba(52,211,153,0.2)'
-    }
-  }, "Nuestro proceso"), /*#__PURE__*/React.createElement("h2", {
-    className: "sh-t"
-  }, "De la idea al lanzamiento, sin fricci\xF3n."), /*#__PURE__*/React.createElement("p", {
-    className: "sh-d"
-  }, "Un proceso claro, iterativo y con comunicaci\xF3n directa en cada fase.")), /*#__PURE__*/React.createElement("div", {
-    className: "g2",
-    style: {
-      maxWidth: 860,
-      margin: '0 auto'
-    }
-  }, steps.map((s, i) => /*#__PURE__*/React.createElement("div", {
-    key: s.title,
-    className: `card rev d${i % 4 + 1}`,
-    style: {
-      flexDirection: 'row',
-      gap: 18,
-      alignItems: 'flex-start'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "proc-icon",
-    style: {
-      background: s.color
-    }
-  }, s.icon), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "proc-num"
-  }, "Paso ", s.n), /*#__PURE__*/React.createElement("div", {
-    className: "card-h",
-    style: {
-      marginTop: 0
-    }
-  }, s.title), /*#__PURE__*/React.createElement("p", {
-    className: "card-p",
-    style: {
-      marginTop: 6
-    }
-  }, s.desc)))))));
-};
-
-/* ── STAR ICON ── */
-const IconStar = () => /*#__PURE__*/React.createElement("svg", {
-  width: "14",
-  height: "14",
-  viewBox: "0 0 24 24",
-  fill: "#f59e0b",
-  xmlns: "http://www.w3.org/2000/svg"
-}, /*#__PURE__*/React.createElement("path", {
-  d: "M12 2l2.9 6.26L21.5 9.27l-4.75 4.63 1.12 6.54L12 17.42l-5.87 3.02 1.12-6.54L2.5 9.27l6.6-1.01z"
-}));
-
-/* ── TESTIMONIALS ── */
-const TestimonialsSection = () => {
-  const T = [{
-    q: 'Pasamos de perder leads por no responder a tiempo a tener un chatbot que los atiende en segundos. En 6 semanas logramos un +38% en conversiones.',
-    author: 'Carlos M.',
-    role: 'Taller mecánico',
-    initials: 'CM',
-    color: 'linear-gradient(135deg,#059669,#0d9488)'
-  }, {
-    q: 'La auditoría técnica nos reveló un 67% de rebote en mobile. En 2 semanas lo bajamos al 22%. Las ventas subieron ese mismo mes.',
-    author: 'Sara L.',
-    role: 'E-commerce',
-    initials: 'SL',
-    color: 'linear-gradient(135deg,#7c3aed,#1a56db)'
-  }, {
-    q: 'Conectaron nuestro CRM con el sistema de facturación. 15 horas semanales de trabajo manual eliminadas. El ROI se pagó en el primer mes.',
-    author: 'Javier R.',
-    role: 'Consultoría B2B · Madrid',
-    initials: 'JR',
-    color: 'linear-gradient(135deg,#1e3a8a,#0d9488)'
-  }, {
-    q: 'Nos montaron un SaaS a medida para nuestro restaurante con gestión de mesas, pedidos y reportes. Hoy funciona todo sin fricción y el equipo lo usa a diario.',
-    author: 'Marta G.',
-    role: 'Restaurante · Barcelona',
-    initials: 'MG',
-    color: 'linear-gradient(135deg,#0d9488,#7c3aed)'
-  }, {
-    q: 'El TPV a medida para nuestra cafetería redujo las colas y los errores de caja casi a cero. El soporte responde en minutos cuando lo necesitamos.',
-    author: 'Lucía F.',
-    role: 'Cafetería · Valencia',
-    initials: 'LF',
-    color: 'linear-gradient(135deg,#f59e0b,#ef4444)'
-  }, {
-    q: 'Nos ayudaron a lanzar nuestra tienda online en 14 días con SEO incluido. Hoy el 40% de las ventas llegan por Google.',
-    author: 'Andrés T.',
-    role: 'Tienda online · Sevilla',
-    initials: 'AT',
-    color: 'linear-gradient(135deg,#0ea5e9,#7c3aed)'
-  }, {
-    q: 'El dashboard todo-en-uno centraliza gastos, tareas y documentos de la clínica. La gestión administrativa pasó de horas a minutos.',
-    author: 'Elena V.',
-    role: 'Clínica dental · Zaragoza',
-    initials: 'EV',
-    color: 'linear-gradient(135deg,#059669,#2563eb)'
-  }, {
-    q: 'El agente autónomo responde consultas, organiza archivos y vigila la web 24/7. Es como tener un empleado digital que nunca duerme.',
-    author: 'Diego S.',
-    role: 'Agencia de viajes · Bilbao',
-    initials: 'DS',
-    color: 'linear-gradient(135deg,#7c3aed,#0d9488)'
-  }];
-  const [idx, setIdx] = React.useState(0);
-  const [paused, setPaused] = React.useState(false);
-  const n = T.length;
-  React.useEffect(() => {
-    if (paused) return;
-    const t = setInterval(() => setIdx(i => (i + 1) % n), 7000);
-    return () => clearInterval(t);
-  }, [paused, n]);
-  const go = i => setIdx((i % n + n) % n);
-  return /*#__PURE__*/React.createElement("section", {
-    className: "sec-lg",
-    style: {
-      background: 'linear-gradient(to bottom,rgba(238,241,248,0.7),transparent)'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "wrap"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "sh c rev"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "ew",
-    style: {
-      color: 'var(--amber-s)',
-      borderColor: 'rgba(251,191,36,0.2)'
-    }
-  }, "Resultados reales"), /*#__PURE__*/React.createElement("h2", {
-    className: "sh-t"
-  }, "Lo que dicen nuestros clientes."), /*#__PURE__*/React.createElement("p", {
-    className: "sh-d"
-  }, "Empresas reales. N\xFAmeros reales. Sin testimonios de stock.")), /*#__PURE__*/React.createElement("div", {
-    className: "rev",
-    style: {
-      maxWidth: 780,
-      margin: '0 auto',
-      position: 'relative'
-    },
-    onMouseEnter: () => setPaused(true),
-    onMouseLeave: () => setPaused(false),
-    onTouchStart: () => setPaused(true),
-    onTouchEnd: () => setPaused(false)
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      overflow: 'hidden',
-      borderRadius: 20
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      transition: 'transform .55s cubic-bezier(.16,1,.3,1)',
-      transform: 'translateX(-' + idx * 100 + '%)'
-    }
-  }, T.map((t, i) => /*#__PURE__*/React.createElement("div", {
-    key: t.author,
-    style: {
-      flex: '0 0 100%',
-      minWidth: '100%',
-      padding: '4px'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "card",
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      minHeight: 210
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "test-stars"
-  }, Array.from({
-    length: 5
-  }).map((_, j) => /*#__PURE__*/React.createElement("span", {
-    key: j,
-    className: "test-star"
-  }, /*#__PURE__*/React.createElement(IconStar, null)))), /*#__PURE__*/React.createElement("p", {
-    className: "test-q"
-  }, "\u201C", t.q, "\u201D"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 10,
-      marginTop: 'auto'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "test-av",
-    style: {
-      background: t.color
-    }
-  }, t.initials), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 13,
-      fontWeight: 600,
-      color: 'var(--txt)'
-    }
-  }, t.author), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 11,
-      color: 'var(--txt-m)',
-      marginTop: 2
-    }
-  }, t.role)))))))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 10,
-      marginTop: 18
-    }
-  }, /*#__PURE__*/React.createElement("button", {
-    onClick: () => go(idx - 1),
-    "aria-label": "Anterior",
-    style: {
-      width: 34,
-      height: 34,
-      borderRadius: '50%',
-      border: '1px solid rgba(29,78,216,0.2)',
-      background: '#fff',
-      color: '#1d4ed8',
-      cursor: 'pointer',
-      fontSize: 14,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      transition: 'all .2s'
-    }
-  }, "\u276E"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      gap: 6,
-      alignItems: 'center'
-    }
-  }, T.map((t, i) => /*#__PURE__*/React.createElement("button", {
-    key: t.author,
-    onClick: () => go(i),
-    "aria-label": 'Testimonio ' + (i + 1),
-    style: {
-      width: i === idx ? 22 : 8,
-      height: 8,
-      borderRadius: 999,
-      border: 'none',
-      cursor: 'pointer',
-      background: i === idx ? 'linear-gradient(135deg,#1d4ed8,#7c3aed)' : 'rgba(29,78,216,0.2)',
-      transition: 'all .3s'
-    }
-  }))), /*#__PURE__*/React.createElement("button", {
-    onClick: () => go(idx + 1),
-    "aria-label": "Siguiente",
-    style: {
-      width: 34,
-      height: 34,
-      borderRadius: '50%',
-      border: '1px solid rgba(29,78,216,0.2)',
-      background: '#fff',
-      color: '#1d4ed8',
-      cursor: 'pointer',
-      fontSize: 14,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      transition: 'all .2s'
-    }
-  }, "\u276F"))), /*#__PURE__*/React.createElement("div", {
-    className: "rev",
-    style: {
-      marginTop: 44,
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      gap: 'clamp(24px,5vw,56px)'
-    }
-  }, [{
-    v: '+70',
-    l: 'Clientes activos'
-  }, {
-    v: '99.9%',
-    l: 'Uptime garantizado'
-  }, {
-    v: '14d',
-    l: 'Entrega media'
-  }, {
-    v: '4.9',
-    l: 'Valoración media'
-  }].map(s => /*#__PURE__*/React.createElement("div", {
-    key: s.l,
-    style: {
-      textAlign: 'center'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 6,
-      fontFamily: 'var(--disp)',
-      fontSize: 'clamp(1.4rem,3vw,2rem)',
-      fontWeight: 600,
-      color: 'var(--txt)'
-    }
-  }, /*#__PURE__*/React.createElement(IconStar, null), s.v), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 12,
-      color: 'var(--txt-m)',
-      marginTop: 4,
-      textTransform: 'uppercase',
-      letterSpacing: '.1em'
-    }
-  }, s.l))))));
-};
-
-/* ── COOKIE BANNER ── */
 const CookieBanner = () => {
   const KEY = 'nd_cookie_consent';
   const [visible, setVisible] = React.useState(false);
@@ -3110,21 +3058,21 @@ const CookieBanner = () => {
     style: {
       fontSize: 16
     }
-  }, "\uD83C\uDF6A"), /*#__PURE__*/React.createElement("span", {
+  }, "\uD83D\uDCAC"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: 'var(--disp)',
       fontSize: 14,
       fontWeight: 700,
       color: '#f1f5f9'
     }
-  }, "Uso de cookies")), /*#__PURE__*/React.createElement("p", {
+  }, "Utiliza\xE7\xE3o de cookies")), /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 12.5,
       lineHeight: 1.75,
       color: '#94a3b8',
       margin: 0
     }
-  }, "Usamos cookies necesarias para el funcionamiento del sitio y, con tu consentimiento, cookies anal\xEDticas para mejorar la experiencia.", ' ', /*#__PURE__*/React.createElement("button", {
+  }, "Utilizamos cookies necess\xE1rias para o funcionamento do site e, com o seu consentimento, cookies anal\xEDticos para melhorar a experi\xEAncia.", ' ', /*#__PURE__*/React.createElement("button", {
     onClick: () => setDetail(!detail),
     style: {
       background: 'none',
@@ -3135,7 +3083,7 @@ const CookieBanner = () => {
       padding: 0,
       textDecoration: 'underline'
     }
-  }, detail ? 'Ocultar detalles' : 'Ver detalles')), detail && /*#__PURE__*/React.createElement("div", {
+  }, detail ? 'Ocultar detalhes' : 'Ver detalhes')), detail && /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 10,
       fontSize: 12,
@@ -3150,7 +3098,7 @@ const CookieBanner = () => {
     style: {
       color: '#94a3b8'
     }
-  }, "Necesarias:"), " Sesi\xF3n, seguridad. No requieren consentimiento."), /*#__PURE__*/React.createElement("p", {
+  }, "Necess\xE1rias:"), " Sess\xE3o, seguran\xE7a. N\xE3o requerem consentimento."), /*#__PURE__*/React.createElement("p", {
     style: {
       margin: 0
     }
@@ -3158,7 +3106,7 @@ const CookieBanner = () => {
     style: {
       color: '#94a3b8'
     }
-  }, "Anal\xEDticas:"), " Google Analytics (an\xF3nimo), mejora de navegaci\xF3n."))), /*#__PURE__*/React.createElement("div", {
+  }, "Anal\xEDticos:"), " Google Analytics (an\xF3nimo), melhoria da navega\xE7\xE3o."))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       gap: 8,
@@ -3180,7 +3128,7 @@ const CookieBanner = () => {
       transition: 'all .2s',
       whiteSpace: 'nowrap'
     }
-  }, "Solo necesarias"), /*#__PURE__*/React.createElement("button", {
+  }, "S\xF3 necess\xE1rias"), /*#__PURE__*/React.createElement("button", {
     onClick: () => accept(true),
     style: {
       padding: '9px 18px',
@@ -3195,20 +3143,20 @@ const CookieBanner = () => {
       transition: 'all .2s',
       whiteSpace: 'nowrap'
     }
-  }, "Aceptar todo"))), /*#__PURE__*/React.createElement("p", {
+  }, "Aceitar tudo"))), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 10,
       fontSize: 11,
       color: '#475569',
       textAlign: 'center'
     }
-  }, "Al continuar navegando, aceptas el uso de cookies necesarias. ", '·', ' ', /*#__PURE__*/React.createElement("a", {
-    href: "privacidad.html",
+  }, "Ao continuar a navegar, aceita o uso de cookies necess\xE1rias. ", '·', ' ', /*#__PURE__*/React.createElement("a", {
+    href: "privacidade.html",
     style: {
       color: '#60a5fa',
       textDecoration: 'none'
     }
-  }, "Pol\xEDtica de privacidad"), ' · ', /*#__PURE__*/React.createElement("a", {
+  }, "Pol\xEDtica de privacidade"), ' · ', /*#__PURE__*/React.createElement("a", {
     href: "cookies.html",
     style: {
       color: '#60a5fa',
@@ -3216,8 +3164,6 @@ const CookieBanner = () => {
     }
   }, "Pol\xEDtica de cookies"))));
 };
-
-/* ── APP ── */
 const App = () => {
   useReveal();
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Navbar, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Ticker, null), /*#__PURE__*/React.createElement(Marquee, null), /*#__PURE__*/React.createElement(SaasSection, null), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(ServicesSection, null), /*#__PURE__*/React.createElement(AppsCatalogSection, null), /*#__PURE__*/React.createElement(AgendaSection, null), /*#__PURE__*/React.createElement(ProcessSection, null), /*#__PURE__*/React.createElement(StatsSection, null), /*#__PURE__*/React.createElement(EcosystemSection, null), /*#__PURE__*/React.createElement(ClientsSection, null), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(TestimonialsSection, null), /*#__PURE__*/React.createElement(TeamSection, null), /*#__PURE__*/React.createElement(FaqSection, null), /*#__PURE__*/React.createElement(ContactSection, null), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(StickyBar, null), /*#__PURE__*/React.createElement(ChatWidget, null), /*#__PURE__*/React.createElement(ScrollFab, null), /*#__PURE__*/React.createElement(WaFab, null), /*#__PURE__*/React.createElement(CookieBanner, null));

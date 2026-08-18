@@ -355,23 +355,47 @@ module.exports = async function handler(req, res) {
       ],
     };
 
-    const geminiResponse = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${process.env.GEMINI_API_KEY}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
+    const geminiKeys = [
+      process.env.GEMINI_API_KEY,
+      process.env.GEMINI_API_KEY_BACKUP,
+    ].filter(Boolean);
+
+    if (geminiKeys.length === 0) {
+      throw new Error("Missing Gemini API key");
+    }
+
+    let reply = null;
+    let lastError = null;
+
+    for (const key of geminiKeys) {
+      try {
+        const geminiResponse = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        const data = await geminiResponse.json();
+        const candidate = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        if (geminiResponse.ok && candidate) {
+          reply = candidate;
+          break;
+        }
+
+        lastError = new Error(data?.error?.message || `Gemini HTTP ${geminiResponse.status}`);
+      } catch (error) {
+        lastError = error;
       }
-    );
+    }
 
-    const data = await geminiResponse.json();
-    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-    if (!geminiResponse.ok || !reply) {
-      const message = data?.error?.message || `Gemini HTTP ${geminiResponse.status}`;
-      throw new Error(message);
+    if (!reply) {
+      throw lastError || new Error("No reply from Gemini");
     }
 
     if (shouldNotifyDiscord(lastUserText)) {

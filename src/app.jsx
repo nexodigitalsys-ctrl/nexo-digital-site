@@ -65,7 +65,7 @@ const Navbar = () => {
               <span style={{padding:'3px 8px',borderRadius:16,background:'var(--blue)',color:'#fff'}}>ES</span>
               <a href="pt/" onClick={function(){try{localStorage.setItem('nd-lang','pt');}catch(e){}}} style={{padding:'3px 8px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>PT</a>
             </div>
-            <a href="/contacto" style={{display:'inline-flex',alignItems:'center',borderRadius:9999,background:'var(--blue)',padding:'9px 20px',fontSize:13.5,fontWeight:600,color:'#fff',textDecoration:'none',transition:'all .2s'}}>Empezar →</a>
+            <a href="/contacto.html" style={{display:'inline-flex',alignItems:'center',borderRadius:9999,background:'var(--blue)',padding:'9px 20px',fontSize:13.5,fontWeight:600,color:'#fff',textDecoration:'none',transition:'all .2s'}}>Empezar →</a>
           </div>
           <button onClick={()=>setOp(!op)} aria-label="Alternar menú de navegación" style={{display:'none',width:40,height:40,alignItems:'center',justifyContent:'center',borderRadius:'50%',border:'1px solid var(--bdr)',background:'rgba(255,255,255,0.93)',color:'var(--txt)',cursor:'pointer',fontSize:17}} className="mbtn">{op?'✕':'☰'}</button>
         </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
             <span style={{padding:'4px 14px',borderRadius:16,background:'var(--blue)',color:'#fff'}}>ES</span>
             <a href="pt/" onClick={function(){try{localStorage.setItem('nd-lang','pt');}catch(e){}}} style={{padding:'4px 14px',borderRadius:16,color:'var(--txt-s)',textDecoration:'none'}}>PT</a>
           </div>
-          <a href="/contacto" onClick={()=>setOp(false)} style={{marginTop:8,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:9999,background:'var(--blue)',padding:'12px 20px',fontSize:14,fontWeight:600,color:'#fff',textDecoration:'none'}}>Empezar →</a>
+          <a href="/contacto.html" onClick={()=>setOp(false)} style={{marginTop:8,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:9999,background:'var(--blue)',padding:'12px 20px',fontSize:14,fontWeight:600,color:'#fff',textDecoration:'none'}}>Empezar →</a>
         </div>
       </div>
     )}
@@ -118,7 +118,7 @@ const Hero = () => (
         ))}
       </div>
       <div className="ha6" style={{marginTop:52,display:'grid',gridTemplateColumns:'repeat(4,1fr)',width:'min(540px,94vw)',margin:'52px auto 0',borderRadius:20,border:'1px solid rgba(29,78,216,0.12)',background:'rgba(255,255,255,0.85)',backdropFilter:'blur(20px)',overflow:'hidden',boxShadow:'0 8px 40px rgba(29,78,216,0.1)'}}>
-        {[['40+','Proyectos'],['99.9%','Uptime'],['< 2s','Velocidad'],['24h','Respuesta']].map(([v,l],i)=>(
+        {[['+88','Apps'],['+70','Clientes'],['99.9%','Uptime'],['24h','Respuesta']].map(([v,l],i)=>(
           <div key={l} style={{padding:'18px 12px',textAlign:'center',borderRight:i<3?'1px solid rgba(29,78,216,0.09)':'none'}}>
             <div style={{fontFamily:'var(--disp)',fontSize:'clamp(17px,2.2vw,23px)',fontWeight:700,background:'linear-gradient(135deg,#1d4ed8,#7c3aed)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>{v}</div>
             <div style={{fontSize:10,color:'var(--txt-m)',marginTop:4,textTransform:'uppercase',letterSpacing:'.12em',fontWeight:600}}>{l}</div>
@@ -131,6 +131,7 @@ const Hero = () => (
 
 /* ── SOCIAL PROOF TICKER ── */
 const Ticker = () => {
+  const [tp,setTp]=React.useState(false);
   const row1=[
     {icon:'🚀',color:'#34d399',label:'Web lanzada',loc:'España',time:'hace 2 días'},
     {icon:'💬',color:'#60a5fa',label:'Chatbot IA activado',loc:'Portugal',time:'hace 4 días'},
@@ -138,6 +139,12 @@ const Ticker = () => {
     {icon:'⚙️',color:'#2dd4bf',label:'CRM integrado con WhatsApp',loc:'Europa',time:'hace 8 días'},
     {icon:'🔒',color:'#fb923c',label:'Auditoría de seguridad',loc:'España',time:'hace 10 días'},
     {icon:'📊',color:'#fbbf24',label:'Dashboard analítico',loc:'Portugal',time:'hace 12 días'},
+    {icon:'🍽️',color:'#34d399',label:'SaaS Restaurante',loc:'España',time:'hace 3 días'},
+    {icon:'🦷',color:'#60a5fa',label:'SaaS Odontología',loc:'Brasil',time:'hace 6 días'},
+    {icon:'☕',color:'#a78bfa',label:'TPV Cafetería',loc:'Portugal',time:'hace 7 días'},
+    {icon:'🏋️',color:'#2dd4bf',label:'SaaS Gimnasio',loc:'España',time:'hace 9 días'},
+    {icon:'🧾',color:'#fb923c',label:'SaaS Facturación',loc:'Europa',time:'hace 11 días'},
+    {icon:'📱',color:'#fbbf24',label:'App móvil Android & iOS',loc:'España',time:'hace 13 días'},
   ];
   const row2=[
     {icon:'✅',color:'#34d399',label:'Nuevo cliente',loc:'Portugal',time:'hace 1 día'},
@@ -146,6 +153,12 @@ const Ticker = () => {
     {icon:'⚡',color:'#2dd4bf',label:'Automatización B2B',loc:'España',time:'hace 9 días'},
     {icon:'🌐',color:'#fb923c',label:'Landing page premium',loc:'Portugal',time:'hace 11 días'},
     {icon:'📈',color:'#fbbf24',label:'SEO Audit · +67% visibilidad',loc:'Europa',time:'hace 13 días'},
+    {icon:'🏪',color:'#34d399',label:'TPV Minimarket',loc:'España',time:'hace 4 días'},
+    {icon:'🎓',color:'#60a5fa',label:'SaaS Academia',loc:'Brasil',time:'hace 8 días'},
+    {icon:'🏨',color:'#a78bfa',label:'SaaS Hospedaje',loc:'Portugal',time:'hace 10 días'},
+    {icon:'👗',color:'#2dd4bf',label:'SaaS Tienda de Moda',loc:'España',time:'hace 12 días'},
+    {icon:'🔧',color:'#fb923c',label:'ERP Taller Automotriz',loc:'Brasil',time:'hace 14 días'},
+    {icon:'🧠',color:'#fbbf24',label:'Luna · Agente IA',loc:'España',time:'hace 2 días'},
   ];
   const Item = ({icon,color,label,loc,time}) => (
     <div style={{display:'inline-flex',alignItems:'center',gap:10,padding:'9px 16px 9px 10px',borderRadius:14,border:`1px solid ${color}28`,background:`linear-gradient(135deg,${color}12,rgba(255,255,255,0.85))`,backdropFilter:'blur(12px)',flexShrink:0,marginRight:10,cursor:'default'}}>
@@ -158,11 +171,11 @@ const Ticker = () => {
     </div>
   );
   return (
-    <div style={{padding:'18px 0 20px',borderTop:'1px solid var(--bdr)',borderBottom:'1px solid var(--bdr)',overflow:'hidden',background:'rgba(245,247,251,0.95)',maskImage:'linear-gradient(90deg,transparent,black 6%,black 94%,transparent)'}}>
-      <div style={{display:'flex',width:'max-content',animation:'ticker 38s linear infinite',marginBottom:9}}>
+    <div onMouseEnter={()=>setTp(true)} onMouseLeave={()=>setTp(false)} onTouchStart={()=>setTp(true)} onTouchEnd={()=>setTp(false)} style={{padding:'18px 0 20px',borderTop:'1px solid var(--bdr)',borderBottom:'1px solid var(--bdr)',overflow:'hidden',background:'rgba(245,247,251,0.95)',maskImage:'linear-gradient(90deg,transparent,black 6%,black 94%,transparent)'}}>
+      <div style={{display:'flex',width:'max-content',animation:'ticker 50s linear infinite',animationPlayState:tp?'paused':'running',marginBottom:9}}>
         {[...row1,...row1].map((t,i)=><Item key={i} {...t}/>)}
       </div>
-      <div style={{display:'flex',width:'max-content',animation:'tickerR 42s linear infinite'}}>
+      <div style={{display:'flex',width:'max-content',animation:'tickerR 55s linear infinite',animationPlayState:tp?'paused':'running'}}>
         {[...row2,...row2].map((t,i)=><Item key={i} {...t}/>)}
       </div>
     </div>
@@ -171,35 +184,51 @@ const Ticker = () => {
 
 /* ── TECH MARQUEE ── */
 const Marquee = () => {
+  const [mp,setMp]=React.useState(false);
   const items=[
     {t:'Next.js',c:'#1d4ed8'},
     {t:'TypeScript',c:'#1d4ed8'},
     {t:'React',c:'#0369a1'},
+    {t:'React Native',c:'#0369a1'},
+    {t:'Flutter',c:'#0369a1'},
     {t:'Node.js',c:'#15803d'},
+    {t:'Python',c:'#15803d'},
     {t:'PostgreSQL',c:'#1d4ed8'},
+    {t:'MySQL',c:'#1d4ed8'},
+    {t:'MongoDB',c:'#065f46'},
+    {t:'Firebase',c:'#b45309'},
+    {t:'Supabase',c:'#065f46'},
+    {t:'Redis',c:'#b91c1c'},
+    {t:'Docker',c:'#0369a1'},
+    {t:'Kubernetes',c:'#1d4ed8'},
+    {t:'AWS',c:'#c2410c'},
     {t:'Cloudflare',c:'#c2410c'},
+    {t:'Vercel',c:'#1d4ed8'},
+    {t:'Git',c:'#c2410c'},
+    {t:'Linux',c:'#b45309'},
+    {t:'Nginx',c:'#065f46'},
     {t:'WordPress',c:'#1d4ed8'},
     {t:'PHP',c:'#6d28d9'},
-    {t:'Flutter',c:'#0369a1'},
+    {t:'Laravel',c:'#b91c1c'},
+    {t:'Tailwind CSS',c:'#0369a1'},
     {t:'Kotlin',c:'#6d28d9'},
     {t:'Swift',c:'#c2410c'},
-    {t:'Firebase',c:'#b45309'},
-    {t:'Docker',c:'#0369a1'},
-    {t:'AWS',c:'#c2410c'},
-    {t:'Supabase',c:'#065f46'},
     {t:'Stripe',c:'#6d28d9'},
+    {t:'Bizum',c:'#0f766e'},
+    {t:'WhatsApp API',c:'#065f46'},
     {t:'Ciberseguridad',c:'#b91c1c'},
     {t:'APIs REST',c:'#0f766e'},
+    {t:'GraphQL',c:'#6d28d9'},
+    {t:'PWA',c:'#0f766e'},
     {t:'Automatización',c:'#065f46'},
     {t:'CI/CD',c:'#b45309'},
-    {t:'Redis',c:'#b91c1c'},
-    {t:'Vercel',c:'#1d4ed8'},
+    {t:'IA / Agentes',c:'#6d28d9'},
   ];
   const d=[...items,...items];
   return (
     <div style={{padding:'28px 0',borderTop:'1px solid var(--bdr)',borderBottom:'1px solid var(--bdr)'}}>
-      <div style={{overflow:'hidden',maskImage:'linear-gradient(90deg,transparent,black 10%,black 90%,transparent)'}}>
-        <div style={{display:'flex',gap:10,width:'max-content',animation:'marquee 36s linear infinite'}}>
+      <div onMouseEnter={()=>setMp(true)} onMouseLeave={()=>setMp(false)} onTouchStart={()=>setMp(true)} onTouchEnd={()=>setMp(false)} style={{overflow:'hidden',maskImage:'linear-gradient(90deg,transparent,black 10%,black 90%,transparent)'}}>
+        <div style={{display:'flex',gap:10,width:'max-content',animation:'marquee 50s linear infinite',animationPlayState:mp?'paused':'running'}}>
           {d.map((t,i)=>(
             <span key={i} style={{display:'inline-flex',alignItems:'center',gap:6,borderRadius:9999,border:`1px solid ${t.c}20`,background:`${t.c}0a`,padding:'7px 15px',fontSize:11,fontWeight:600,textTransform:'uppercase',letterSpacing:'.14em',color:t.c,whiteSpace:'nowrap',transition:'all .2s'}}>
               <span style={{width:5,height:5,borderRadius:'50%',background:t.c,opacity:.8,flexShrink:0}}/>
@@ -244,6 +273,13 @@ const SaasSection = () => {
             </div>
           ))}
         </div>
+        <div className="rev" style={{marginTop:34,borderRadius:22,border:'1px solid rgba(29,78,216,0.16)',background:'linear-gradient(135deg,rgba(29,78,216,0.06),rgba(124,58,237,0.06),rgba(13,148,136,0.05))',padding:'clamp(26px,4vw,40px)',display:'flex',alignItems:'center',justifyContent:'space-between',gap:18,flexWrap:'wrap'}}>
+          <div style={{minWidth:260,flex:1}}>
+            <div style={{fontFamily:'var(--disp)',fontSize:'clamp(17px,2.6vw,22px)',fontWeight:600,letterSpacing:'-.015em',color:'var(--txt)'}}>¿Buscas una app moderna creada a medida?</div>
+            <p style={{marginTop:8,fontSize:13.5,lineHeight:1.8,color:'var(--txt-s)',maxWidth:520}}>Aplicaciones SaaS, CRMs, TPVs, ERPs y apps móviles para Android e iOS. Analizamos tu caso y te proponemos la mejor solución.</p>
+          </div>
+          <a href="#contacto" className="btn btn-p" style={{flexShrink:0}}>Quiero una app a medida →</a>
+        </div>
       </div>
     </section>
   );
@@ -260,6 +296,9 @@ const ServicesSection = () => {
     {icon:'⚙️',title:'Sistemas a Medida',desc:'ERP, CRM, dashboards y portales internos diseñados para la operación real del negocio.',feats:['ERP y CRM personalizados','Integraciones vía API REST','Arquitectura escalable']},
     {icon:'📣',title:'Tráfico Pago / Anuncios',desc:'Campañas Google Ads y Meta Ads orientadas a resultados medibles para negocios locales y nacionales.',feats:['Google Ads y Meta Ads','Segmentación geográfica precisa','Informes y optimización continua']},
     {icon:'🔒',title:'Ciberseguridad & Infraestructura',desc:'Auditorías de seguridad, hardening, SSL, firewall Cloudflare y monitorización activa 24/7.',feats:['Auditoría de seguridad web','Firewall y protección DDoS','Backups automáticos diarios']},
+    {icon:'📱',title:'Apps Móviles (Android & iOS)',desc:'Aplicaciones móviles nativas e híbridas para Android e iOS: publicamos tu app en Google Play y App Store.',feats:['Android & iOS (React Native / Flutter)','Publicación en Google Play y App Store','Notificaciones push y offline']},
+    {icon:'☁️',title:'Aplicaciones SaaS a medida',desc:'Software como servicio por sectores: restaurantes, clínicas, academias, gimnasios y más. Multiusuario y escalable.',feats:['SaaS por sector (restaurante, clínica…)','Suscripciones y gestión de usuarios','Panel de administración']},
+    {icon:'🤝',title:'CRMs a medida',desc:'Sistemas de relación con clientes personalizados para tu operación: ventas, delivery, tiendas y servicios.',feats:['Pipeline y seguimiento comercial','Integración con WhatsApp','Reportes y automatización']},
   ];
   return (
     <section id="servicios" className="sec-lg" style={{background:'linear-gradient(to bottom,rgba(238,241,248,0.7),transparent)'}}>
@@ -313,10 +352,10 @@ const AgendaSection = () => (
 /* ── STATS ── */
 const StatsSection = () => {
   const S=[
-    {v:'40+',l:'Proyectos entregados',d:'Sitios, plataformas y sistemas con foco en claridad y ejecución.'},
-    {v:'99.9%',l:'Uptime garantizado',d:'Monitorización continua con alertas inmediatas ante cualquier incidencia.'},
-    {v:'<2s',l:'Velocidad web objetivo',d:'Experiencias ligeras, lectura rápida y Core Web Vitals optimizados.'},
-    {v:'24h',l:'Tiempo de respuesta',d:'Acompañamiento directo y respuesta garantizada en menos de 24 horas.'},
+    {v:'+88',l:'Aplicaciones en catálogo',d:'TPVs, SaaS, ERPs, CRMs y sistemas de gestión listos para cada sector.'},
+    {v:'+70',l:'Proyectos entregados',d:'Sitios, plataformas y sistemas a medida en producción.'},
+    {v:'24/7',l:'Monitoreo y seguridad',d:'Vigilancia inteligente con alertas automáticas y protección proactiva.'},
+    {v:'4',l:'Idiomas soportados',d:'Plataformas y tienda en español, portugués, inglés y catalán — con francés e italiano en camino.'},
   ];
   return (
     <section className="sec">
@@ -341,7 +380,7 @@ const StatsSection = () => {
 
 /* ── CLIENTS ── */
 const ClientsSection = () => {
-  const C=['Reformas Machado','Soltur Reformas','Santafe Reformas','Super Clim','Saviesa','Bresami','Viviane Cordeiro','Misme Electric','Ecants'];
+  const C=['Santa Fe Construcciones','Fornells Studio','Onadance','Reformas Machado','Soltur Reformas','Santafe Reformas','Super Clim','Saviesa','Bresami','Viviane Cordeiro','Misme Electric','Ecants'];
   return (
     <section id="clientes" className="sec" style={{background:'linear-gradient(to bottom,rgba(238,241,248,0.5),transparent)'}}>
       <div className="wrap">
@@ -354,9 +393,100 @@ const ClientsSection = () => {
         <div className="cta-join rev">
           <div>
             <div style={{fontFamily:'var(--disp)',fontSize:16,fontWeight:600,color:'var(--txt)'}}>¿Tu empresa podría ser la siguiente?</div>
-            <p style={{marginTop:5,fontSize:13,color:'var(--txt-s)'}}>Últimos clientes registrados en los últimos 14 días. Únete a nuestra lista.</p>
+            <p style={{marginTop:5,fontSize:13,color:'var(--txt-s)'}}>Únete a las empresas que ya confían en nosotros y haz crecer tu negocio.</p>
           </div>
           <a href="#contacto" className="btn btn-p btn-sm" style={{flexShrink:0}}>Contactar ahora →</a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ── APPS CATALOG ── */
+const AppsCatalogSection = () => {
+  const groups=[
+    {icon:'🛍️',title:'TPVs por sector',count:'11',items:['Cafetería','Hostelería','Fast Food','Panadería','Peluquería','Estética & SPA','Minimarket','Zapatería','Joyería','Papelería','Bares']},
+    {icon:'☁️',title:'SaaS multinegocio',count:'15',items:['Restaurante','Clínica','Odontología','Gimnasio','Colegio','Academia','Ferretería','Minimarket','Hospedaje','Taller Automotriz','Taller Textil','Tienda de Moda','Botica','Citas Médicas','Préstamos']},
+    {icon:'🏢',title:'Gestión & ERPs',count:'10+',items:['Almacenes','Gestor documental','Contabilidad','Consultorio médico','Asistencia digital','Encomiendas','Planilla','Servicio técnico','ERP educativo','ERP farmacia']},
+    {icon:'🤝',title:'CRMs a medida',count:'8',items:['Tienda online','Delivery','Odontología','Agencia de viajes','Colegio','Condominio','Ventas','Tienda de móviles']},
+  ];
+  const extras=[
+    {icon:'📊',title:'Dashboard todo-en-uno',desc:'Gastos, CRM, tareas, documentos y metas en una sola plataforma.',tag:'Todo en 1'},
+    {icon:'📱',title:'Apps móviles validadas',desc:'Android & iOS publicadas en Google Play y App Store.',tag:'Android · iOS'},
+    {icon:'🎮',title:'Juegos & Gamificación',desc:'Juegos web y móviles, casuales y arcade.',tag:'Web · Móvil'},
+    {icon:'🧠',title:'IA & Agentes',desc:'Chatbots IA y agentes autónomos como Luna.',tag:'IA propia'},
+  ];
+  return (
+    <section id="apps" className="sec" style={{background:'linear-gradient(to bottom,rgba(238,241,248,0.6),transparent)'}}>
+      <div className="wrap">
+        <div className="sh c rev">
+          <span className="ew">Aplicaciones a medida</span>
+          <h2 className="sh-t">Software hecho por sectores, no plantillas.</h2>
+          <p className="sh-d">Un catálogo propio con más de 88 soluciones: TPV, SaaS, ERPs, CRMs y sistemas de gestión adaptados al día a día de cada negocio.</p>
+        </div>
+        <div className="g4">
+          {groups.map((g,i)=>(
+            <div key={g.title} className={`card rev d${i+1}`}>
+              <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:10}}>
+                <span style={{fontSize:26}}>{g.icon}</span>
+                <span className="stat-v" style={{fontSize:'clamp(1.5rem,3vw,2.1rem)'}}>{g.count}</span>
+              </div>
+              <div className="card-h" style={{fontSize:'clamp(15px,2vw,18px)'}}>{g.title}</div>
+              <div style={{marginTop:12,display:'flex',flexWrap:'wrap',gap:6}}>
+                {g.items.map(t=><span key={t} className="cpill" style={{fontSize:11,padding:'5px 11px'}}>{t}</span>)}
+              </div>
+              <div className="card-cta"><a href="#contacto">Quiero una app así →</a></div>
+            </div>
+          ))}
+        </div>
+        <div className="apps-strip rev">
+          {extras.map(x=>(
+            <div key={x.title} className="apps-strip-i">
+              <span>{x.icon}</span>
+              <div style={{minWidth:0}}>
+                <b>{x.title}</b>
+                <p>{x.desc}</p>
+              </div>
+              <span className="tag2">{x.tag}</span>
+            </div>
+          ))}
+        </div>
+        <div className="rev" style={{marginTop:24,textAlign:'center',fontSize:13,color:'var(--txt-s)'}}>
+          +88 aplicaciones en catálogo · Entrega digital · Multidioma (es · pt · en · ca) · Pago flexible
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ── NEXO ECOSYSTEM ── */
+const EcosystemSection = () => {
+  const cards=[
+    {icon:'🧠',title:'Luna — Agente autónomo',tag:'IA propia',sc:'blue',desc:'Sistema de inteligencia propio que razona en la nube y ejecuta acciones reales en el servidor: archivos, shell, git y dashboards de forma autónoma.',feats:['Monitoreo inteligente 24/7','Firewall activo y anti fuerza bruta','Detección de ataques con geolocalización de IPs','Accesos controlados y contraseñas reforzadas']},
+    {icon:'🛒',title:'Nexo Digital Store',tag:'Plataforma',sc:'green',desc:'Plataforma completa de aplicaciones de negocio con +88 productos: TPV, SaaS, webs y apps, con catálogo, ficha de producto y entrega digital.',feats:['+88 productos organizados','Transferencia y Bizum, Stripe en camino','Descarga con verificación de compra','Panel de administración centralizado','Español · Portugués · Inglés · Catalán']},
+    {icon:'💼',title:'Nexo Business Suite',tag:'Suite de negocio',sc:'orange',desc:'Soluciones listas para usar: gestión documental por áreas (Nexus), RRHH, logística, contabilidad, clínicas y retail, más un creador de landing pages.',feats:['Nexus: expedientes por áreas','RRHH, logística y contabilidad','Soluciones para clínicas y retail','Creador de landing pages']},
+  ];
+  return (
+    <section id="ecosistema" className="sec">
+      <div className="wrap">
+        <div className="sh c rev">
+          <span className="ew">El ecosistema Nexo</span>
+          <h2 className="sh-t">Tecnología propia, operada por nosotros.</h2>
+          <p className="sh-d">IA autónoma, tienda de software y suite de negocio: lo que usamos para construir — y operar — productos reales cada día.</p>
+        </div>
+        <div className="g3">
+          {cards.map((c,i)=>(
+            <div key={c.title} className={`card rev d${i%4+1}`}>
+              <div style={{display:'flex',alignItems:'flex-start',justifyContent:'space-between',gap:10}}>
+                <span style={{fontSize:28}}>{c.icon}</span>
+                <span className={`sb ${c.sc}`}><span className="sb-dot"/>{c.tag}</span>
+              </div>
+              <div className="card-h">{c.title}</div>
+              <p className="card-p">{c.desc}</p>
+              <ul className="fl">{c.feats.map(f=><li key={f} className="fi"><IconCheck/><span>{f}</span></li>)}</ul>
+              <div className="card-cta"><a href="#contacto">Solicitar demo →</a></div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -599,8 +729,8 @@ const Footer = () => (
       <div className="fbot">
         <span>© 2026 Nexo Digital</span>
         <div style={{display:'flex',gap:16,flexWrap:'wrap',justifyContent:'flex-end'}}>
-          <a href="/aviso-legal" className="flk" style={{fontSize:12}}>Aviso Legal</a>
-          <a href="/privacidad" className="flk" style={{fontSize:12}}>Privacidad</a>
+          <a href="/aviso-legal.html" className="flk" style={{fontSize:12}}>Aviso Legal</a>
+          <a href="/privacidad.html" className="flk" style={{fontSize:12}}>Privacidad</a>
           <a href="cookies.html" className="flk" style={{fontSize:12}}>Cookies</a>
         </div>
       </div>
@@ -660,6 +790,28 @@ const ChatWidget = () => {
 
   const waLink = 'https://wa.me/34689135159?text=Hola%20Nexo%20Digital,%20vengo%20del%20chat%20de%20vuestra%20web';
 
+  const localAnswer = (txt) => {
+    try {
+      const stops = ['para','como','que','los','las','una','unos','unas','con','por','del','al','el','la','de','y','a','en','es','se','su','sus','este','esta','estos','quiero','quieres','cuanto','cual','puede','puedes','hacer','hace','seria','estaria','tener','necesito','queria','dime','informacion'];
+      const words = txt.toLowerCase().replace(/[^a-záéíóúüñç0-9\s]/gi,' ').split(/\s+/).filter(w=>w.length>3 && stops.indexOf(w)===-1);
+      const body = (document.body && document.body.innerText) ? document.body.innerText.replace(/\s+/g,' ') : '';
+      if (!words.length || !body) return null;
+      const paras = body.split(/(?<=[.!?])\s+/).filter(p=>p.length>30 && p.length<420);
+      let best=null, bestScore=0;
+      for (const p of paras) {
+        const low=p.toLowerCase();
+        let score=0;
+        for (const w of words) if (low.indexOf(w)!==-1) score++;
+        if (score>bestScore){ bestScore=score; best=p; }
+      }
+      if (best && bestScore>=1) {
+        const clean = best.trim().replace(/^\s*[•\-\*#]+\s*/,'');
+        return 'He buscado en la web y esto es lo que he encontrado:\n\n'+clean.slice(0,320)+'\n\n¿Te ayudo con algo más, o prefieres que te pase al equipo por WhatsApp?';
+      }
+      return null;
+    } catch(e) { return null; }
+  };
+
   const send = async (text) => {
     const txt = (text || inp).trim();
     if (!txt || busy) return;
@@ -667,6 +819,7 @@ const ChatWidget = () => {
     const history = [...msgs, {r:'u', t:txt}];
     setMsgs(history);
     setBusy(true);
+    const fallback = localAnswer(txt) || 'Lo siento, no he podido conectar con el servicio y no tengo esa info en la página. Escríbenos por WhatsApp o a contacto@nexo-digital.app y te respondemos en 24h.';
     try {
       const res = await fetch('/api/chat', {
         method:'POST',
@@ -674,9 +827,9 @@ const ChatWidget = () => {
         body: JSON.stringify({messages: history.map(m => ({role: m.r==='u'?'user':'assistant', content:m.t}))})
       });
       const data = await res.json();
-      setMsgs(function(h){ return [...h, {r:'b', t: data.reply || 'Lo siento, ha ocurrido un error. Puedes escribirnos directamente.'}]; });
+      setMsgs(function(h){ return [...h, {r:'b', t: data.reply || fallback}]; });
     } catch(e) {
-      setMsgs(function(h){ return [...h, {r:'b', t:'Error de conexion. Escribenos por WhatsApp o email y te respondemos enseguida.'}]; });
+      setMsgs(function(h){ return [...h, {r:'b', t: fallback}]; });
     }
     setBusy(false);
   };
@@ -890,13 +1043,32 @@ const ProcessSection = () => {
   );
 };
 
+/* ── STAR ICON ── */
+const IconStar = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.9 6.26L21.5 9.27l-4.75 4.63 1.12 6.54L12 17.42l-5.87 3.02 1.12-6.54L2.5 9.27l6.6-1.01z"/></svg>
+);
+
 /* ── TESTIMONIALS ── */
 const TestimonialsSection = () => {
   const T=[
     {q:'Pasamos de perder leads por no responder a tiempo a tener un chatbot que los atiende en segundos. En 6 semanas logramos un +38% en conversiones.',author:'Carlos M.',role:'Taller mecánico',initials:'CM',color:'linear-gradient(135deg,#059669,#0d9488)'},
     {q:'La auditoría técnica nos reveló un 67% de rebote en mobile. En 2 semanas lo bajamos al 22%. Las ventas subieron ese mismo mes.',author:'Sara L.',role:'E-commerce',initials:'SL',color:'linear-gradient(135deg,#7c3aed,#1a56db)'},
     {q:'Conectaron nuestro CRM con el sistema de facturación. 15 horas semanales de trabajo manual eliminadas. El ROI se pagó en el primer mes.',author:'Javier R.',role:'Consultoría B2B · Madrid',initials:'JR',color:'linear-gradient(135deg,#1e3a8a,#0d9488)'},
+    {q:'Nos montaron un SaaS a medida para nuestro restaurante con gestión de mesas, pedidos y reportes. Hoy funciona todo sin fricción y el equipo lo usa a diario.',author:'Marta G.',role:'Restaurante · Barcelona',initials:'MG',color:'linear-gradient(135deg,#0d9488,#7c3aed)'},
+    {q:'El TPV a medida para nuestra cafetería redujo las colas y los errores de caja casi a cero. El soporte responde en minutos cuando lo necesitamos.',author:'Lucía F.',role:'Cafetería · Valencia',initials:'LF',color:'linear-gradient(135deg,#f59e0b,#ef4444)'},
+    {q:'Nos ayudaron a lanzar nuestra tienda online en 14 días con SEO incluido. Hoy el 40% de las ventas llegan por Google.',author:'Andrés T.',role:'Tienda online · Sevilla',initials:'AT',color:'linear-gradient(135deg,#0ea5e9,#7c3aed)'},
+    {q:'El dashboard todo-en-uno centraliza gastos, tareas y documentos de la clínica. La gestión administrativa pasó de horas a minutos.',author:'Elena V.',role:'Clínica dental · Zaragoza',initials:'EV',color:'linear-gradient(135deg,#059669,#2563eb)'},
+    {q:'El agente autónomo responde consultas, organiza archivos y vigila la web 24/7. Es como tener un empleado digital que nunca duerme.',author:'Diego S.',role:'Agencia de viajes · Bilbao',initials:'DS',color:'linear-gradient(135deg,#7c3aed,#0d9488)'},
   ];
+  const [idx, setIdx] = React.useState(0);
+  const [paused, setPaused] = React.useState(false);
+  const n = T.length;
+  React.useEffect(() => {
+    if (paused) return;
+    const t = setInterval(() => setIdx(i => (i + 1) % n), 7000);
+    return () => clearInterval(t);
+  }, [paused, n]);
+  const go = (i) => setIdx(((i % n) + n) % n);
   return (
     <section className="sec-lg" style={{background:'linear-gradient(to bottom,rgba(238,241,248,0.7),transparent)'}}>
       <div className="wrap">
@@ -905,25 +1077,44 @@ const TestimonialsSection = () => {
           <h2 className="sh-t">Lo que dicen nuestros clientes.</h2>
           <p className="sh-d">Empresas reales. Números reales. Sin testimonios de stock.</p>
         </div>
-        <div className="g3">
-          {T.map((t,i)=>(
-            <div key={t.author} className={`card rev d${i+1}`} style={{display:'flex',flexDirection:'column'}}>
-              <div className="test-stars">{'★★★★★'.split('').map((s,j)=><span key={j} className="test-star">{s}</span>)}</div>
-              <p className="test-q">&ldquo;{t.q}&rdquo;</p>
-              <div style={{display:'flex',alignItems:'center',gap:10,marginTop:'auto'}}>
-                <div className="test-av" style={{background:t.color}}>{t.initials}</div>
-                <div>
-                  <div style={{fontSize:13,fontWeight:600,color:'var(--txt)'}}>{t.author}</div>
-                  <div style={{fontSize:11,color:'var(--txt-m)',marginTop:2}}>{t.role}</div>
+        <div className="rev" onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onTouchStart={()=>setPaused(true)} onTouchEnd={()=>setPaused(false)} style={{maxWidth:780,margin:'0 auto',position:'relative'}}>
+          <div style={{overflow:'hidden',borderRadius:20}}>
+            <div style={{display:'flex',transition:'transform .55s cubic-bezier(.16,1,.3,1)',transform:'translateX(-'+(idx*100)+'%)'}}>
+              {T.map((t,i)=>(
+                <div key={t.author} style={{flex:'0 0 100%',minWidth:'100%',padding:'4px'}}>
+                  <div className="card" style={{display:'flex',flexDirection:'column',minHeight:210}}>
+                    <div className="test-stars">{Array.from({length:5}).map((_,j)=><span key={j} className="test-star"><IconStar/></span>)}</div>
+                    <p className="test-q">&ldquo;{t.q}&rdquo;</p>
+                    <div style={{display:'flex',alignItems:'center',gap:10,marginTop:'auto'}}>
+                      <div className="test-av" style={{background:t.color}}>{t.initials}</div>
+                      <div>
+                        <div style={{fontSize:13,fontWeight:600,color:'var(--txt)'}}>{t.author}</div>
+                        <div style={{fontSize:11,color:'var(--txt-m)',marginTop:2}}>{t.role}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:10,marginTop:18}}>
+            <button onClick={()=>go(idx-1)} aria-label="Anterior" style={{width:34,height:34,borderRadius:'50%',border:'1px solid rgba(29,78,216,0.2)',background:'#fff',color:'#1d4ed8',cursor:'pointer',fontSize:14,display:'flex',alignItems:'center',justifyContent:'center',transition:'all .2s'}}>&#10094;</button>
+            <div style={{display:'flex',gap:6,alignItems:'center'}}>
+              {T.map((t,i)=>(
+                <button key={t.author} onClick={()=>go(i)} aria-label={'Testimonio '+(i+1)} style={{
+                  width:i===idx?22:8,height:8,borderRadius:999,border:'none',cursor:'pointer',
+                  background:i===idx?'linear-gradient(135deg,#1d4ed8,#7c3aed)':'rgba(29,78,216,0.2)',
+                  transition:'all .3s'
+                }} />
+              ))}
+            </div>
+            <button onClick={()=>go(idx+1)} aria-label="Siguiente" style={{width:34,height:34,borderRadius:'50%',border:'1px solid rgba(29,78,216,0.2)',background:'#fff',color:'#1d4ed8',cursor:'pointer',fontSize:14,display:'flex',alignItems:'center',justifyContent:'center',transition:'all .2s'}}>&#10095;</button>
+          </div>
         </div>
         <div className="rev" style={{marginTop:44,display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'clamp(24px,5vw,56px)'}}>
-          {[{v:'+50',l:'Clientes activos'},{v:'99.9%',l:'Uptime garantizado'},{v:'14d',l:'Entrega media'},{v:'4.9★',l:'Valoración media'}].map(s=>(
+          {[{v:'+70',l:'Clientes activos'},{v:'99.9%',l:'Uptime garantizado'},{v:'14d',l:'Entrega media'},{v:'4.9',l:'Valoración media'}].map(s=>(
             <div key={s.l} style={{textAlign:'center'}}>
-              <div style={{fontFamily:'var(--disp)',fontSize:'clamp(1.4rem,3vw,2rem)',fontWeight:600,color:'var(--txt)'}}>{s.v}</div>
+              <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:6,fontFamily:'var(--disp)',fontSize:'clamp(1.4rem,3vw,2rem)',fontWeight:600,color:'var(--txt)'}}><IconStar/>{s.v}</div>
               <div style={{fontSize:12,color:'var(--txt-m)',marginTop:4,textTransform:'uppercase',letterSpacing:'.1em'}}>{s.l}</div>
             </div>
           ))}
@@ -1019,9 +1210,11 @@ const App = () => {
       <SaasSection/>
       <hr/>
       <ServicesSection/>
+      <AppsCatalogSection/>
       <AgendaSection/>
       <ProcessSection/>
       <StatsSection/>
+      <EcosystemSection/>
       <ClientsSection/>
       <hr/>
       <TestimonialsSection/>
