@@ -2093,19 +2093,19 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
     justifyContent: 'flex-end'
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "aviso-legal.html",
+  href: "/pt/aviso-legal.html",
   className: "flk",
   style: {
     fontSize: 12
   }
 }, "Aviso Legal"), /*#__PURE__*/React.createElement("a", {
-  href: "privacidade.html",
+  href: "/pt/privacidade.html",
   className: "flk",
   style: {
     fontSize: 12
   }
 }, "Privacidade"), /*#__PURE__*/React.createElement("a", {
-  href: "cookies.html",
+  href: "/pt/cookies.html",
   className: "flk",
   style: {
     fontSize: 12
@@ -3151,13 +3151,13 @@ const CookieBanner = () => {
       textAlign: 'center'
     }
   }, "Ao continuar a navegar, aceita o uso de cookies necess\xE1rias. ", '·', ' ', /*#__PURE__*/React.createElement("a", {
-    href: "privacidade.html",
+    href: "/pt/privacidade.html",
     style: {
       color: '#60a5fa',
       textDecoration: 'none'
     }
   }, "Pol\xEDtica de privacidade"), ' · ', /*#__PURE__*/React.createElement("a", {
-    href: "cookies.html",
+    href: "/pt/cookies.html",
     style: {
       color: '#60a5fa',
       textDecoration: 'none'

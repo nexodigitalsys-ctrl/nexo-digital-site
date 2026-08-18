@@ -36,7 +36,7 @@ const IconArrow = ({
   d: "M6 9l6 6 6-6"
 }));
 const Logo = () => /*#__PURE__*/React.createElement("a", {
-  href: "index.html",
+  href: "/pt/index.html",
   style: {
     display: 'inline-flex',
     alignItems: 'center',
@@ -201,7 +201,7 @@ const Navbar = () => {
       color: '#fff'
     }
   }, "PT")), /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     style: {
       display: 'inline-flex',
       alignItems: 'center',
@@ -297,7 +297,7 @@ const Navbar = () => {
       color: '#fff'
     }
   }, "PT")), /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     onClick: () => setOp(false),
     style: {
       marginTop: 8,
@@ -342,7 +342,7 @@ const PageHero = () => /*#__PURE__*/React.createElement("section", {
     gap: 12
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "index.html",
+  href: "/pt/index.html",
   style: {
     fontSize: 12,
     color: 'var(--txt-m)'
@@ -637,7 +637,7 @@ const CtaSection = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: 'wrap'
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "contacto.html",
+  href: "/pt/contacto.html",
   className: "btn btn-p"
 }, "Consulta gratuita \u2192"), /*#__PURE__*/React.createElement("a", {
   href: "mailto:contacto@nexo-digital.app",
@@ -677,7 +677,7 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
   href: "mailto:contacto@nexo-digital.app",
   className: "flk"
 }, "contacto@nexo-digital.app"), /*#__PURE__*/React.createElement("a", {
-  href: "contacto.html",
+  href: "/pt/contacto.html",
   className: "flk",
   style: {
     marginTop: 12
@@ -702,7 +702,7 @@ const StickyBar = () => {
   }, /*#__PURE__*/React.createElement("p", {
     className: "sticky-txt"
   }, /*#__PURE__*/React.createElement("strong", null, "Vamos come\xE7ar o seu projeto?"), " Primeira consulta gratuita."), /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     className: "btn btn-p",
     style: {
       padding: '9px 18px',

@@ -36,7 +36,7 @@ const IconCheck = () => /*#__PURE__*/React.createElement("svg", {
   points: "22 4 12 14.01 9 11.01"
 }));
 const Logo = () => /*#__PURE__*/React.createElement("a", {
-  href: "index.html",
+  href: "/pt/index.html",
   style: {
     display: 'inline-flex',
     alignItems: 'center',
@@ -201,7 +201,7 @@ const Navbar = () => {
       color: '#fff'
     }
   }, "PT")), /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     style: {
       display: 'inline-flex',
       alignItems: 'center',
@@ -299,7 +299,7 @@ const Navbar = () => {
       color: '#fff'
     }
   }, "PT")), /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     onClick: () => setOp(false),
     style: {
       marginTop: 8,
@@ -344,7 +344,7 @@ const PageHero = () => /*#__PURE__*/React.createElement("section", {
     gap: 12
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "index.html",
+  href: "/pt/index.html",
   style: {
     fontSize: 12,
     color: 'var(--txt-m)',
@@ -459,7 +459,7 @@ const SaasSection = () => {
   }, /*#__PURE__*/React.createElement(IconCheck, null), /*#__PURE__*/React.createElement("span", null, f)))), /*#__PURE__*/React.createElement("div", {
     className: "card-cta"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html"
+    href: "/pt/contacto.html"
   }, p.cta)))))));
 };
 const ServicesSection = () => {
@@ -571,7 +571,7 @@ const ServicesSection = () => {
   }, /*#__PURE__*/React.createElement(IconCheck, null), /*#__PURE__*/React.createElement("span", null, f)))), /*#__PURE__*/React.createElement("div", {
     className: "card-cta"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html"
+    href: "/pt/contacto.html"
   }, "Consultar \u2192")))))));
 };
 const AppsCatalogSection = () => {
@@ -676,7 +676,7 @@ const AppsCatalogSection = () => {
   }, t))), /*#__PURE__*/React.createElement("div", {
     className: "card-cta"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html"
+    href: "/pt/contacto.html"
   }, "Quero uma app assim \u2192"))))), /*#__PURE__*/React.createElement("div", {
     className: "apps-strip rev"
   }, extras.map(x => /*#__PURE__*/React.createElement("div", {
@@ -737,7 +737,7 @@ const CtaSection = () => /*#__PURE__*/React.createElement("section", {
     flexWrap: 'wrap'
   }
 }, /*#__PURE__*/React.createElement("a", {
-  href: "contacto.html",
+  href: "/pt/contacto.html",
   className: "btn btn-p"
 }, "Enviar consulta \u2192"), /*#__PURE__*/React.createElement("a", {
   href: "mailto:contacto@nexo-digital.app",
@@ -777,7 +777,7 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
   href: "mailto:contacto@nexo-digital.app",
   className: "flk"
 }, "contacto@nexo-digital.app"), /*#__PURE__*/React.createElement("a", {
-  href: "contacto.html",
+  href: "/pt/contacto.html",
   className: "flk",
   style: {
     marginTop: 12
@@ -802,7 +802,7 @@ const StickyBar = () => {
   }, /*#__PURE__*/React.createElement("p", {
     className: "sticky-txt"
   }, /*#__PURE__*/React.createElement("strong", null, "Precisa de um servi\xE7o \xE0 medida?"), " Conte-nos o seu projeto."), /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     className: "btn btn-p",
     style: {
       padding: '9px 18px',

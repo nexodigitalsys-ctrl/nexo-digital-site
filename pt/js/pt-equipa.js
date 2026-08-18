@@ -22,7 +22,7 @@ const useReveal = () => {
   }, []);
 };
 const Logo = () => /*#__PURE__*/React.createElement("a", {
-  href: "index.html",
+  href: "/pt/index.html",
   style: {
     display: 'inline-flex',
     alignItems: 'center',
@@ -186,7 +186,7 @@ const Navbar = () => {
       color: '#fff'
     }
   }, "PT")), /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     style: {
       display: 'inline-flex',
       alignItems: 'center',
@@ -281,7 +281,7 @@ const Navbar = () => {
       color: '#fff'
     }
   }, "PT")), /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     onClick: () => setOp(false),
     style: {
       marginTop: 8,
@@ -470,7 +470,7 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
   href: "mailto:contacto@nexo-digital.app",
   className: "flk"
 }, "contacto@nexo-digital.app"), /*#__PURE__*/React.createElement("a", {
-  href: "contacto.html",
+  href: "/pt/contacto.html",
   className: "flk",
   style: {
     marginTop: 12
@@ -495,7 +495,7 @@ const StickyBar = () => {
   }, /*#__PURE__*/React.createElement("p", {
     className: "sticky-txt"
   }, /*#__PURE__*/React.createElement("strong", null, "Quer trabalhar com a nossa equipa?"), " Primeira consulta gratuita."), /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     className: "btn btn-p",
     style: {
       padding: '9px 18px',
@@ -1047,7 +1047,7 @@ const App = () => {
       gap: 12
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "index.html",
+    href: "/pt/index.html",
     style: {
       fontSize: 12,
       color: 'var(--txt-m)'
@@ -1117,7 +1117,7 @@ const App = () => {
       flexWrap: 'wrap'
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "contacto.html",
+    href: "/pt/contacto.html",
     className: "btn btn-p"
   }, "Falar com a equipa \u2192"), /*#__PURE__*/React.createElement("a", {
     href: "mailto:contacto@nexo-digital.app",
